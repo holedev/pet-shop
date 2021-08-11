@@ -4,45 +4,132 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog & Cat</title>
+    <title>H&M's Pet</title>
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid header-content">
+            <div class="grid header-grid">
                 <div class="header-left">
-                    <h1 class="header-left__logo">
-                        LOGO
-                    </h1>
+                    <img src="./assets/img/logo.png" alt="" class="header-left__logo">
                 </div>
                 <div class="header-right">
                     <ul class="header-right__list">
-                        <li class="header-right__item">
-                            Home
+                        <li id="home" class="header-right__item active">
+                            Trang chủ
                         </li>
-                        <li class="header-right__item">
-                            Menu
+                        <li id="intro" class="header-right__item">
+                            Giới thiệu
                         </li>
-                        <li class="header-right__item">
-                            Page
+                        <li id="list-pet" class="header-right__item">
+                            Chuyên mục thú cưng
                         </li>
-                        <li class="header-right__item">
-                            Gallery
+                        <li id="news" class="header-right__item">
+                            Tin tức
                         </li>
-                        <li class="header-right__item">
-                            Contact
+                        <li id="contact" class="header-right__item">
+                            Liên hệ
                         </li>
                     </ul>
+                    <div class="header-right__search">
+                        <div class="header-right__search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
+
+        
         <section class="main">
             <div class="main-top">
-
+                
             </div>
         </section>
+
+
+
+        <footer class="footer">
+            <section class="footer-content grid">
+                <div class="footer-left">
+                    <div class="footer-left__logo">
+                        <img src="./assets/img/logo-footer.jpg" alt="" class="footer-left__logo-img">
+                    </div>
+                    <div class="footer-left__content">
+                        H&M’s Pet là cổng thông tin hoàn toàn
+                        miễn phí về các vấn đề xung quanh chó và mèo.
+                    </div>
+                </div>
+                <div class="footer-main">
+                    <div class="footer__title">
+                        Danh sách trang
+                    </div>
+                    <ul class="footer-main__list">
+                        <li class="footer-main__item">
+                            Giới thiệu
+                        </li>
+                        <li class="footer-main__item">
+                            Chính sách bảo mật
+                        </li>
+                        <li class="footer-main__item">
+                            Điều khoản dịch vụ
+                        </li>
+                        <li class="footer-main__item">
+                            Liên hệ
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <div class="footer__title">
+                        Liên hệ với chúng tôi
+                    </div>
+                    <ul class="footer-right__list">
+                        <li class="footer-right__item">
+                            <div style="color: #fff;" class="footer-right__item-icon">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                        </li>
+                        <li class="footer-right__item">
+                            <div style="color: #1da1f2" class="footer-right__item-icon">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                        </li>
+                        <li class="footer-right__item">
+                            <div style="color: #c52e35" class="footer-right__item-icon">
+                                <i class="fab fa-pinterest"></i>
+                            </div>
+                        </li>
+                        <li class="footer-right__item">
+                            <div style="color: #0077b5"class="footer-right__item-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="footer__title">
+                        Tải trên ứng dụng
+                    </div>
+                    <div class="footer__download">
+                        <div class="footer__download-qr">
+                            <img src="./assets/img/QR.png" alt="">
+                        </div>
+                        <div class="footer__download-icon">
+                            <div class="footer__download-icon__GGPlay">
+                                <img src="./assets/img/GGPlay.png" alt="">
+                            </div>
+                            <div class="footer__download-icon__Appstore">
+                                <img src="./assets/img/Appstore.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </section>
+            <div class="footer-copyright">
+                Copyright &#169; 2021 - Bản quyền thuộc về H&M's Pet
+            </div>
+        </footer>
     </div>
 
     <script src="./assets/js/app.js"></script>
