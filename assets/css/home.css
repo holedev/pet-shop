@@ -1,0 +1,52 @@
+.header {
+    background-color: transparent;
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    
+}
+
+.header-left__logo {
+    font-size: 3.6rem;
+    
+}
+
+.header-right {
+
+}
+
+.header-right__list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-right__item {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.header-right__item:hover {
+    color: blue;
+    cursor: pointer;
+    background-color:#ccc;
+}
+
+.main-top{
+    height: 100px;
+    background-color: var(--secondary-color);
+}
