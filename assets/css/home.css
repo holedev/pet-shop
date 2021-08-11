@@ -1,7 +1,6 @@
-
-
-
-
+.main {
+    background-color: var(--background-color);
+}
 
 .main-top{
     background-image: url(../img/banner-cat.jpg);
@@ -11,8 +10,26 @@
     width: 100%;
     padding-top: 50%;
     margin-top: 68px;
-    filter: brightness(60%);
     position: relative;
+}
+
+.main-top__content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.main-top__title {
+    font-size: 8.4rem;
+    letter-spacing: 4px;
+}
+
+.main-top__sub-title {
+    font-size: 3.2rem;
+    font-weight: 400;
 }
 
 
