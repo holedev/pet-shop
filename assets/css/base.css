@@ -58,6 +58,7 @@ html {
     display:flex;
     align-items: center;
     z-index: 1;
+    padding: 0 40px;
 }
 
 .header-grid {
@@ -214,8 +215,8 @@ html {
 .search-box__form-input:not(:placeholder-shown) +
 .search-box__form-label{
     display: inline-block;
-    top: -10px;
-    color: #ccc;
+    top: -20px;
+    color: #aaa;
     opacity: 1;
 }
 

@@ -234,13 +234,13 @@
 
 .main-takecare__right {
     flex: 1;
-    height: 100%;
-    padding: 52px 12px;
+    padding: 52px 20px;
     padding-right: 10%;
     box-shadow: 8px 4px 12px #ffd2d5,
                 4px 8px 12px #ffd2d5;
     border-radius: 4px;
     position: relative;
+    text-align: center;
 }
 
 .main-takecare__right-content {
@@ -347,7 +347,7 @@
 ------------------------------------ */
 
 .main-contact {
-
+    
 }
 
 .main-contact__grid {
@@ -445,4 +445,36 @@
 .main-contact__btn:hover
 .main-contact__btn-link {
     color: #000;
+}
+
+
+
+
+/* --------------------------------------
+-------------- RESPONSIVE ---------------
+----------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .grid {
+        width: 100%;
+    }
+
+    .main-contact {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .main-takecare {
+        padding: 0 20px;
+
+    }
+
+    .main-takecare__right-text {
+        width: 60%;
+        text-align: right;
+    }
+
+    .main-takecare__right {
+       padding: 20px 40px;
+    }
 }
