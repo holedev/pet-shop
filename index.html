@@ -32,16 +32,26 @@
                         </li>
                     </ul>
                     <div class="header-right__search">
-                        <div class="header-right__search-icon">
+                        <div onclick="openSearch()" class="header-right__search-icon">
                             <i class="fas fa-search"></i>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="search-box">
+                <div onclick="closeSearch()" class="search-box__close">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <div class="search-box__form">
+                    <input type="text" class="search-box__form-input" name="search" placeholder=" ">
+                    <label class="search-box__form-label" for="name">Type then hit enter to search</label>
                 </div>
             </div>
         </header>
 
 
         <section class="main">
+
             <div class="main-top">
                 <div class="main-top__content">
                     <h2 class="main-top__title">
@@ -212,6 +222,58 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="main-contact">
+                <div class="main-contact__grid grid">
+                    <h3 class="main-title">
+                        Liên hệ
+                    </h3>
+                    <div class="main-contact__main">
+                        <div class="main-contact__main-left">
+                            <div class="main-contact__main-left__item">
+                                <div class="main-contact__main-left__item-icon">
+                                    <i class="fas fa-globe-europe"></i>
+                                </div>
+                                <div class="main-contact__main-left__item-content">
+                                    Việt Nam
+                                </div>
+                            </div>
+                            <div class="main-contact__main-left__item">
+                                <div class="main-contact__main-left__item-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="main-contact__main-left__item-content">
+                                    Phone: +00 121212
+                                </div>
+                            </div>
+                            <div class="main-contact__main-left__item">
+                                <div class="main-contact__main-left__item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="main-contact__main-left__item-content">
+                                    Mail: mail@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-contact__main-right">
+                            <div class="main-contact__main-right__row1">
+                                <input type="text" name="name" placeholder="Họ tên" class="main-contact__main-right__row1-input">
+                                <input type="email" name="email" placeholder="Email" class="main-contact__main-right__row1-input">
+                            </div>
+                            <div class="main-contact__main-right__row2">
+                                <input type="text" name="message" placeholder="Message" class="main-contact__main-rightright__row2-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-contact__submit">
+                        <div class="main-contact__btn">
+                            <a href="" class="main-contact__btn-link">
+                                Send
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
@@ -263,6 +325,25 @@
                             </div>
                         </div>
                     </div>
+                    <div class="footer__more">
+                        <ul class="footer__social">
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>    
             </section>
             <div class="footer-copyright">
@@ -271,6 +352,17 @@
         </footer>
     </div>
 
-    <script src="./assets/js/app.js"></script>
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        closeSearch = function(){
+            $('.search-box').style.display = 'none'
+        }
+
+        openSearch = function(){
+            $('.search-box').style.display = 'flex'
+        }
+    </script>
 </body>
 </html>

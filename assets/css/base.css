@@ -149,8 +149,80 @@ html {
 ---------------------------------------*/
 
 
+/* --------------------------------------
+--------------SEARCH BOX-----------------
+----------------------------------------- */
 
 
+.search-box {
+    position: fixed;
+    top: 0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeIn ease 0.5s;
+}
+
+.search-box__close {
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 60px;
+}
+
+.search-box__close:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-box__form {
+    position: relative;
+}
+
+.search-box__form-input {
+    height: 40px;
+    width: 700px;
+    background-color: transparent;
+    border-color: transparent transparent #ccc transparent;
+    outline: none;
+    color: #fff;
+    font-size: 2.2rem;
+    padding-left: 25%;
+    text-transform: uppercase;
+}
+
+.search-box__form-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    color: #fff;
+    transition: all ease 0.3s;
+    opacity: 0;
+}
+
+.search-box__form-input:focus +
+.search-box__form-label, 
+.search-box__form-input:not(:placeholder-shown) +
+.search-box__form-label{
+    display: inline-block;
+    top: -10px;
+    color: #ccc;
+    opacity: 1;
+}
+
+
+/* --------------------------------------
+------------SEARCH BOX END-------------
+----------------------------------------- */
 
 
 
@@ -271,6 +343,31 @@ html {
     padding: 8px 0;
     color : #4a4a4a
 }
+
+.footer__more {
+    margin-top: 40px;
+}
+
+.footer__social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__social-item {
+    font-size: 3.2rem;
+    padding: 8px;
+}
+
+.footer__social-item__link {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer__social-item__link:hover {
+    color: #ccc;
+}
+
 
 /* ---------------------------------------
 ------------- END FOOTER ----------------
