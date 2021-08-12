@@ -4,6 +4,8 @@
 :root{
     --active-color: #1c47af;
     --background-color: #fde6e8;
+    --text-color: #000;
+    --border-color: #ccc;
 }
 
 /* reset css */
@@ -16,6 +18,7 @@
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 /* layout 1200 */

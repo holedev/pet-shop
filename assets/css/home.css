@@ -1,15 +1,15 @@
 .main {
     background-color: var(--background-color);
+    margin-top: 68px;
 }
 
 .main-top{
-    background-image: url(../img/banner-cat.jpg);
-    background-size: cover;
+    background-image: url(../img/banner-cat.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:center;
+    background-size: cover;
     width: 100%;
-    padding-top: 50%;
-    margin-top: 68px;
+    padding-top:50%;
     position: relative;
 }
 
@@ -32,6 +32,175 @@
     font-weight: 400;
 }
 
+/* -----------------------------------
+------------ INTRODUCE --------------
+------------------------------------- */
+
+.main-introduce {
+
+}
+
+.main-introduce__grid {
+    display: flex;
+    flex-direction: column;
+    padding: 52px;
+}
+
+.main-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.main-introduce__content {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.main-introduce__content-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    letter-spacing: 1px;
+    text-align: justify;
+    font-style: italic;
+}
+
+.main-introduce__content-text-paragraph {
+    width: 70%;
+}
+
+.main-introduce__content-text-paragraph span{
+    font-weight: 500;
+}
+
+.main-introduce__content-img {
+    flex: 1;
+    max-width: 530px;
+}
+
+.main-introduce__btn {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+    width: 100px;
+    transition: all ease 0.2s;
+}
+
+.main-introduce__btn:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.main-introduce__btn-link {
+    text-decoration: none;
+    padding: 8px 20px;
+    color: var(--text-color);
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+
+
+
+/* --------------------------------
+--------------- PET ---------------
+----------------------------------- */
+
+.main-pet {
+    background-color:#e3e2df;
+    padding: 40px;
+}
+
+.main-pet__grid {
+
+}
+
+.main-pet__grid .main-title {
+    text-align: center;
+}
+
+.main-pet__list {
+    list-style: none;
+}
+
+.main-pet__item {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    justify-content: space-around;
+    border-radius: 30px;
+    box-shadow: 0 0 4px #e3afbc;
+    overflow: hidden;
+}
+
+.main-pet__item:hover 
+.main-pet__item-img,
+.main-pet__item:hover
+.main-pet__item-info-more {
+    transform: scale(1.2);
+}
+
+.main-pet__item:nth-child(even) {
+    flex-direction: row-reverse;
+    background-image: linear-gradient(to left, #e3afbc, #f37885);
+}
+
+.main-pet__item:nth-child(odd) {
+    background-image: linear-gradient(to right, #e4a1b2, #edc7b7);
+}
+
+.main-pet__item-img {
+    width: 280px;
+    transition: all ease-in-out 0.3s;
+}
+
+.main-pet__item-info {
+    width: 40%;
+}
+
+.main-pet__item-info-text {
+    font-size: 1.6rem;
+    position: relative;
+    font-style: italic;
+}
+
+.main-pet__item-info-text::before {
+    position: absolute;
+    content: "\201C";
+    font-size: 200%;
+    top: -8px;
+    left: -16px;
+}
+
+.main-pet__item-info-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100px;
+    transition: all ease 0.3s
+}
+
+.main-pet__item-info-more:hover
+.main-pet__item-info-more__link {
+    background-color: rgba(0,0,0,0.8);
+    color: #77a7ff;
+    font-weight: 500;
+}
+
+.main-pet__item-info-more__link {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: #ccc;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    line-height: 32px;
+    text-align: center;
+}
 
 
 
