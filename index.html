@@ -16,6 +16,9 @@
                 <div class="header-left">
                     <img src="./assets/img/logo.png" alt="" class="header-left__logo">
                 </div>
+                <div class="header-mobile">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <div class="header-right">
                     <ul class="header-right__list">
                         <li class="header-right__item active">
@@ -36,6 +39,12 @@
                             <i class="fas fa-search"></i>
                         </div>
                     </div>
+                    <div class="search-960">
+                        <input placeholder="Tìm kiếm" type="text" class="search-960__input">
+                        <div class="search-960__icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="search-box">
@@ -49,6 +58,8 @@
             </div>
         </header>
 
+        <!-- overplay -->
+        <div class="overplay"></div>
 
         <section class="main">
 
@@ -361,16 +372,53 @@
     </div>
 
     <script>
+
         const $ = document.querySelector.bind(document)
         const $$ = document.querySelectorAll.bind(document)
 
+        const overplay = $('.overplay')
+        const headerRight = $('.header-right')
+        const headerRightHeight = headerRight.clientHeight;
+        const menuRightItems = $$('.header-right__item')
+        //đóng, mở search pc
         closeSearch = function(){
             $('.search-box').style.display = 'none'
         }
-
         openSearch = function(){
             $('.search-box').style.display = 'flex'   
         }
+
+
+        //đóng mở menu mobile
+        closeMenuMobile = function(){
+            headerRight.classList.remove('active')
+            overplay.classList.remove('active')
+        }
+
+        showMenuMobile = function(){
+            headerRight.classList.add('active')
+            overplay.classList.add('active')
+        }
+
+        $('.header-mobile').onclick = function(){
+            if (headerRight.clientHeight == 0){
+                showMenuMobile()
+            } else {
+                closeMenuMobile()
+            }
+        }
+
+        overplay.onclick = function(){
+            closeMenuMobile()
+        }
+
+        menuRightItems.forEach(item => {
+            item.onclick = function(){
+                closeMenuMobile()
+            }
+        });
+
+
     </script>
 </body>
 </html>
