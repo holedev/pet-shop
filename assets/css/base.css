@@ -114,7 +114,6 @@ html {
 
 .header-right__item.active {
     color: var(--active-color);
-    font-weight: 500;
 }
 
 .header-right__item.active::after {

@@ -21,16 +21,16 @@
                 </div>
                 <div class="header-right">
                     <ul class="header-right__list">
-                        <li class="header-right__item active">
+                        <li class="home header-right__item active">
                             Trang chủ
                         </li>
-                        <li class="header-right__item">
+                        <li class="intro header-right__item">
                             Giới thiệu
                         </li>
-                        <li class="header-right__item">
+                        <li class="pet header-right__item">
                             Chuyên mục thú cưng
                         </li>
-                        <li class="header-right__item">
+                        <li class="contact header-right__item">
                             Liên hệ
                         </li>
                     </ul>
@@ -414,12 +414,44 @@
             closeMenuMobile()
         }
 
-        menuRightItems.forEach(item => {
-            item.onclick = function(){
-                closeMenuMobile()
-            }
-        });
+        
+        //menu onclick
+        activeMenu = function(e){
+            menuRightItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            e.classList.add('active');
+            closeMenuMobile()
+        }
 
+        //scroll
+        $('.home').onclick = function(){
+            window.scroll({
+                top: 0,
+            });
+            activeMenu(this)
+        }
+
+        $('.intro').onclick = function(){
+            window.scroll({
+                top: $('.main-introduce').offsetTop - 56,
+            });
+            activeMenu(this)
+        }
+
+        $('.pet').onclick = function(){
+            window.scroll({
+                top: $('.main-pet').offsetTop - 56,
+            });
+            activeMenu(this)
+        }
+
+        $('.contact').onclick = function(){
+            window.scroll({
+                top: $('.main-contact').offsetTop - 56,
+            });
+            activeMenu(this)
+        }
 
     </script>
 </body>
