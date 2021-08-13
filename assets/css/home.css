@@ -434,7 +434,7 @@
 
 .main-contact__btn {
     margin-left: auto;
-    min-width: 68px;
+    width: 68px;
     height: 32px;
     background-color: #000;
     display: flex;
@@ -501,6 +501,10 @@
 
     :root {
         --header-height: 52px;
+    }
+
+    .search-box {
+        display: none !important;
     }
 
     .header-right {
@@ -651,6 +655,73 @@
 
 @media only screen and (max-width: 739px) {
     html {
+        font-size: 60%;
+    }
+
+    .main-top__title {
+        font-size: 3.2rem;
+        letter-spacing: 2px;
+    }
+
+    .main-top__sub-title {
+        font-size: 1.6rem;
+    }
+
+    .main-introduce__grid {
+        padding: 40px;
+    }
+
+    .main-pet__item {
+        width: 85%;
+    }
+
+    .main-takecare__right {
+        min-width: 80%;
+    }
+
+    .main-promise__list {
+        flex-direction: column;
+        margin-top: 20px;
+        justify-content:center;
+        align-items:center
+    }
+
+    .main-promise__item {
+        margin-top: 40px;
+        width: 80%;
+    }
+
+    .main-contact__main {
+        margin: 0 auto;
+    }
+
+    .main-contact__main-row1 {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .main-contact__main-right__row1 {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .main-contact__main-right__row1-input {
+        width: 100%;
+    }
+
+    .main-contact__btn {
+        width: 80%;
+        margin: 8px auto;
+    }
+
+    .main-contact__main-right {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    html {
         font-size: 56%;
     }
 
@@ -669,18 +740,11 @@
     }
 
     .main-takecare__right-text {
-        width: 80%;
+        width: 60%;
     }
 
     .main-promise__grid {
         padding: 80px 24px;
-    }
-
-    .main-promise__list {
-        flex-direction: column;
-        margin-top: 20px;
-        justify-content:center;
-        align-items:center
     }
 
     .main-promise__item {
@@ -696,21 +760,7 @@
         width: 100%;
     }
 
-    .main-contact__main-row1 {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .main-contact__main-right__row1 {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .main-contact__main-right__row1-input {
-        width: 100%;
-    }
-
-    .main-contact__submit {
+    .main-contact__btn {
         margin-top: 8px;
         width: 100%;
     }
