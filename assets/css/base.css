@@ -58,6 +58,23 @@ html {
     }
 }
 
+/* --------------------------------------
+------------- LOADING -------------------
+------------------------------------ */
+
+.loading {
+    position: fixed;
+    width:100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e7dfdd url(../img/pre-loader.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+    z-index: 9999;
+}
 
 /* ---------------------------------------
 --------------- HEADER -------------------

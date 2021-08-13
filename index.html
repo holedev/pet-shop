@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body onload="preloader()">
+
+    <div class="loading"></div>
     <div class="app">
         <header class="header">
             <div class="grid header-grid">
@@ -380,6 +382,15 @@
         const headerRight = $('.header-right')
         const headerRightHeight = headerRight.clientHeight;
         const menuRightItems = $$('.header-right__item')
+
+
+        //preloader
+        preloader = function(){
+            setTimeout(function(){
+                $('.loading').style.display = 'none'
+            }, 2000)
+        }
+
         //đóng, mở search pc
         closeSearch = function(){
             $('.search-box').style.display = 'none'
