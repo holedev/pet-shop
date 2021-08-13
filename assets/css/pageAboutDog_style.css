@@ -1,0 +1,26 @@
+h3 {
+    padding: 52px;
+}
+
+div.main-introduce__grid > img {
+    align-items: left;
+}
+
+.content_description_image {
+    flex: 1;
+    max-width: 50%;
+    float: left;
+}
+
+ul.content_description_list > li {
+    list-style: circle;
+    font-style: italic;
+}
+
+.content_description_list_member {
+    list-style: square;
+}
+
+.clearfix {
+    overflow: auto;
+}
