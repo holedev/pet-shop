@@ -16,6 +16,20 @@
     box-sizing: border-box;
 }
 
+/* đổi thanh scroll xịn hơn */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-button {
+    height: 2px
+} */
+
 html {
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;

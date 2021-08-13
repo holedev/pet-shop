@@ -393,11 +393,13 @@
         closeMenuMobile = function(){
             headerRight.classList.remove('active')
             overplay.classList.remove('active')
+            document.body.style.overflow = 'auto'
         }
 
         showMenuMobile = function(){
             headerRight.classList.add('active')
             overplay.classList.add('active')
+            document.body.style.overflow = 'hidden'
         }
 
         $('.header-mobile').onclick = function(){
