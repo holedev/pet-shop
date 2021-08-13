@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="main-introduce__content-img">
-                            <img src="./assets/img/intro-banner.jpg" alt="banner" width="100%">
+                            <img width="100%" src="./assets/img/intro-banner.jpg" alt="banner" width="100%">
                         </div>
                     </div>
                     <span class="main-introduce__btn">
@@ -107,12 +107,12 @@
                     </h3>
                     <ul class="main-pet__list">
                         <li class="main-pet__item">
-                            <img width="100%" src="./assets/img/pet-banner-dog.jpg" alt="pet-banner" class="main-pet__item-img">
+                            <div class="main-pet__item-img">
+                                <img src="./assets/img/pet-banner-dog.jpg" alt="pet-banner" class="">
+                            </div>
                             <div class="main-pet__item-info">
                                 <div class="main-pet__item-info-text">
-                                    Loài vật không quan tâm đến việc bạn thông minh hay ngu dốt,
-                                    bạn xinh đẹp hay xấu xí, chỉ cần bạn trao trái tim mình cho nó, 
-                                    và nó sẽ trao lại trái tim nó cho bạn.
+                                    Cần tìm một người bạn trung thành ?
                                 </div>
                                 <div class="main-pet__item-info-more">
                                     <a href="" class="main-pet__item-info-more__link">
@@ -122,7 +122,9 @@
                             </div>
                         </li>
                         <li class="main-pet__item">
-                            <img width="100%" src="./assets/img/pet-banner-cat.jpg" alt="pet-banner" class="main-pet__item-img">
+                            <div class="main-pet__item-img">
+                                <img width="100%" src="./assets/img/pet-banner-cat.jpg" alt="pet-banner" class="">
+                            </div>
                             <div class="main-pet__item-info">
                                 <div class="main-pet__item-info-text">
                                     Meowwww, trẫm đói ...
@@ -229,50 +231,56 @@
                         Liên hệ
                     </h3>
                     <div class="main-contact__main">
-                        <div class="main-contact__main-left">
-                            <div class="main-contact__main-left__item">
-                                <div class="main-contact__main-left__item-icon">
-                                    <i class="fas fa-globe-europe"></i>
+                        <div class="main-contact__main-row1">
+                            <div class="main-contact__main-left">
+                                <div class="main-contact__main-left__item">
+                                    <div class="main-contact__main-left__item-icon">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </div>
+                                    <div class="main-contact__main-left__item-content">
+                                        Việt Nam
+                                    </div>
                                 </div>
-                                <div class="main-contact__main-left__item-content">
-                                    Việt Nam
+                                <div class="main-contact__main-left__item">
+                                    <div class="main-contact__main-left__item-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="main-contact__main-left__item-content">
+                                        Phone: +00 121212
+                                    </div>
+                                </div>
+                                <div class="main-contact__main-left__item">
+                                    <div class="main-contact__main-left__item-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="main-contact__main-left__item-content">
+                                        Mail: mail@gmail.com
+                                    </div>
                                 </div>
                             </div>
-                            <div class="main-contact__main-left__item">
-                                <div class="main-contact__main-left__item-icon">
-                                    <i class="fas fa-phone-alt"></i>
+                            <div class="main-contact__main-right">
+                                <div class="main-contact__main-right__row1">
+                                    <input type="text" name="name" placeholder="Họ tên" class="main-contact__main-right__row1-input">
+                                    <input type="email" name="email" placeholder="Email" class="main-contact__main-right__row1-input">
                                 </div>
-                                <div class="main-contact__main-left__item-content">
-                                    Phone: +00 121212
-                                </div>
-                            </div>
-                            <div class="main-contact__main-left__item">
-                                <div class="main-contact__main-left__item-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="main-contact__main-left__item-content">
-                                    Mail: mail@gmail.com
+                                <div class="main-contact__main-right__row2">
+                                    <input type="text" name="message" placeholder="Message" class="main-contact__main-rightright__row2-input">
                                 </div>
                             </div>
                         </div>
-                        <div class="main-contact__main-right">
-                            <div class="main-contact__main-right__row1">
-                                <input type="text" name="name" placeholder="Họ tên" class="main-contact__main-right__row1-input">
-                                <input type="email" name="email" placeholder="Email" class="main-contact__main-right__row1-input">
+                        <div class="main-contact__submit">
+                            <div class="main-contact__btn">
+                                <a href="" class="main-contact__btn-link">
+                                    Send
+                                </a>
                             </div>
-                            <div class="main-contact__main-right__row2">
-                                <input type="text" name="message" placeholder="Message" class="main-contact__main-rightright__row2-input">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-contact__submit">
-                        <div class="main-contact__btn">
-                            <a href="" class="main-contact__btn-link">
-                                Send
-                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="main-map">
+
             </div>
         </section>
 

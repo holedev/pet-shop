@@ -6,6 +6,7 @@
     --background-color: #fde6e8;
     --text-color: #000;
     --border-color: #ccc;
+    --header-height: 68px;
 }
 
 /* reset css */
@@ -49,7 +50,7 @@ html {
 ---------------------------------------*/
 
 .header {
-    height: 68px;
+    height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
