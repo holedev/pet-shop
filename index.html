@@ -380,15 +380,14 @@
 
         const overplay = $('.overplay')
         const headerRight = $('.header-right')
-        const headerRightHeight = headerRight.clientHeight;
         const menuRightItems = $$('.header-right__item')
-
+        const inputSearch = $('.search-box__form-input')
 
         //preloader
         preloader = function(){
             setTimeout(function(){
                 $('.loading').style.display = 'none'
-            }, 2000)
+            }, 1000)
         }
 
         //đóng, mở search pc
@@ -396,7 +395,8 @@
             $('.search-box').style.display = 'none'
         }
         openSearch = function(){
-            $('.search-box').style.display = 'flex'   
+            $('.search-box').style.display = 'flex'  
+            inputSearch.focus()
         }
 
 
@@ -436,33 +436,19 @@
         }
 
         //scroll
-        $('.home').onclick = function(){
-            window.scroll({
-                top: 0,
-            });
-            activeMenu(this)
+        scrollToComponent = function(title, component) {
+            title.onclick = function(){
+                window.scroll({
+                    top: component.offsetTop - 56,
+                });
+                activeMenu(this)
+            }
         }
 
-        $('.intro').onclick = function(){
-            window.scroll({
-                top: $('.main-introduce').offsetTop - 56,
-            });
-            activeMenu(this)
-        }
-
-        $('.pet').onclick = function(){
-            window.scroll({
-                top: $('.main-pet').offsetTop - 56,
-            });
-            activeMenu(this)
-        }
-
-        $('.contact').onclick = function(){
-            window.scroll({
-                top: $('.main-contact').offsetTop - 56,
-            });
-            activeMenu(this)
-        }
+        scrollToComponent($('.home'), $('.main-top'))
+        scrollToComponent($('.intro'), $('.main-introduce'))
+        scrollToComponent($('.pet'), $('.main-pet'))
+        scrollToComponent($('.contact'), $('.main-contact'))
 
     </script>
 </body>
