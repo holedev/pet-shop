@@ -184,16 +184,23 @@
             </footer>
         </div>
     
+        <script src="./assets/js/app.js"></script>
         <script>
-            const $ = document.querySelector.bind(document)
-            const $$ = document.querySelectorAll.bind(document)
-    
-            closeSearch = function(){
-                $('.search-box').style.display = 'none'
+            //scroll
+            scrollToComponent = function(title, component) {
+                title.onclick = function(){
+                    window.scroll({
+                        top: component.offsetTop - 56,
+                    });
+                    activeMenu(this)
+                }
             }
-            openSearch = function(){
-                $('.search-box').style.display = 'flex'   
-            }
+
+            scrollToComponent($('.home'), $('.main-top'))
+            scrollToComponent($('.intro'), $('.main-introduce'))
+            scrollToComponent($('.pet'), $('.main-pet'))
+            scrollToComponent($('.contact'), $('.main-contact'))
+
         </script>
     </body>
 </html>
