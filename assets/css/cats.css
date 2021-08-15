@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+    --gap: 12px;
+}
+
+.main {
+    margin-top: var(--header-height);
+    background-color: var(--background-color);
+    font-family: 'Pacifico', cursive;
+}
+
+.main-top {
+    padding: 20px;
+}
+
+.main-top__grid {
+    text-align: center;
+}
+
+.main-top__title {
+    font-size: 7rem;
+    display: inline-block;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0px 0 32px;
+}
+
+.main-top__content {
+
+}
+
+.main-top__content-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--gap));
+}
+
+.main-top__content-item {
+    width: calc(25% - var(--gap));
+    margin-left: var(--gap);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-top__content-item:hover {
+    cursor: pointer;
+}
+
+.main-top__content-item:hover
+.main-top__content-item__img img {
+    transform: scale(1.1);
+    filter: brightness(80%)
+}
+
+.main-top__content-item:hover
+.main-top__content-item__hover,
+.main-top__content-item:hover
+.main-top__content-item__name {
+    transform: scaleX(1);
+}
+
+.main-top__content-item__img {
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.main-top__content-item__img img {
+    transition: all ease 0.3s;
+    width: 100%;
+    height: 100%;
+}
+
+.main-top__content-item__bottom {
+    margin-top: auto;
+    position: relative;
+}
+
+.main-top__content-item__name,
+.main-top__content-item__hover {
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.main-top__content-item__hover {
+    position: absolute;
+    border-radius: 8px;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, pink, rgb(100, 100, 248));
+    transition: all linear 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.main-top__content-item__hover i {
+    font-size: 3.2rem;
+    transform: rotate(35deg);
+}
+
+.main-top__content-item__name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 12px 0;
+    position: relative;
+    z-index: 1;
+    transition: all linear 0.25s;
+}
+
+
+
+/* ----------------------------------------
+--------------- PAGE SLIDER ---------------
+------------------------------------------- */
+
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+.page-slider {
+    height: 100%;
+}
+
+.page-slider__grid {
+    position: relative;
+    background: url(../img/Cats/meo-34.jpg) no-repeat center / cover;
+    height:100%;
+    filter: brightness(90%);
+    border-radius: 8px;
+}
+
+.page-slider__prevBtn,
+.page-slider__nextBtn {
+    font-size: 4rem;
+    background-color:#fff;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 20px;
+    border-radius: 50%;
+}
+
+.page-slider__prevBtn {
+    left: 0;
+}
+
+.page-slider__nextBtn {
+    right: 0;
+}
+
+.page-slider__main {
+    position: absolute;
+    bottom:0;
+    padding: 16px;
+}
+
+.page-slider__main-title {
+    font-size: 4.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 8px 16px;
+    text-shadow: 0 0 4px #fff;
+}
+
+.page-slider__content {
+    display: flex;
+    gap: 20px;
+}
+
+.page-slider__content-left {
+    flex: 2;
+    padding: 8px 16px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow:0 8px 8px 0 rgba(103, 151, 255, .11), 0 12px 18px 0 rgba(103, 151, 255, .11);
+}
+
+
+.page-slider__content-info {
+    
+}
+
+
+.page-slider__content-info__text {
+    font-size: 1.8rem;
+    font-style: italic;
+    text-align: justify;
+}
+
+.page-slider__content-right {
+    flex: 1;
+    align-self: flex-end;
+}
+
+.page-slider__content-sliders {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+}
+
+.page-slider__content-slider {
+    
+}
+
+.page-slider__content-slider__img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--background-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.page-slider__content-slider__img:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.page-slider__content-slider__img img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* ---------------------------------------
+--------------- RESPONSIVE ---------------
+------------------------------------------ */
+
+
+@media only screen and (max-width: 960px) {
+
+    :root {
+        --gap: 16px
+    }
+
+    .main-top__content-item {
+        width: calc(33.33% - var(--gap));
+    }
+}
+
+@media only screen and (max-width: 739px) {
+
+    :root {
+        --gap: 24px
+    }
+    
+    .main-top__content-item {
+        width: calc(50% - var(--gap));
+    }
+}
+
+@media only screen and (max-width: 579px) {
+
+    :root {
+        --gap: 0;
+    }
+    
+    .main-top__content-item {
+        width: 100%;
+    }
+}

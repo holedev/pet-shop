@@ -15,7 +15,7 @@
 
      <!-- overplay -->
      <div class="overplay"></div>
-     
+
     <div class="app">
         <header class="header">
             <div class="grid header-grid">
@@ -65,7 +65,29 @@
         </header>
 
         <section class="main">
+            <div class="main-top">
+                <div class="main-top__grid grid">
+                    <h2 class="main-top__title">
+                        Meowwww
+                    </h2>
+                    <div class="main-top__content">
+                        <ul class="main-top__content-list">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="slider">
+            <span class="page-slider__prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="page-slider__nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </span>
+            <section class="page-slider">
+            </section>
         </section>
 
         <footer class="footer">
@@ -143,5 +165,167 @@
     </div>
 
     <script src="./assets/js/app.js"></script>
+    <script>
+
+        const app = {
+            currentSilder: 0,
+            cats: [
+                {
+                    id: 1,
+                    path: "./assets/img/Cats/meo-sphynx.jpg",
+                    name: "Mèo Ai Cập",
+                    content: "Không có vẻ ngoài bụ bẫm và bộ lông nhiều màu sắc như những giống mèo khác, mèo Ai Cập shynx có ngoại hình vô cùng kỳ lạ và độc đáo. Cơ thể chúng hoàn toàn trụi lông kèm thêm một gương mặt nhăn nheo như đang trong trạng thái cáu kỉnh. Mèo Ai Cập còn có tên gọi khác là mèo Sphynx, mèo nhân sư, mèo không lông. Trông mèo nhân sư có vẻ kỳ dị vậy thôi nhưng chúng cũng là loài mèo được nhiều người trong giới thượng lưu yêu thích và dần đang được nuôi phổ biến."
+                },
+                {
+                    id: 2,
+                    path: "./assets/img/Cats/meo-Anh.jpg",
+                    name: "Mèo Anh",
+                },
+                {
+                    id: 3,
+                    path: "./assets/img/Cats/meo-34.jpg",
+                    name: "Mèo Ba Tư",
+                },
+                {
+                    id: 4,
+                    path: "./assets/img/Cats/meo-bengal.jpg",
+                    name: "Mèo Bengal",
+                },
+                {
+                    id: 5,
+                    path: "./assets/img/Cats/meo-golden.jpg",
+                    name: "Mèo Golden",
+                },
+                {
+                    id: 6,
+                    path: "./assets/img/Cats/meo-himalaya.jpg",
+                    name: "Mèo Himalaya",
+                },
+                {
+                    id: 7,
+                    path: "./assets/img/Cats/meo-munchkin.jpg",
+                    name: "Mèo Munchkin",
+                },
+                {
+                    id: 8,
+                    path: "./assets/img/Cats/meo-ocicat.jpg",
+                    name: "Mèo Ocicat",
+                },
+                {
+                    id: 9,
+                    path: "./assets/img/Cats/meo-ragdoll.jpg",
+                    name: "Mèo Ai Ragdoll",
+                },
+                {
+                    id: 10,
+                    path: "./assets/img/Cats/meo-scottish.jpg",
+                    name: "Mèo Scottish",
+                },
+                {
+                    id: 11,
+                    path: "./assets/img/Cats/meo-siamese.jpg",
+                    name: "Mèo Siamese",
+                },
+                {
+                    id: 12,
+                    path: "./assets/img/Cats/meo-tuxedo.jpg",
+                    name: "Mèo Tuxedo",
+                },
+            ],
+            renderCats: function(){
+                const htmls = this.cats.map(function(cat, index) {
+                    return `
+                            <li class="main-top__content-item" id="${index}">
+                                <div class="main-top__content-item__img">
+                                    <img src="${cat.path}" alt="cat-picture">
+                                </div>
+                                <div class="main-top__content-item__bottom">
+                                    <div class="main-top__content-item__name">
+                                        ${cat.name}
+                                    </div>
+                                    <span class="main-top__content-item__hover" >
+                                        <i class="fas fa-paw"></i>
+                                    </span>
+                                </div>
+                            </li>
+                    `
+                })
+                $('.main-top__content-list').innerHTML = htmls.join('')
+            },
+            renderSlider: function(id){
+                $('.page-slider').innerHTML = `
+                <div class="page-slider__grid grid" style="background-image: url('${this.cats[id].path}')">
+                    <div class="page-slider__main">
+                        <div class="page-slider__main-title">
+                            ${this.cats[id].name}
+                        </div>
+                        <div class="page-slider__content">
+                            <div class="page-slider__content-left">
+                                <div class="page-slider__content-info">
+                                    <div class="page-slider__content-info__text">
+                                        ${this.cats[id].content}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-slider__content-right">
+                                <ul class="page-slider__content-sliders">
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img src="${this.cats[id].path}" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img src="${this.cats[id].path}" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img src="${this.cats[id].path}" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+            },
+            nextSlider: function (){
+                this.currentSilder++;
+                if(this.currentSilder === this.cats.length) {
+                    this.currentSilder = 0;
+                }
+            },
+            prevSlider: function (){
+                this.currentSilder--;
+                if(this.currentSilder < 0) {
+                    this.currentSilder = this.cats.length - 1;
+                }
+            },
+            handleEvents: function(){
+                const _this = this;
+
+                //next
+                $('.page-slider__nextBtn').onclick = function(){
+                    _this.nextSlider();
+                    _this.renderSlider(_this.currentSilder)
+                }
+
+                //prev
+                $('.page-slider__prevBtn').onclick = function(){
+                    _this.prevSlider();
+                    _this.renderSlider(_this.currentSilder)
+                }
+            },
+            start: function(){
+                this.renderCats()
+                this.handleEvents();
+                this.renderSlider(this.currentSilder)
+            } 
+        }
+
+        app.start()
+    </script>
 </body>
 </html>
