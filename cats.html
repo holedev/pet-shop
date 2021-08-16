@@ -81,6 +81,9 @@
 
         <section class="slider" onload="preloader()">
                 <div class="page-slider__grid grid">
+                    <span class="page-slider__closeBtn" onclick="closeSlider()">
+                        <i class="fas fa-times"></i>
+                    </span>
                     <span class="page-slider__prevBtn">
                         <i class="fas fa-chevron-left"></i>
                     </span>
@@ -369,8 +372,8 @@
                 const _this = this;
                 const catItems = $$('.main-top__content-item')
                 const slider = $('.slider')
-                
-                
+                const prevBtn = $('.page-slider__prevBtn')
+                const nextBtn = $('.page-slider__nextBtn')
 
                 //onclick show thông tin mèo
                 catItems.forEach(catItem => {
@@ -408,7 +411,7 @@
                     }
                 }
 
-                //close slider
+                //close slider khi click ngoài vùng ảnh
                 slider.onclick = function (e) {
                     if (e.target === this) {
                         this.style.display = 'none'
@@ -416,15 +419,21 @@
                     }
                 }
 
+                //close slider khi X
+                closeSlider = function (){
+                    slider.style.display = 'none'
+                    document.body.style.overflow = 'auto'
+                }
+
 
                 //next
-                $('.page-slider__nextBtn').onclick = function(){
+                nextBtn.onclick = function(){
                     _this.nextSlider();
                     activeSlider(imgSubsliders[0])
                 }
 
                 //prev
-                $('.page-slider__prevBtn').onclick = function(){
+                prevBtn.onclick = function(){
                     _this.prevSlider();
                     activeSlider(imgSubsliders[0])
                 }
