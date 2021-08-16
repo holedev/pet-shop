@@ -79,15 +79,49 @@
             </div>
         </section>
 
-        <section class="slider">
-            <span class="page-slider__prevBtn">
-                <i class="fas fa-chevron-left"></i>
-            </span>
-            <span class="page-slider__nextBtn">
-                <i class="fas fa-chevron-right"></i>
-            </span>
-            <section class="page-slider">
-            </section>
+        <section class="slider" onload="preloader()">
+                <div class="page-slider__grid grid">
+                    <span class="page-slider__prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="page-slider__nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <div class="page-slider__main">
+                        <div class="page-slider__main-title">
+                            Name
+                        </div>
+                        <div class="page-slider__content">
+                            <div class="page-slider__content-left">
+                                <div class="page-slider__content-info">
+                                    <div class="page-slider__content-info__text">
+                                        Content
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-slider__content-right">
+                                <ul class="page-slider__content-sliders">
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img class="sub-slider-1" src="" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img class="sub-slider-2" src="" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="page-slider__content-slider">
+                                        <div class="page-slider__content-slider__img">
+                                            <img class="sub-slider-3" src="" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </section>
 
         <footer class="footer">
@@ -166,6 +200,8 @@
 
     <script src="./assets/js/app.js"></script>
     <script>
+        const imgSubsliders = $$('.page-slider__content-slider img')
+        const slider_grid = $('.page-slider__grid')
 
         const app = {
             currentSilder: 0,
@@ -174,62 +210,109 @@
                     id: 1,
                     path: "./assets/img/Cats/meo-sphynx.jpg",
                     name: "Mèo Ai Cập",
-                    content: "Không có vẻ ngoài bụ bẫm và bộ lông nhiều màu sắc như những giống mèo khác, mèo Ai Cập shynx có ngoại hình vô cùng kỳ lạ và độc đáo. Cơ thể chúng hoàn toàn trụi lông kèm thêm một gương mặt nhăn nheo như đang trong trạng thái cáu kỉnh. Mèo Ai Cập còn có tên gọi khác là mèo Sphynx, mèo nhân sư, mèo không lông. Trông mèo nhân sư có vẻ kỳ dị vậy thôi nhưng chúng cũng là loài mèo được nhiều người trong giới thượng lưu yêu thích và dần đang được nuôi phổ biến."
+                    content: "Không có vẻ ngoài bụ bẫm và bộ lông nhiều màu sắc như những giống mèo khác, mèo Ai Cập shynx có ngoại hình vô cùng kỳ lạ và độc đáo. Cơ thể chúng hoàn toàn trụi lông kèm thêm một gương mặt nhăn nheo như đang trong trạng thái cáu kỉnh. Mèo Ai Cập còn có tên gọi khác là mèo Sphynx, mèo nhân sư, mèo không lông. Trông mèo nhân sư có vẻ kỳ dị vậy thôi nhưng chúng cũng là loài mèo được nhiều người trong giới thượng lưu yêu thích và dần đang được nuôi phổ biến.",
+                    pathSlider1: "./assets/img/Cats/meo-sphynx-1.png",
+                    pathSlider2: "./assets/img/Cats/meo-sphynx-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-sphynx-3.jpg",
                 },
                 {
                     id: 2,
                     path: "./assets/img/Cats/meo-Anh.jpg",
                     name: "Mèo Anh",
+                    content: "Mèo Anh hiện là loài mèo được nuôi phổ biến tại nhiều gia đình trên thế giới trong đó có Việt Nam. Mèo Anh được phân chia thành 2 loại là mèo Anh lông ngắn (British Shorthair) và mèo Anh lông dài (British Longhair). Những chú mèo Anh thuộc hai giống này đều sở hữu ngoại hình vô cùng dễ thương, vì thế được rất nhiều người yêu thích. Họ không chỉ coi những chú mèo Anh là thú cưng mà chúng còn giống như những thành viên trong nhà.",
+                    pathSlider1: "./assets/img/Cats/meo-Anh-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-Anh-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-Anh-3.jpg"
                 },
                 {
                     id: 3,
                     path: "./assets/img/Cats/meo-34.jpg",
                     name: "Mèo Ba Tư",
+                    content: "Mèo Ba Tư là một trong những giống mèo cảnh được đông đảo người yêu mèo yêu mến, lựa chọn làm thú cưng trong gia đình. Sở dĩ như vậy là do ngoại hình của chúng mập mạp, đáng yêu với bộ lông vô cùng quyến rũ. Mặc dù giống mèo này chăm sóc khó khăn hơn so với những giống mèo cảnh khác nhưng do ngoại hình quá đẹp và thu hút nên ở nước ta rất nhiều bạn vẫn săn đón mèo Ba Tư.",
+                    pathSlider1: "./assets/img/Cats/meo-34-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-34-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-34-3.jpg",
                 },
                 {
                     id: 4,
                     path: "./assets/img/Cats/meo-bengal.jpg",
                     name: "Mèo Bengal",
+                    content: "Có thể bạn đã bắt gặp trên mạng hình ảnh những chú mèo vằn da báo cực kỳ đặc biệt và thắc mắc đó là giống mèo gì, đó có phải là màu lông nguyên bản của chúng hay không? Đó chính là giống mèo Bengal, chúng được mệnh danh là loài “báo rừng” thu nhỏ vô cùng đáng yêu và là thú cưng được nhiều người săn đón hiện nay.",
+                    pathSlider1: "./assets/img/Cats/meo-bengal-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-bengal-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-bengal-3.jpg",
                 },
                 {
                     id: 5,
                     path: "./assets/img/Cats/meo-golden.jpg",
                     name: "Mèo Golden",
+                    content: "Xuất hiện tại thị trường Việt Nam chưa lâu, mèo Golden chỉ mới được biết đến rộng rãi từ khoảng những năm 2008 đến 2010. Những chú mèo Golden thu hút ánh nhìn và đốn hạ trái tim của bất cứ ai với thân hình mập ú siêu đáng yêu cùng gương mặt bầu bĩnh, đôi mắt long lanh “ngây thơ vô số tội”.",
+                    pathSlider1: "./assets/img/Cats/meo-golden-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-golden-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-golden-3.jpg",
                 },
                 {
                     id: 6,
                     path: "./assets/img/Cats/meo-himalaya.jpg",
                     name: "Mèo Himalaya",
+                    content: "Trong vương quốc loài mèo có một giống mèo vô cùng xinh xắn xuất hiện từ thời xa xưa với tổ tiên là mèo Ba Tư thuần chủng và mèo Thái, tên của chúng là Himalaya. Thường thường người ta sẽ gọi những chú mèo Himalaya là Himmie cho có cảm giác thân thiện, gần gũi. Kế thừa những ưu điểm từ nòi giống bố và mẹ, mèo Ba Tư Himalaya sở hữu bộ lông vô cùng ấn tượng cùng điểm nhấn là đôi mắt xanh sâu thẳm.",
+                    pathSlider1: "./assets/img/Cats/meo-himalaya-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-himalaya-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-himalaya-3.jpg",
                 },
                 {
                     id: 7,
                     path: "./assets/img/Cats/meo-munchkin.jpg",
                     name: "Mèo Munchkin",
+                    content: "Mèo Munchkin là một giống mèo khá mới từ Mỹ. Chính vì thế, Munchkin còn khá mới lạ ở Việt Nam. Đối với những người yêu mèo, Munchkin cat rất được yêu thích, ưa chuộng bởi 4 chân ngắn chũn chĩn với khuôn mặt tròn ngây thơ vô cùng.",
+                    pathSlider1: "./assets/img/Cats/meo-munchkin-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-munchkin-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-munchkin-3.jpg",
                 },
                 {
                     id: 8,
                     path: "./assets/img/Cats/meo-ocicat.jpg",
                     name: "Mèo Ocicat",
+                    content: "Mèo Ocicat là một giống mèo nhà, có nét tương đồng với mèo hoang dã nhưng lại không có chứa DNA hoang dã trong nhóm gen của nó. Loài này có đặc điểm bất thường ở chỗ nó được phát hiện như một giống mèo hoang dã nhưng lại có tính tình của một con vật trong nhà",
+                    pathSlider1: "./assets/img/Cats/meo-ocicat-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-ocicat-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-ocicat-3.jpg",
                 },
                 {
                     id: 9,
                     path: "./assets/img/Cats/meo-ragdoll.jpg",
-                    name: "Mèo Ai Ragdoll",
+                    name: "Mèo Ragdoll",
+                    content: "Gần đây số lượng người nuôi mèo cảnh ngày càng gia tăng bởi sự dễ thương, ngoan ngoãn và thông minh của các “boss”. Những chú mèo cảnh luôn chiếm một vị trí vô cùng quan trọng trong lòng người nuôi, là “con cưng”, là người bạn thân. Mèo Ragdoll cũng vậy, tuy nhiên giống mèo này vẫn chưa thật sự phổ biến ở Việt Nam. Chỉ có thế bắt gặp một số ít gia đình chăm nuôi Ragdoll Cat",
+                    pathSlider1: "./assets/img/Cats/meo-ragdoll-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-ragdoll-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-ragdoll-3.jpg",
                 },
                 {
                     id: 10,
                     path: "./assets/img/Cats/meo-scottish.jpg",
                     name: "Mèo Scottish",
+                    content: "Mèo scottish là một trong những giống mèo được yêu thích nhất hiện nay. Cũng là loài được lựa chọn để phối giống với nhiều loài mèo quý khác, tạo nên những chú mèo mang bộ gen lạ, độc đáo. Hiện nay, mèo Scottish nhận được sự quan tâm lớn từ những người nuôi thú cưng. Vậy giống mèo Scottish tại sao lại có sức hút kỳ lạ đến vậy?",
+                    pathSlider1: "./assets/img/Cats/meo-scottish-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-scottish-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-scottish-3.jpg",
                 },
                 {
                     id: 11,
                     path: "./assets/img/Cats/meo-siamese.jpg",
                     name: "Mèo Siamese",
+                    content: "Mèo Xiêm là một trong những loài mèo đầu tiên của mèo lông ngắn phương Đông được công nhận. Nguồn gốc của mèo Xiêm cho đến nay vẫn chưa được rõ ràng, nhưng Thái Lan được tin rằng là nơi xuất xứ của nó. Ở Thái Lan - nơi mèo Xiêm là một trong những nòi mèo bản xứ - nó được người dân Thái gọi là Wichian Mat.",
+                    pathSlider1: "./assets/img/Cats/meo-siamese-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-siamese-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-siamese-3.jpg",
                 },
                 {
                     id: 12,
                     path: "./assets/img/Cats/meo-tuxedo.jpg",
                     name: "Mèo Tuxedo",
+                    content: "Nhắc tới mèo Tuxedo rất nhiều người lại thấy lạ lẫm. Khởi nguồn của tên gọi mèo Tuxedo bắt đầu vào năm 1888, khi những người nuôi mèo nhị thể thấy được những bộ đồ vest của nam giới tại Mỹ với áo khoác màu đen và sơ mi bên trong màu trắng. Từ đặc điểm lông của những chú mèo này quá giống với kiểu vest kia nên chúng được đặt luôn tên là Tuxedo.",
+                    pathSlider1: "./assets/img/Cats/meo-tuxedo-1.jpg",
+                    pathSlider2: "./assets/img/Cats/meo-tuxedo-2.jpg",
+                    pathSlider3: "./assets/img/Cats/meo-tuxedo-3.jpg",
                 },
             ],
             renderCats: function(){
@@ -253,75 +336,94 @@
                 $('.main-top__content-list').innerHTML = htmls.join('')
             },
             renderSlider: function(id){
-                $('.page-slider').innerHTML = `
-                <div class="page-slider__grid grid" style="background-image: url('${this.cats[id].path}')">
-                    <div class="page-slider__main">
-                        <div class="page-slider__main-title">
-                            ${this.cats[id].name}
-                        </div>
-                        <div class="page-slider__content">
-                            <div class="page-slider__content-left">
-                                <div class="page-slider__content-info">
-                                    <div class="page-slider__content-info__text">
-                                        ${this.cats[id].content}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page-slider__content-right">
-                                <ul class="page-slider__content-sliders">
-                                    <li class="page-slider__content-slider">
-                                        <div class="page-slider__content-slider__img">
-                                            <img src="${this.cats[id].path}" alt="">
-                                        </div>
-                                    </li>
-                                    <li class="page-slider__content-slider">
-                                        <div class="page-slider__content-slider__img">
-                                            <img src="${this.cats[id].path}" alt="">
-                                        </div>
-                                    </li>
-                                    <li class="page-slider__content-slider">
-                                        <div class="page-slider__content-slider__img">
-                                            <img src="${this.cats[id].path}" alt="">
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `
+                $('.page-slider__grid').style.backgroundImage = `url('${this.cats[id].pathSlider1}')`
+                $('.page-slider__main-title').innerHTML = this.cats[id].name;
+                $('.page-slider__content-info__text').innerHTML = this.cats[id].content;
+                $('.sub-slider-1').src = this.cats[id].pathSlider1;
+                $('.sub-slider-2').src = this.cats[id].pathSlider2;
+                $('.sub-slider-3').src = this.cats[id].pathSlider3;
             },
             nextSlider: function (){
                 this.currentSilder++;
-                if(this.currentSilder === this.cats.length) {
+                if(this.currentSilder > this.cats.length - 1) {
                     this.currentSilder = 0;
                 }
+                slider_grid.classList.remove('active')
+                this.renderSlider(this.currentSilder)
             },
             prevSlider: function (){
                 this.currentSilder--;
                 if(this.currentSilder < 0) {
                     this.currentSilder = this.cats.length - 1;
                 }
+                slider_grid.classList.remove('active')
+                this.renderSlider(this.currentSilder)
             },
             handleEvents: function(){
                 const _this = this;
+                const catItems = $$('.main-top__content-item')
+                const slider = $('.slider')
+                
+
+                //onclick show thông tin mèo
+                catItems.forEach(catItem => {
+                    catItem.onclick = function(){
+                        const catId = this.getAttribute('id')
+                        _this.renderSlider(catId)
+                        activeSlider(imgSubsliders[0])
+                        slider.style.display = 'block';
+                        slider_grid.classList.remove('active')
+                    }
+                })
+
+                //onclick sub slider
+                activeSlider = function(e){
+                    imgSubsliders.forEach(subslider => {
+                        subslider.classList.remove('active');
+                    });
+                    e.classList.add('active');
+                    const srcSubslider = e.src
+                    slider_grid.style.backgroundImage = `url('${srcSubslider}')`
+                }
+
+                imgSubsliders.forEach(subslider => {
+                    subslider.onclick = function() {
+                        activeSlider(this)
+                    }
+                })
+
+                //hiện/ẩn content trong slider
+                slider_grid.onclick = function (e) {
+                    if (e.target === this) {
+                        this.classList.toggle('active')
+                    }
+                }
+
+                //close slider
+                slider.onclick = function (e) {
+                    if (e.target === this) {
+                        this.style.display = 'none'
+                    }
+                }
+
 
                 //next
                 $('.page-slider__nextBtn').onclick = function(){
                     _this.nextSlider();
-                    _this.renderSlider(_this.currentSilder)
+                    activeSlider(imgSubsliders[0])
                 }
 
                 //prev
                 $('.page-slider__prevBtn').onclick = function(){
                     _this.prevSlider();
-                    _this.renderSlider(_this.currentSilder)
+                    activeSlider(imgSubsliders[0])
                 }
+
+                
             },
             start: function(){
                 this.renderCats()
                 this.handleEvents();
-                this.renderSlider(this.currentSilder)
             } 
         }
 
