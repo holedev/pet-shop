@@ -8,8 +8,36 @@
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/pageAboutDog_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style type="text/css">
+            ::-webkit-scrollbar {
+                display: block;
+                border: 1px;
+                border-radius: 10px;
+                width: 10px;
+                background-color: lightgray;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border: 1px;
+                border-radius: 10px; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border: 1px;
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+            }
+        </style>
     </head>
-    <body>
+    <body onload="preloader()">
+
+        <div class="loading"></div>
+
+        <!-- overplay -->
+        <div class="overplay"></div>
+
         <div class="app">
             <header class="header">
                 <div class="grid header-grid">
@@ -61,7 +89,7 @@
             <div class="main">
                 <div class="main-title">
                     <h1>Những người bạn bốn chân</h1>
-                    <h3>"Bạn thích một sự năng động?"</h3>
+                    <h3>"Bạn thích sự năng động?"</h3>
                     <h3>"Bạn thích cảm giác luôn có người chờ mình khi trở về nhà?"</h3>
                     <h4>Vậy hãy thử xem qua những "người bạn" đáng yêu và trung thành này nhé!</h4>
                 </div>
@@ -568,11 +596,11 @@
                     </div>
                 </div>
                 <div class="main-end">
-                    <h4>"Nếu bạn người thích cảm giác theo đuổi người khác 
-                        thì sao không thử ghé qua xem các em Meow của page nèo ~"</h4>
                     <div class="main-end__image">
-                        <img src="./assets/img/Cats/meo-bengal.jpg" alt="Mèo" width="100%">
+                        <img src="./assets/img/images_Decor/loading-cat-dog.gif" alt="Loading cat & dog" width="100%">
                     </div>
+                    <h4>"Nếu bạn là người thích cảm giác theo đuổi người khác 
+                        thì sao không thử ghé xem các em Meow của page nèo ~"</h4>
                 </div>
             </div>
 
