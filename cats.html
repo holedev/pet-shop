@@ -370,6 +370,7 @@
                 const catItems = $$('.main-top__content-item')
                 const slider = $('.slider')
                 
+                
 
                 //onclick show thông tin mèo
                 catItems.forEach(catItem => {
@@ -380,6 +381,7 @@
                         slider.style.display = 'block';
                         slider_grid.classList.remove('active')
                         _this.currentSilder = catId;
+                        document.body.style.overflow = 'hidden'
                     }
                 })
 
@@ -410,6 +412,7 @@
                 slider.onclick = function (e) {
                     if (e.target === this) {
                         this.style.display = 'none'
+                        document.body.style.overflow = 'auto'
                     }
                 }
 

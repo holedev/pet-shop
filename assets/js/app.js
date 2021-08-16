@@ -17,11 +17,12 @@ preloader = function(){
 //đóng, mở search pc
 closeSearch = function(){
     $('.search-box').style.display = 'none'
+    document.body.style.overflow = 'auto'
 }
 openSearch = function(){
     $('.search-box').style.display = 'flex'  
     inputSearch.focus()
-    document.body.style.overflow = 'auto'
+    document.body.style.overflow = 'hidden'
 }
 
 
