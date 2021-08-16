@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>H&M's Pet</title>
-        <link rel="stylesheet" href="./assets/css/base.css" type="text/css">
-        <link rel="stylesheet" href="./assets/css/pageTakeCare_style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&M's Pet</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/pageTakeCare_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div class="app">
@@ -16,23 +16,32 @@
                     <div class="header-left">
                         <img src="./assets/img/logo.png" alt="" class="header-left__logo">
                     </div>
+                    <div class="header-mobile">
+                        <i class="fas fa-bars"></i>
+                    </div>
                     <div class="header-right">
                         <ul class="header-right__list">
-                            <li class="header-right__item">
+                            <li class="home header-right__item active">
                                 Trang chủ
                             </li>
-                            <li class="header-right__item">
+                            <li class="intro header-right__item">
                                 Giới thiệu
                             </li>
-                            <li class="header-right__item active">
+                            <li class="pet header-right__item">
                                 Chuyên mục thú cưng
                             </li>
-                            <li class="header-right__item">
+                            <li class="contact header-right__item">
                                 Liên hệ
                             </li>
                         </ul>
                         <div class="header-right__search">
                             <div onclick="openSearch()" class="header-right__search-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="search-960">
+                            <input placeholder="Tìm kiếm" type="text" class="search-960__input">
+                            <div class="search-960__icon">
                                 <i class="fas fa-search"></i>
                             </div>
                         </div>
@@ -96,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="content__muc">
+                <div class="content__muc" style="line-height: 50px;">
                     <div class="content__muc__text">
                         4. Chuẩn bị không gian sống phù hợp. <br>
                         5. Huấn luyện thú cưng đi vệ sinh đúng chỗ. <br>
@@ -198,12 +207,12 @@
                     activeMenu(this)
                 }
             }
-
+    
             scrollToComponent($('.home'), $('.main-top'))
             scrollToComponent($('.intro'), $('.main-introduce'))
             scrollToComponent($('.pet'), $('.main-pet'))
             scrollToComponent($('.contact'), $('.main-contact'))
-
+    
         </script>
     </body>
 </html>
