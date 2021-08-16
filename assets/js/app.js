@@ -21,6 +21,7 @@ closeSearch = function(){
 openSearch = function(){
     $('.search-box').style.display = 'flex'  
     inputSearch.focus()
+    document.body.style.overflow = 'auto'
 }
 
 

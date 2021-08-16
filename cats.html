@@ -200,8 +200,15 @@
 
     <script src="./assets/js/app.js"></script>
     <script>
+
         const imgSubsliders = $$('.page-slider__content-slider img')
         const slider_grid = $('.page-slider__grid')
+
+        function hideContent(){
+            setTimeout(() => {
+                slider_grid.classList.add('active')
+            }, 3000)
+        }
 
         const app = {
             currentSilder: 0,
@@ -342,13 +349,13 @@
                 $('.sub-slider-1').src = this.cats[id].pathSlider1;
                 $('.sub-slider-2').src = this.cats[id].pathSlider2;
                 $('.sub-slider-3').src = this.cats[id].pathSlider3;
+                slider_grid.classList.remove('active')
             },
             nextSlider: function (){
                 this.currentSilder++;
                 if(this.currentSilder > this.cats.length - 1) {
                     this.currentSilder = 0;
                 }
-                slider_grid.classList.remove('active')
                 this.renderSlider(this.currentSilder)
             },
             prevSlider: function (){
@@ -356,7 +363,6 @@
                 if(this.currentSilder < 0) {
                     this.currentSilder = this.cats.length - 1;
                 }
-                slider_grid.classList.remove('active')
                 this.renderSlider(this.currentSilder)
             },
             handleEvents: function(){
@@ -373,6 +379,7 @@
                         activeSlider(imgSubsliders[0])
                         slider.style.display = 'block';
                         slider_grid.classList.remove('active')
+                        _this.currentSilder = catId;
                     }
                 })
 

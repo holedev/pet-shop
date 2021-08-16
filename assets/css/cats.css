@@ -132,13 +132,15 @@
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 2;
     display: none;
+    animation: fadeIn ease-in-out 0.5s;
 }
 
 .page-slider__grid {
     position: relative;
-    background: url(../img/Cats/meo-34.jpg) no-repeat center / cover;
+    background: no-repeat center / cover;
     height:100%;
-    filter: brightness(80%);
+    filter: brightness(90%);
+    transition: all ease-in-out 0.5s;
 }
 
 .page-slider__grid.active
@@ -158,9 +160,18 @@
     border-radius: 50%;
 }
 
+.page-slider__prevBtn:hover,
+.page-slider__nextBtn:hover {
+    cursor: pointer;
+}
+
 .page-slider__prevBtn {
     left: 0;
     transform: translateX(-50%);
+}
+
+.page-slider__prevBtn:hover {
+    background-image: linear-gradient(to left,pink, blue);
 }
 
 .page-slider__nextBtn {
@@ -168,10 +179,16 @@
     transform: translateX(50%);
 }
 
+.page-slider__nextBtn:hover {
+    background-image: linear-gradient(to right,pink, blue);
+}
+
 .page-slider__main {
     position: absolute;
     bottom:0;
     padding: 16px;
+    animation: fadeIn ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
 }
 
 .page-slider__main-title {
@@ -193,6 +210,8 @@
     background-color: var(--background-color);
     border-radius: 8px;
     box-shadow:0 8px 8px 0 rgba(103, 151, 255, .11), 0 12px 18px 0 rgba(103, 151, 255, .11);
+    display: flex;
+    align-items: center;
 }
 
 
@@ -205,6 +224,7 @@
     font-size: 1.8rem;
     font-style: italic;
     text-align: justify;
+    align-items: center;
 }
 
 .page-slider__content-right {
