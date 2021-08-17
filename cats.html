@@ -91,11 +91,11 @@
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <div class="page-slider__main">
-                        <div class="page-slider__main-title">
-                            Name
-                        </div>
                         <div class="page-slider__content">
                             <div class="page-slider__content-left">
+                                <div class="page-slider__content-title">
+                                    Name
+                                </div>
                                 <div class="page-slider__content-info">
                                     <div class="page-slider__content-info__text">
                                         Content
@@ -347,7 +347,7 @@
             },
             renderSlider: function(id){
                 $('.page-slider__grid').style.backgroundImage = `url('${this.cats[id].pathSlider1}')`
-                $('.page-slider__main-title').innerHTML = this.cats[id].name;
+                $('.page-slider__content-title').innerHTML = this.cats[id].name;
                 $('.page-slider__content-info__text').innerHTML = this.cats[id].content;
                 $('.sub-slider-1').src = this.cats[id].pathSlider1;
                 $('.sub-slider-2').src = this.cats[id].pathSlider2;
@@ -438,7 +438,37 @@
                     activeSlider(imgSubsliders[0])
                 }
 
-                
+                //vuốt ảnh trên tablet/đt
+                var positionStart = 0;
+                var isMove = false;
+                var distance;
+                slider_grid.addEventListener('touchstart', function(e){
+                    isMove = true;
+                    positionStart = e.pageX || event.touches[0].clientX;
+                })
+
+                slider_grid.addEventListener('touchmove', function(e){
+                   if (isMove) {
+                        positionEnd = e.pageX || event.touches[0].clientX;
+                        distance = positionEnd - positionStart;
+                    }
+                    
+                })
+
+                slider_grid.addEventListener('touchend', function(e){
+                    isMove = false;
+                    if (distance > 100) {
+                        _this.nextSlider();
+                        activeSlider(imgSubsliders[0])
+                    } 
+                    if (distance < -100) {
+                        _this.prevSlider();
+                        activeSlider(imgSubsliders[0])
+                    }
+                    distance = 0;
+                })
+
+
             },
             start: function(){
                 this.renderCats()
