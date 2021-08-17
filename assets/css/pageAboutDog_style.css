@@ -28,8 +28,8 @@
 }
 
 .main-title {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
     font-style: italic;
     line-height: 50px;
 }
@@ -42,6 +42,9 @@
 .main-title > h3 {
     text-align: center;
     font-size: 1.6rem;
+}
+
+.main-title > h3.main-title__report {
     line-height: normal;
 }
 
@@ -49,7 +52,29 @@
     font-size: 1.6rem;
 }
 
-.main-classify {
+.main-body-table__icon {
+    display: none;
+    position: absolute;
+    top: 100px;
+}
+
+.main-body-table__icon i {
+    font-size: 2.8rem;
+    color: mediumslateblue;
+    padding: 4px 8px;
+    position: fixed;
+    top: 100px;
+}
+
+.main-body-table__icon i {
+    cursor: pointer;
+}
+
+.main-body-table__icon {
+    font-size: 4rem;
+}
+
+.main-classify__name {
     border: 3px;
     border-radius: 10px;
     box-shadow: 3px;
@@ -60,21 +85,19 @@
     margin-right: 10px;
 }
 
-.main-classify__name {
-    
-}
-
 .main-classify__name > ul {
     font-size: 15px;
     list-style: none;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .main-classify__name > ul > li {
     max-width: 200px;
     padding: 10px;
-    border-right: 1px solid white;
 }
 
 .main-classify__name > ul > li:last-child {
@@ -88,7 +111,12 @@
 }
 
 .main-classify__name > ul > li > a:hover {
-    background-color: darkblue;
+    background-color: #ccc;
+    color: white;
+}
+
+.main-classify__name > ul > li > a:active {
+    background-color: lightskyblue;
     color: wheat;
 }
 
@@ -148,4 +176,169 @@ ul.main-item__content__list {
 
 .main-end__image {
     flex: 1;
+}
+
+@media only screen and (max-width: 960px) {
+    .main-title > h1 {
+        margin-top: 60px;
+    }
+
+    .main-classify__name {
+        display: none;
+    }
+
+    .main-body-table__icon {
+        display: block;
+    }
+
+    .main-body-table {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-classify__name {
+        width: 100%;
+    }
+
+    .main-classify__name > ul {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-classify__name > ul > li > a {
+        display: block;
+        width: 100%;
+    }
+
+    .main-classify__name > ul > li > a:hover {
+        background-color: #ccc;
+    }
+
+    .main-classify__name > ul > li > a:hover::after {
+        display: none;
+    }
+
+    .main-item {
+        width: 47%;
+        margin: 1%;
+    }
+
+    ::-webkit-scrollbar {
+        display: block;
+        border: 1px;
+        border-radius: 10px;
+        width: 5px;
+        background-color: lightgray;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border: 1px;
+        border-radius: 5px; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border: 1px;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .main-title {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    .main-title > h1 {
+        text-align: center;
+        font-size: 3.2rem;
+    }
+    
+    .main-title > h3 {
+        text-align: left;
+        font-size: 1.4rem;
+    }
+    
+    .main-title > h4 {
+        text-align: right;
+        font-size: 1.4rem;
+    }
+
+    .main-item {
+        width: 96%;
+        margin: 2%;
+    }
+
+    .main-end > h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main-title > h4 {
+        text-align: left;
+    }
+
+    .main-item {
+        width: 94%;
+        margin: 2%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .main-title {
+        line-height: 30px;
+    }
+
+    .main-title > h1 {
+        font-size: 3rem;
+    }
+    
+    .main-title > h3 {
+        font-size: 1.2rem;
+    }
+    
+    .main-title > h4 {
+        font-size: 1.2rem;
+    }
+
+    .main-end > h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .main-title {
+        margin-left: 5px;
+        margin-right: 5px;
+        line-height: 25px;
+    }
+
+    .main-item {
+        width: 92%;
+        margin: 3%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .main-title > h1 {
+        font-size: 2rem;
+    }
+    
+    .main-title > h3 {
+        font-size: 1rem;
+    }
+    
+    .main-title > h4 {
+        font-size: 1rem;
+    }
+
+    .main-end > h4 {
+        font-size: 1rem;
+    }
 }
