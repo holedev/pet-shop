@@ -116,7 +116,7 @@
                 <div class="main-infor">
                     <div class="main-item" id="husky">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/husky_den_trang.jpg" alt="Husky đen trắng" width="100%" title="Husky Đen Trắng">
+                            <img src="./assets/img/images_Dog/husky-6.png" alt="Husky" width="100%" title="Husky Đen Trắng">
                             <span class="main-item__image__name">Husky</span>
                         </div>
                         <div class="main-item__content">
@@ -187,7 +187,7 @@
                     </div>
                     <div class="main-item" id="shiba">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Shiba_Inu_den_trang.jpg" alt="Shiba Inu" width="100%" title="Shiba màu đen trắng">
+                            <img src="./assets/img/images_Dog/shiba-1.jpg" alt="Shiba Inu" width="100%" title="Shiba màu vừng">
                             <span class="main-item__image__name">Shiba Inu</span>
                         </div>
                         <div class="main-item__content">
@@ -282,7 +282,7 @@
                     </div>
                     <div class="main-item" id="corgi">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Pembroke Welsh Corgi.jpg" alt="Corgi" width="100%" title="Pembroke Welsh Corgi">
+                            <img src="./assets/img/images_Dog/corgi-1.jpg" alt="Corgi" width="100%" title="Corgi màu vàng trắng">
                             <span class="main-item__image__name">Corgi</span>
                         </div>
                         <div class="main-item__content">
@@ -385,7 +385,7 @@
                     </div>
                     <div class="main-item" id="dachshund">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Duchshund_long_ngan.jpg" alt="Dachshund" width="100%" title="Duchshund lông ngắn">
+                            <img src="./assets/img/images_Dog/dachshund-1.jpg" alt="Dachshund" width="100%" title="Duchshund lông ngắn">
                             <span class="main-item__image__name">Dachshund</span>
                         </div>
                         <div class="main-item__content">
@@ -426,7 +426,7 @@
                     </div>
                     <div class="main-item" id="chihuahua">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Chihuahua_long_hair.jpg" alt="Chihuahua" width="100%" title="Chihuahua lông dài">
+                            <img src="./assets/img/images_Dog/chihuahua-1.jpg" alt="Chihuahua" width="100%" title="Chihuahua lông ngắn">
                             <span class="main-item__image__name">Chihuahua</span>
                         </div>
                         <div class="main-item__content">
@@ -467,7 +467,7 @@
                     </div>
                     <div class="main-item" id="golden">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Golden_vang.jpg" alt="Golden Retriever" width="100%" title="Golden màu vàng">
+                            <img src="./assets/img/images_Dog/golden-1.jpg" alt="Golden Retriever" width="100%" title="Golden màu vàng">
                             <span class="main-item__image__name">Golden Retriever</span>
                         </div>
                         <div class="main-item__content">
@@ -548,7 +548,7 @@
                     </div>
                     <div class="main-item" id="akita">
                         <div class="main-item__image">
-                            <img src="./assets/img/images_Dog/Akita_White_Red.jpg" alt="Akita Inu" width="100%" title="Akita màu đỏ trắng">
+                            <img src="./assets/img/images_Dog/akita-1.jpg" alt="Akita Inu" width="100%" title="Akita màu đỏ trắng">
                             <span class="main-item__image__name">Akita Inu</span>
                         </div>
                         <div class="main-item__content">
@@ -686,21 +686,22 @@
     
         <script src="./assets/js/app.js"></script>
         <script>
-            //scroll
-            scrollToComponent = function(title, component) {
-                title.onclick = function(){
-                    window.scroll({
-                        top: component.offsetTop - 56,
-                    });
-                    activeMenu(this)
+            const iconMenuDog = $('.main-body-table__icon')
+            const listMenuDog = $('.main-body-table')
+            
+            var flag = false
+
+            // open - close menu list
+            iconMenuDog.onclick = function () {
+                if (!flag) {
+                    listMenuDog.classList.add('active')
+                    flag = true
+                }
+                else {
+                    listMenuDog.classList.remove('active')
+                    flag = false
                 }
             }
-    
-            scrollToComponent($('.home'), $('.main-top'))
-            scrollToComponent($('.intro'), $('.main-introduce'))
-            scrollToComponent($('.pet'), $('.main-pet'))
-            scrollToComponent($('.contact'), $('.main-contact'))
-    
         </script>
     </body>
 </html>

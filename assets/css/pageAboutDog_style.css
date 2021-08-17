@@ -54,31 +54,22 @@
 
 .main-body-table__icon {
     display: none;
-    position: absolute;
-    top: 100px;
 }
 
 .main-body-table__icon i {
-    font-size: 2.8rem;
-    color: mediumslateblue;
-    padding: 4px 8px;
-    position: fixed;
-    top: 100px;
+    font-size: 3.2rem;
+    color: black;
 }
 
 .main-body-table__icon i {
     cursor: pointer;
 }
 
-.main-body-table__icon {
-    font-size: 4rem;
-}
-
 .main-classify__name {
     border: 3px;
     border-radius: 10px;
     box-shadow: 3px;
-    background-color: chartreuse;
+    background-color: white;
     border-style: solid;
     border-color: black;
     margin-left: 10px;
@@ -96,8 +87,8 @@
 }
 
 .main-classify__name > ul > li {
-    max-width: 200px;
     padding: 10px;
+    min-width: 120px;
 }
 
 .main-classify__name > ul > li:last-child {
@@ -107,7 +98,12 @@
 .main-classify__name > ul > li > a {
     text-decoration: none;
     color: black;
-    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 4rem;
+    padding: 0 8px;
+    border-radius: 4px;
 }
 
 .main-classify__name > ul > li > a:hover {
@@ -183,40 +179,33 @@ ul.main-item__content__list {
         margin-top: 60px;
     }
 
-    .main-classify__name {
-        display: none;
+    .main {
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .main-body-table {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+    }
+
+    .main-body-table.active .main-body-table__icon,
+    .main-body-table.active {
+        transform: translate(0, -50%);
     }
 
     .main-body-table__icon {
         display: block;
-    }
-
-    .main-body-table {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .main-classify__name {
-        width: 100%;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(100%, -50%);
     }
 
     .main-classify__name > ul {
-        display: block;
         flex-direction: column;
-        width: 100%;
-    }
-
-    .main-classify__name > ul > li > a {
-        display: block;
-        width: 100%;
-    }
-
-    .main-classify__name > ul > li > a:hover {
-        background-color: #ccc;
-    }
-
-    .main-classify__name > ul > li > a:hover::after {
-        display: none;
     }
 
     .main-item {
