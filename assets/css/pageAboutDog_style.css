@@ -91,10 +91,6 @@
     min-width: 120px;
 }
 
-.main-classify__name > ul > li:last-child {
-    border-right: none;
-}
-
 .main-classify__name > ul > li > a {
     text-decoration: none;
     color: black;
@@ -241,20 +237,18 @@ ul.main-item__content__list {
         margin-right: 10px;
         font-style: italic;
         line-height: 40px;
+        text-align: center;
     }
 
     .main-title > h1 {
-        text-align: center;
         font-size: 3.2rem;
     }
     
     .main-title > h3 {
-        text-align: left;
         font-size: 1.4rem;
     }
     
     .main-title > h4 {
-        text-align: right;
         font-size: 1.4rem;
     }
 
@@ -269,10 +263,6 @@ ul.main-item__content__list {
 }
 
 @media only screen and (max-width: 480px) {
-    .main-title > h4 {
-        text-align: left;
-    }
-
     .main-item {
         width: 94%;
         margin: 2%;
@@ -306,6 +296,10 @@ ul.main-item__content__list {
         margin-left: 5px;
         margin-right: 5px;
         line-height: 25px;
+    }
+
+    .main-classify__name > ul > li > a {
+        line-height: 3rem;
     }
 
     .main-item {

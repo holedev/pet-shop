@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="./assets/css/pageTakeCare_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body>
+    <body onload="preloader()">
+
+        <div class="loading"></div>
+
+        <!-- overplay -->
+        <div class="overplay"></div>
+
         <div class="app">
             <header class="header">
                 <div class="grid header-grid">
@@ -60,64 +66,32 @@
 
             <div class="main">
                 <div class="main-title">
-                    <div class="main-title__content">
-                            <div class="main-title__content__line1">
-                                How to
+                    <div class="main-title-text">
+                        <h1>Làm sao chăm sóc tốt cho thú cưng của bạn?</h1>
+                    </div>
+                    <div class="main-title-img">
+                        <img src="./assets/img/images_Decor/doctor-icon-avatar.jpg" alt="Doctor ava" width="100%">
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="main-content__question">
+                        <div class="main-content__question__img">
+                            <img src="./assets/img/images_Decor/Docter_With_Pet.png" alt="Doctor and pet" width="100%">
+                        </div>
+                        <div class="main-content__question__text">
+                            "Thú cưng luôn mắc bệnh vặt thì phải làm sao?"
+                            <div class="main-content__question__text__answer">
+                                <div class="main-content__question__text__answer__item">
+                                    <span>- Câu trả lời là...</span><i class="fas fa-binoculars"></i>
+                                </div>
+                                <div class="main-content__question__text__answer__infor">
+                                    <div>Tiêm đầy đủ các vắc xin cần thiết.</div>
+                                </div>
                             </div>
-                            <div class="main-title__content__line2">
-                                take care
-                            </div>
-                            <div class="main-title__content__line3">
-                                your pet?
-                            </div>
-                            <div class="main-title__image">
-                                <img src="./assets/img/images_Decor/doctor-icon-avatar.jpg" alt="Doctor Avatar" width="100%">
-                            </div>
-                    </div>
-                </div>
-
-                <div class="content__muc">
-                    <div class="content__muc__text">
-                        1. Tiêm đầy đủ các vắc xin cần thiết.
-                    </div>
-                    <div class="content__muc__image">
-                        <img src="./assets/img/images_Decor/Veterinary_Clinic_2.jpg" alt="Tiêm ngừa" width="100%">
-                    </div>
-                </div>
-
-                <div class="content__muc">
-                    <div class="content__muc__text" style="background-color: #87d7ee;">
-                        2. Luôn cho thú cưng vận động đầy đủ.
-                    </div>
-                </div>
-                <div class="content__muc">
-                    <div class="content__muc__image" style="text-indent: 0%;">
-                        <img src="./assets/img/images_Decor/pet_Run_1.jpg" alt="Vận động" width="100%">
-                    </div>
-                </div>
-
-                <div class="content__muc" style="background-color: var(--background-color);">
-                    <div class="content__muc__text">
-                        3. Xây dựng chế độ ăn uống hợp lý cho thú cưng.
-                    </div>
-                    <div class="content__muc__image">
-                        <img src="./assets/img/images_Decor/pet_Eat.png" alt="Chế độ ăn uống" width="100%">
-                    </div>
-                </div>
-
-                <div class="content__muc" style="line-height: 50px;">
-                    <div class="content__muc__text">
-                        4. Chuẩn bị không gian sống phù hợp. <br>
-                        5. Huấn luyện thú cưng đi vệ sinh đúng chỗ. <br>
-                        6. Xây dựng mối quan hệ gắn kết với thú cưng.
-                    </div>
-                    <div class="content__muc__image">
-                        <img src="./assets/img/images_Decor/To_be_interested_in_Pet.png" alt="Môi trường sống" width="100%">
-                    </div>
-                    <div class="content__muc__text">
-                        7. Cắt tỉa lông. <br>
-                        8. Tắm. <br>
-                        9. Cắt móng.
+                        </div>
+                        <div class="main-content__question__img">
+                            <img src="./assets/img/images_Decor/Veterinary_Clinic_1.jpg" alt="Doctor and dog" width="100%">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,21 +172,7 @@
     
         <script src="./assets/js/app.js"></script>
         <script>
-            //scroll
-            scrollToComponent = function(title, component) {
-                title.onclick = function(){
-                    window.scroll({
-                        top: component.offsetTop - 56,
-                    });
-                    activeMenu(this)
-                }
-            }
-    
-            scrollToComponent($('.home'), $('.main-top'))
-            scrollToComponent($('.intro'), $('.main-introduce'))
-            scrollToComponent($('.pet'), $('.main-pet'))
-            scrollToComponent($('.contact'), $('.main-contact'))
-    
+            
         </script>
     </body>
 </html>
