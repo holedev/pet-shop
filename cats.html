@@ -97,8 +97,11 @@
                                     Name
                                 </div>
                                 <div class="page-slider__content-info">
-                                    <div class="page-slider__content-info__text">
+                                    <div title="" class="page-slider__content-info__text">
                                         Content
+                                    </div>
+                                    <div class="page-slider__content-info__more">
+                                        More
                                     </div>
                                 </div>
                             </div>
@@ -206,12 +209,6 @@
 
         const imgSubsliders = $$('.page-slider__content-slider img')
         const slider_grid = $('.page-slider__grid')
-
-        function hideContent(){
-            setTimeout(() => {
-                slider_grid.classList.add('active')
-            }, 3000)
-        }
 
         const app = {
             currentSilder: 0,
@@ -374,6 +371,8 @@
                 const slider = $('.slider')
                 const prevBtn = $('.page-slider__prevBtn')
                 const nextBtn = $('.page-slider__nextBtn')
+                const textContent = $('.page-slider__content-info__text')
+                const moreTextBtn = $('.page-slider__content-info__more')
 
                 //onclick show thông tin mèo
                 catItems.forEach(catItem => {
@@ -442,6 +441,7 @@
                 var positionStart = 0;
                 var isMove = false;
                 var distance;
+
                 slider_grid.addEventListener('touchstart', function(e){
                     isMove = true;
                     positionStart = e.pageX || event.touches[0].clientX;
@@ -451,23 +451,31 @@
                    if (isMove) {
                         positionEnd = e.pageX || event.touches[0].clientX;
                         distance = positionEnd - positionStart;
-                    }
-                    
+                    } 
                 })
 
-                slider_grid.addEventListener('touchend', function(e){
+                slider_grid.addEventListener('touchend', function(){
                     isMove = false;
-                    if (distance > 100) {
+                    if (distance < 50) {
                         _this.nextSlider();
                         activeSlider(imgSubsliders[0])
                     } 
-                    if (distance < -100) {
+                    if (distance > -50) {
                         _this.prevSlider();
                         activeSlider(imgSubsliders[0])
                     }
                     distance = 0;
                 })
 
+                //trên đt/tablet ấn vào btn xem đầy đủ nội dung hơn
+                moreTextBtn.onclick = function() {
+                    textContent.classList.add('active')
+                    this.style.display = 'none'
+                    setTimeout(function() {
+                        textContent.classList.remove('active')
+                        moreTextBtn.style.display = 'block'
+                    }, 8000)
+                }
 
             },
             start: function(){

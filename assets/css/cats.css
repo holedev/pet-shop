@@ -240,7 +240,9 @@
 
 
 .page-slider__content-info {
-    
+    display: flex;
+    align-items: center;
+    transition: all ease-in-out 0.5s;
 }
 
 
@@ -253,6 +255,24 @@
     font-style: italic;
     text-align: justify;
     align-items: center;
+}
+
+.page-slider__content-info__more {
+    text-transform: uppercase;
+    background-color: #ccc;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 0 8px;
+    font-size: 1.1rem;
+    display: none;
+}
+
+.page-slider__content-info__more:hover {
+    cursor: pointer;
+    background-color: #777777;
+    color: #ccc;
 }
 
 .page-slider__content-right {
@@ -358,7 +378,7 @@
     }
 
     .page-slider__content-right {
-        width: 40%;
+        width: 50%;
         align-self: center;
     }
 
@@ -376,5 +396,72 @@
     
     .main-top__content-item {
         width: 100%;
+    }
+
+    .page-slider__main {
+        width: 100%;
+    }
+
+    .page-slider__content {
+        gap: 8px;
+    }
+
+    .page-slider__content-title {
+        font-size: 2.8rem;
+        margin-bottom: 0;
+    }
+
+    .page-slider__content-info { 
+        background-color: var(--background-color);
+        padding: 8px 0;
+        height: 100%;
+        border-radius: 4px;
+        margin-left: 12px;
+    }
+
+    .page-slider__content-left {
+        align-items: flex-start;
+    }
+
+    .page-slider__content-info__text {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        box-shadow: none;
+        display: none;
+    }
+
+    .page-slider__content-info__text.active {
+        display: block;
+    }
+
+    .page-slider__content-info__more {
+        display: block;
+    }
+
+    .page-slider__grid {
+        height: 50%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .page-slider__grid {
+        height: 40%;
+    }
+
+    .page-slider__content-title {
+        font-size: 1.8rem;
+    }
+
+    .page-slider__content-info__text {
+        font-size: 1.2rem;
+    }
+
+    .page-slider__content-info__more {
+        font-size: 1rem;
+        margin: 0 6px;
+    }
+
+    .page-slider__content-info {
+        padding: 4px 0;
     }
 }
