@@ -67,9 +67,14 @@
         <section class="main">
             <div class="main-top">
                 <div class="main-top__grid grid">
-                    <h2 class="main-top__title">
-                        Meowwww
-                    </h2>
+                    <div class="main-top__title">
+                        <h2 class="main-top__title-main">
+                            Meowwww
+                        </h2>
+                        <p class="main-top__sub-title">
+                            Một chút cute cho ngày mới
+                        </p>
+                    </div>
                     <div class="main-top__content">
                         <ul class="main-top__content-list">
                             
@@ -209,6 +214,8 @@
 
         const imgSubsliders = $$('.page-slider__content-slider img')
         const slider_grid = $('.page-slider__grid')
+        const textContent = $('.page-slider__content-info__text')
+        const moreTextBtn = $('.page-slider__content-info__more')
 
         const app = {
             currentSilder: 0,
@@ -371,8 +378,7 @@
                 const slider = $('.slider')
                 const prevBtn = $('.page-slider__prevBtn')
                 const nextBtn = $('.page-slider__nextBtn')
-                const textContent = $('.page-slider__content-info__text')
-                const moreTextBtn = $('.page-slider__content-info__more')
+                
 
                 //onclick show thông tin mèo
                 catItems.forEach(catItem => {
@@ -431,11 +437,28 @@
                     activeSlider(imgSubsliders[0])
                 }
 
+                
                 //prev
                 prevBtn.onclick = function(){
                     _this.prevSlider();
                     activeSlider(imgSubsliders[0])
                 }
+
+                //phím esc left right
+                window.onkeydown = function(e){
+                    if(e.which == 27 && slider.style.display === 'block') {
+                        slider.style.display = 'none'
+                    }
+                    if(e.which == 37 && slider.style.display === 'block') {
+                        _this.prevSlider();
+                        activeSlider(imgSubsliders[0])
+                    }
+                    if(e.which == 39 && slider.style.display === 'block') {
+                        _this.nextSlider();
+                        activeSlider(imgSubsliders[0])
+                    }
+                }
+                
 
                 //vuốt ảnh trên tablet/đt
                 var positionStart = 0;
@@ -468,13 +491,17 @@
                 })
 
                 //trên đt/tablet ấn vào btn xem đầy đủ nội dung hơn
+                function timeCloseContent(time){
+                    setTimeout(() => {
+                        textContent.classList.remove('active')
+                        moreTextBtn.style.display = 'block'
+                    }, time)
+                }
+
                 moreTextBtn.onclick = function() {
                     textContent.classList.add('active')
                     this.style.display = 'none'
-                    setTimeout(function() {
-                        textContent.classList.remove('active')
-                        moreTextBtn.style.display = 'block'
-                    }, 8000)
+                    timeCloseContent(7000)
                 }
 
             },
