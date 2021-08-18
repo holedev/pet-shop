@@ -103,6 +103,10 @@ html {
     width: 220px;
 }
 
+.header-left a{
+    text-decoration: none;
+}
+
 .header-left__logo {
     width: 100%;
 }
