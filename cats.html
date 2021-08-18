@@ -456,12 +456,12 @@
 
                 slider_grid.addEventListener('touchend', function(){
                     isMove = false;
-                    if (distance < 50) {
-                        _this.nextSlider();
-                        activeSlider(imgSubsliders[0])
-                    } 
-                    if (distance > -50) {
+                    if (distance > 50) {
                         _this.prevSlider();
+                        activeSlider(imgSubsliders[0])
+                    } else
+                    if (distance < -50) {
+                        _this.nextSlider();
                         activeSlider(imgSubsliders[0])
                     }
                     distance = 0;
