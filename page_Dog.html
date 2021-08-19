@@ -100,15 +100,15 @@
                     <div class="main-classify">
                         <div class="main-classify__name">
                             <ul>
-                                <li><a href="#husky">Husky</a></li>
-                                <li><a href="#shiba">Shiba Inu</a></li>
-                                <li><a href="#samoyed">Samoyed</a></li>
-                                <li><a href="#corgi">Corgi</a></li>
-                                <li><a href="#dachshund">Dachshund</a></li>
-                                <li><a href="#chihuahua">Chihuahua</a></li>
-                                <li><a href="#golden">Golden Retriever</a></li>
-                                <li><a href="#phuquoc">Chó Phú Quốc</a></li>
-                                <li><a href="#akita">Akita Inu</a></li>
+                                <li class="main-classify__name-item"><a href="#husky">Husky</a></li>
+                                <li class="main-classify__name-item"><a href="#shiba">Shiba Inu</a></li>
+                                <li class="main-classify__name-item"><a href="#samoyed">Samoyed</a></li>
+                                <li class="main-classify__name-item"><a href="#corgi">Corgi</a></li>
+                                <li class="main-classify__name-item"><a href="#dachshund">Dachshund</a></li>
+                                <li class="main-classify__name-item"><a href="#chihuahua">Chihuahua</a></li>
+                                <li class="main-classify__name-item"><a href="#golden">Golden Retriever</a></li>
+                                <li class="main-classify__name-item"><a href="#phuquoc">Chó Phú Quốc</a></li>
+                                <li class="main-classify__name-item"><a href="#akita">Akita Inu</a></li>
                             </ul>
                         </div>
                     </div>
@@ -688,7 +688,10 @@
         <script>
             const iconMenuDog = $('.main-body-table__icon')
             const listMenuDog = $('.main-body-table')
-            
+            const itemClassDogs = $$('.main-item')
+            const itemMenuDogs = $$('.main-classify__name-item')
+            console.log(itemClassDogs[0])
+            console.log(itemMenuDogs)
             var flag = false
 
             // open - close menu list
@@ -701,6 +704,11 @@
                     listMenuDog.classList.remove('active')
                     flag = false
                 }
+            }
+
+            // scroll khoảng cách
+            function () {
+                
             }
         </script>
     </body>

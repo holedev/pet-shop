@@ -57,11 +57,8 @@
 }
 
 .main-body-table__icon i {
-    font-size: 3.2rem;
+    font-size: 4rem;
     color: black;
-}
-
-.main-body-table__icon i {
     cursor: pointer;
 }
 
@@ -87,7 +84,7 @@
 }
 
 .main-classify__name > ul > li {
-    padding: 10px;
+    padding: 8px;
     min-width: 120px;
 }
 
@@ -119,17 +116,18 @@
 
 .main-item {
     background-color: darkgray;
-    width: 31%;
-    height: 400px;
+    width: 29%;
+    height: 500px;
     padding: 10px;
-    margin: 1%;
+    margin: 1% 1% 1% 2%;
     border-radius: 10px;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .main-item__image {
     font-size: 3.2rem;
     text-align: center;
+    padding: 10px 10px 30px 10px;
 }
 
 .main-item__content {
@@ -171,8 +169,13 @@ ul.main-item__content__list {
 }
 
 @media only screen and (max-width: 960px) {
+    .main-title {
+        text-align: center;
+    }
+
     .main-title > h1 {
-        margin-top: 60px;
+        padding-top: 30px;
+        font-size: 3.2rem;
     }
 
     .main {
@@ -185,11 +188,13 @@ ul.main-item__content__list {
         top: 50%;
         left: 0;
         transform: translate(-100%, -50%);
+        transition-duration: 0.5s;
     }
 
     .main-body-table.active .main-body-table__icon,
     .main-body-table.active {
         transform: translate(0, -50%);
+        transition-duration: 0.5s;
     }
 
     .main-body-table__icon {
@@ -198,6 +203,7 @@ ul.main-item__content__list {
         top: 50%;
         right: 0;
         transform: translate(100%, -50%);
+        transition-duration: 1s;
     }
 
     .main-classify__name > ul {
@@ -205,29 +211,9 @@ ul.main-item__content__list {
     }
 
     .main-item {
-        width: 47%;
-        margin: 1%;
-    }
-
-    ::-webkit-scrollbar {
-        display: block;
-        border: 1px;
-        border-radius: 10px;
-        width: 5px;
-        background-color: lightgray;
-    }
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border: 1px;
-        border-radius: 5px; 
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #888;
-        border: 1px;
-        border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: #555;
+        width: 42%;
+        margin: 3%;
+        height: 300px;
     }
 }
 
@@ -252,9 +238,14 @@ ul.main-item__content__list {
         font-size: 1.4rem;
     }
 
+    .main-body-table__icon i {
+        font-size: 6rem;
+    }
+
     .main-item {
-        width: 96%;
-        margin: 2%;
+        width: 85%;
+        margin: 5% 5% 5% 10%;
+        height: 400px;
     }
 
     .main-end > h4 {
@@ -263,17 +254,24 @@ ul.main-item__content__list {
 }
 
 @media only screen and (max-width: 480px) {
+    .main-title {
+        line-height: normal;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .main-title > h1 {
+        padding-top: 20px;
+    }
+
     .main-item {
-        width: 94%;
-        margin: 2%;
+        width: 80%;
+        margin: 4% 4% 8% 8%;
+        height: 350px;
     }
 }
 
 @media only screen and (max-width: 430px) {
-    .main-title {
-        line-height: 30px;
-    }
-
     .main-title > h1 {
         font-size: 3rem;
     }
@@ -286,8 +284,27 @@ ul.main-item__content__list {
         font-size: 1.2rem;
     }
 
+    .main-item {
+        height: 300px;
+    }
+
     .main-end > h4 {
         font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .main-title {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .main-title > h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-body-table__icon i {
+        font-size: 4rem;
     }
 }
 
@@ -295,7 +312,6 @@ ul.main-item__content__list {
     .main-title {
         margin-left: 5px;
         margin-right: 5px;
-        line-height: 25px;
     }
 
     .main-classify__name > ul > li > a {
@@ -303,8 +319,7 @@ ul.main-item__content__list {
     }
 
     .main-item {
-        width: 92%;
-        margin: 3%;
+        height: 250px;
     }
 }
 
@@ -319,6 +334,10 @@ ul.main-item__content__list {
     
     .main-title > h4 {
         font-size: 1rem;
+    }
+
+    .main-item {
+        height: 210px;
     }
 
     .main-end > h4 {
