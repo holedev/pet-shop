@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&M's Pet</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/intro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="preloader()">
+    <div class="loading"></div>
+
+     <!-- overplay -->
+     <div class="overplay"></div>
+
+     <div class="app">
+        <header class="header">
+            <div class="grid header-grid">
+                <div class="header-left">
+                    <a href="index.html">
+                        <img src="./assets/img/logo.png" alt="" class="header-left__logo">
+                    </a>
+                </div>
+                <div class="header-mobile">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-right">
+                    <ul class="header-right__list">
+                        <li class="home header-right__item ">
+                            Trang chủ
+                        </li>
+                        <li class="intro header-right__item active">
+                            Giới thiệu
+                        </li>
+                        <li class="pet header-right__item">
+                            Chuyên mục thú cưng
+                        </li>
+                        <li class="contact header-right__item">
+                            Liên hệ
+                        </li>
+                    </ul>
+                    <div class="header-right__search">
+                        <div onclick="openSearch()" class="header-right__search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="search-960">
+                        <input placeholder="Tìm kiếm" type="text" class="search-960__input">
+                        <div class="search-960__icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-box">
+                <div onclick="closeSearch()" class="search-box__close">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <div class="search-box__form">
+                    <input type="text" class="search-box__form-input" name="search" placeholder=" ">
+                    <label class="search-box__form-label" for="name">Type then hit enter to search</label>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="main-top">
+                <div class="main-top__grid grid">
+                    <div class="main-top__left">
+                        <h2 class="main-top__left-title">
+                            H&M's Pet
+                        </h2>
+                        <div class="main-top__left-content">
+                            <div class="main__paragraph">
+                                <span>
+                                    H&M's Pet
+                                </span>
+                                được xây dựng dựa trên tiêu chí là cổng thông tin
+                                khổng lồ và hoàn toàn miễn phí về các vấn đề xunh quanh động 
+                                vật , đặc biệt là thú cưng, cụ thể như các bệnh về chó mèo, 
+                                các thực phẩm dinh dưỡng dành cho thú cưng, cách chăm sóc và
+                                điều trị bệnh cho chó mèo… Tất cả những thông tin tại H&M's Pet 
+                                được sưu tầm và tham khảo từ nhiều nguồn khác nhau có chọn lọc, 
+                                bên cạnh đó còn là trải nghiệm thực tế của chúng tôi trong quá
+                                trình nuôi thú cưng để đem đến cho độc giả những thông tin chính
+                                xác và hữu ích nhất.
+                            </div>
+                            <div class="main__paragraph">
+                                <span>
+                                    H&M's Pet 
+                                </span>
+                                còn là nơi kết nối, truyền tải thông tin từ bác sĩ thú 
+                                y tới người đọc nhằm cung cấp đến cho người nuôi động vật, thú cưng 
+                                những thông tin chính xác nhất, được kiểm duyệt từ đội ngũ bác sĩ 
+                                thú y đầy uy tín. Chúng tôi thành lập H&M's Pet dựa trên tình yêu thương 
+                                dành cho động vật, thú nuôi với mong muốn tất cả các bé chó mèo, thú 
+                                nuôi sẽ được chăm sóc, cứu chữa kịp thời, và không một bé nào phải “ra đi” 
+                                vì chủ nuôi hay người đang cần thông tin lại không được cung cấp thông 
+                                tin một cách chính xác và đầy đủ.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-top__right">
+                        <div class="main-top__right-img">
+                            <img src="./assets/img/intro/intro-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-middle">
+                <div class="main-middle__grid grid">
+                    <div class="main-middle__mission">
+                        <div class="main-title">
+                            Sứ mệnh
+                        </div>
+                        <div class="main__paragraph">
+                            Sứ mệnh của chúng tôi là mang đến cho độc giả, những người yêu 
+                            thương thú cưng những thông tin nhanh chóng và chính xác nhất. 
+                            Nhằm đảm bảo và giảm thiểu những trường hợp vì thiếu thông tin 
+                            mà gây ra những việc hậu quả đáng tiếc.
+                        </div>
+                        <div class="main__paragraph">
+                            <span>
+                                H&M's Pet
+                            </span>
+                            cam kết mang lại cho độc giả một trải nghiệm tốt nhất 
+                            trong ngành chăm sóc thú cưng. Chúng tôi cũng như các chủ nuôi 
+                            – hay những người yêu quý động vật, đều dành một tình yêu to lớn 
+                            cho những người bạn bốn chân. H&M's Pet sẽ luôn đồng hành cùng với 
+                            mọi người để giúp những người bạn bốn chân của chúng ta nhận ra 
+                            rằng chúng đang được yêu thương và quý trọng như thế nào.
+                        </div>
+                    </div>
+                    <div class="main-middle__view">
+                        <div class="main-title">
+                            Tầm nhìn
+                        </div>
+                        <div class="main__paragraph">
+                            Chúng tôi mong muốn 
+                            <span>
+                                H&M's Pet 
+                            </span> 
+                            sẽ trở thành địa chỉ tìm kiếm thông tin đáng tin cậy cho những 
+                            người quan tâm và yêu thương động vật. Và quan trọng hơn, H&M's Pet 
+                            sẽ là người bạn đồng hành thân cậy với mọi người 
+                            trong quá trình chăm sóc thú nuôi.
+                        </div>
+                        <div class="main__paragraph">
+                            Chúng tôi sẽ không ngừng nỗ lực và phát triển, phủ rộng thông tin 
+                            đến mọi miền đất nước, đến những nơi cần chúng tôi trong hành trình 
+                            chăm sóc động vật – thú cưng.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <section class="footer-content grid">
+                <div class="footer-left">
+                    <div class="footer-left__logo">
+                        <img src="./assets/img/logo-footer.jpg" alt="" class="footer-left__logo-img">
+                    </div>
+                    <div class="footer-left__content">
+                        H&M’s Pet là cổng thông tin hoàn toàn
+                        miễn phí về các vấn đề xung quanh chó và mèo.
+                    </div>
+                </div>
+                <div class="footer-main">
+                    <div class="footer__title">
+                        Danh sách trang
+                    </div>
+                    <ul class="footer-main__list">
+                        <li class="footer-main__item">
+                            Giới thiệu
+                        </li>
+                        <li class="footer-main__item">
+                            Chính sách bảo mật
+                        </li>
+                        <li class="footer-main__item">
+                            Điều khoản dịch vụ
+                        </li>
+                        <li class="footer-main__item">
+                            Liên hệ
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <div class="footer__title">
+                        Tải trên ứng dụng
+                    </div>
+                    <div class="footer__download">
+                        <div class="footer__download-qr">
+                            <img src="./assets/img/QR.png" alt="">
+                        </div>
+                        <div class="footer__download-icon">
+                            <div class="footer__download-icon__GGPlay">
+                                <img src="./assets/img/GGPlay.png" alt="">
+                            </div>
+                            <div class="footer__download-icon__Appstore">
+                                <img src="./assets/img/Appstore.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__more">
+                        <ul class="footer__social">
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="" class="footer__social-item__link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>    
+            </section>
+            <div class="footer-copyright">
+                Copyright &#169; 2021 - Bản quyền thuộc về H&M's Pet
+            </div>
+        </footer>
+     </div>
+
+     <script src="./assets/js/app.js"></script>
+</body>
+</html>

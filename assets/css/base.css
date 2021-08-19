@@ -156,8 +156,7 @@ html {
     color: #fff;
 }
 
-.header-right__item.active
-a,
+.header-right__item.active a,
 .header-right__item.active {
     color: var(--active-color);
 }
@@ -361,7 +360,7 @@ a,
 ------------- CONTACT BTN ----------------
 ----------------------------------------- */
 
-.contact {
+.contact-main {
     position: fixed;
     right: 12px;
     bottom: 20px;
