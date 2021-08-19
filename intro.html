@@ -29,7 +29,9 @@
                 <div class="header-right">
                     <ul class="header-right__list">
                         <li class="home header-right__item ">
-                            Trang chủ
+                            <a href="index.html">
+                                Trang chủ
+                            </a>
                         </li>
                         <li class="intro header-right__item active">
                             Giới thiệu
@@ -37,9 +39,9 @@
                         <li class="pet header-right__item">
                             Chuyên mục thú cưng
                         </li>
-                        <li class="contact header-right__item">
+                        <!-- <li class="contact header-right__item">
                             Liên hệ
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="header-right__search">
                         <div onclick="openSearch()" class="header-right__search-icon">
@@ -156,6 +158,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- Contact -->
+        <section class="contact-main">
+            <div class="contact-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <div class="contact-form">
+                <div class="contact-form__title">
+                    Liên lạc với chúng tôi
+                </div>
+                <div class="contact-form__info">
+                    <div class="contact-form__info-title">
+                        Nhập thông tin của bạn *
+                    </div>
+                    <div class="contact-form__info-name">
+                        <input type="text" placeholder="Nhập tên của bạn" class="contact-form__info-name__input">
+                    </div>
+                    <div class="contact-form__info-mail">
+                        <input type="text" placeholder="Nhập email của bạn" class="contact-form__info-mail__input">
+                    </div>
+                    <div class="contact-form__info-phone">
+                        <input type="text" placeholder="Nhập số điện thoại của bạn" class="contact-form__info-phone__input">
+                    </div>
+                </div>
+                <div class="contact-form__message">
+                    <div class="contact-form__message-title">
+                        Tin nhắn
+                    </div>
+                    <div class="contact-form__message-content">
+                        <textarea class="contact-form__message-textarea" name="" id="" cols="10" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="contact-form__submit">
+                    <button class="contact-form__submit-btn">
+                        Gửi
+                    </button>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">
             <section class="footer-content grid">
