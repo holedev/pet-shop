@@ -140,11 +140,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 52px;
 }
 
 .main-rank__list {
     display: flex;
     margin-left: calc(-1 * var(--gap));
+    flex-wrap: wrap;
 }
 
 .main-rank__item {
@@ -241,6 +243,270 @@
     color: #f2364f;
 }
 
+/* ---------------------------------------
+---------------- COMMENT -----------------
+--------------------------------------- */
+
+.main-comment {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 80px;
+}
+
+.main-comment__grid
+.main__title {
+    font-family: 'Pacifico', cursive;
+}
+
+.main-comment__content {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.main-comment__box {
+    margin-top: 50px;
+}
+
+.main-comment__box-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-comment__name {
+    flex: 2;
+}
+
+.box-comment__content {
+    flex: 5;
+}
+
+.box-comment__name,
+.box-comment__content {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color:transparent;
+}
+
+.box-comment__name-input,
+.box-comment__content-input {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 0 32px;
+    font-size: 1.7rem;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    color: #333;
+}
+
+
+.box-comment__name-label,
+.box-comment__content-label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.7rem;
+    user-select: none;
+    pointer-events: none;
+    color: #333;;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all ease-in-out 0.2s;
+    font-style: italic;
+}
+
+.box-comment__name-input:focus + 
+.box-comment__name-label,
+.box-comment__name-input:not(:placeholder-shown) +
+.box-comment__name-label,
+.box-comment__content-input:focus + 
+.box-comment__content-label,
+.box-comment__content-input:not(:placeholder-shown) +
+.box-comment__content-label {
+    top: -8px;
+}
+
+.box-comment__content {
+    margin-top: 32px;
+}
+
+.box-comment__content-input {
+
+}
+
+.box-comment__content-label {
+
+}
+
+.box-comment__btn {
+    margin-top: 8px;
+    display: flex;
+    align-self: flex-end;
+    gap: 4px;
+}
+
+.box-comment__btn-submit,
+.box-comment__btn-cancel {
+    font-size: 1.4rem;
+    font-weight: 550;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: #777;
+}
+
+.box-comment__btn-submit.active {
+    background-color: #065fd4;
+    color: #fff;
+}
+
+.box-comment__btn-submit.active:hover,
+.box-comment__btn-cancel:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+
+.box-comment__btn:hover {
+    
+}
+
+.main-comment__commented {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.main-comment__commented-list {
+    list-style: none;
+    max-height: 500px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.main-comment__commented-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-comment__commented-left {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+}
+
+.main-comment__commented-left img {
+    border-radius: 50%;
+}
+
+.main-comment__commented-right {
+    width: 100%;
+}
+
+.commented-right__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.commented-right__top-left {
+    display: flex;
+    align-items:center;
+}
+
+
+.commented-right__name {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.commented-right__time {
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.commented-right__top-right {
+
+}
+
+.comment-right__more {
+    position: relative;
+}
+
+.comment-right__more i {
+    font-size: 1.6rem;
+    color: #333;
+    padding: 4px 8px;
+}
+
+.comment-right__more:hover {
+    color: #000;
+}
+
+.comment-right__more:hover 
+.comment-right__more-list,
+.comment-right__more:active 
+.comment-right__more-list {
+    display: block;
+}
+
+.comment-right__more-list {
+    display: none;
+    position: absolute;
+    top: 90%;
+    right: 0;
+    list-style: none;
+    background-color: #ddd;
+    padding: 4px 0;
+    border-radius: 4px;
+}
+
+
+.comment-right__more-list::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 8px;
+    background-color: transparent;
+    top: -8px;
+    left: 0;
+}
+
+.comment-right__more-list::after {
+    position: absolute;
+    content: "";
+    border: 8px solid;
+    border-color: transparent transparent #ddd transparent;
+    top: -12px;
+    right: 6px;
+}
+
+
+.comment-right__more-item {
+    font-size: 1.6rem;
+    padding: 4px 8px;
+    min-width: 80px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.comment-right__more-item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.commented-right__content {
+    margin-top: 4px;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
 
 
 /* ----------------------------------------
@@ -288,6 +554,7 @@
     padding: 4px 8px;
     border-radius: 50%;
     text-shadow: 0 0 2px #ccc;
+    transition: all ease-in-out 0.3s;
 }
 
 .page-slider__reactBtn.active {
@@ -447,9 +714,18 @@
 --------------- RESPONSIVE ---------------
 ------------------------------------------ */
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1235px) {
     .slider {
         padding: 20px 40px;
+    }
+
+    .main-rank__list {
+        justify-content: center;
+    }
+    
+    .main-rank__item {
+        width: calc(50% - var(--gap));
+        margin-bottom: 24px;
     }
 
 }
@@ -477,6 +753,10 @@
     
     .main-top__content-item {
         width: calc(50% - var(--gap));
+    }
+
+    .main-rank__item {
+        width: calc(100% - var(--gap));
     }
 
     .slider {
@@ -578,6 +858,18 @@
 }
 
 @media only screen and (max-width: 479px) {
+    html {
+        font-size: 50%;
+    }
+
+    .main__title-main {
+        font-size: 6rem;
+    }
+
+    .main__sub-title {
+        font-size: 2rem;
+    }
+
     .page-slider__grid {
         height: 40%;
     }
