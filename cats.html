@@ -30,17 +30,21 @@
                 <div class="header-right">
                     <ul class="header-right__list">
                         <li class="home header-right__item">
-                            Trang chủ
+                            <a href="index.html">
+                                Trang chủ
+                            </a>
                         </li>
                         <li class="intro header-right__item">
-                            Giới thiệu
+                            <a href="#">
+                                Giới thiệu
+                            </a>
                         </li>
                         <li class="pet header-right__item active">
                             Chuyên mục thú cưng
                         </li>
-                        <li class="contact header-right__item">
+                        <!-- <li class="contact header-right__item">
                             Liên hệ
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="header-right__search">
                         <div onclick="openSearch()" class="header-right__search-icon">
@@ -92,7 +96,7 @@
                             Top mèo
                         </h2>
                         <p class="main__sub-title">
-                            Ai đáng yêu nhất tuần này nào?
+                            Ai đáng yêu nhất tuần nào?
                         </p>
                     </div>
                     <div class="main-rank__list">
@@ -277,6 +281,45 @@
 
         </section>
 
+        <!-- Contact -->
+        <section class="contact">
+            <div class="contact-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <div class="contact-form">
+                <div class="contact-form__title">
+                    Liên lạc với chúng tôi
+                </div>
+                <div class="contact-form__info">
+                    <div class="contact-form__info-title">
+                        Nhập thông tin của bạn *
+                    </div>
+                    <div class="contact-form__info-name">
+                        <input type="text" placeholder="Nhập tên của bạn" class="contact-form__info-name__input">
+                    </div>
+                    <div class="contact-form__info-mail">
+                        <input type="text" placeholder="Nhập email của bạn" class="contact-form__info-mail__input">
+                    </div>
+                    <div class="contact-form__info-phone">
+                        <input type="text" placeholder="Nhập số điện thoại của bạn" class="contact-form__info-phone__input">
+                    </div>
+                </div>
+                <div class="contact-form__message">
+                    <div class="contact-form__message-title">
+                        Tin nhắn
+                    </div>
+                    <div class="contact-form__message-content">
+                        <textarea class="contact-form__message-textarea" name="" id="" cols="10" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="contact-form__submit">
+                    <button class="contact-form__submit-btn">
+                        Gửi
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
             <section class="footer-content grid">
                 <div class="footer-left">
@@ -427,7 +470,7 @@
                     path: "./assets/img/Cats/meo-sphynx.jpg",
                     name: "Mèo Ai Cập",
                     content: "Không có vẻ ngoài bụ bẫm và bộ lông nhiều màu sắc như những giống mèo khác, mèo Ai Cập shynx có ngoại hình vô cùng kỳ lạ và độc đáo. Cơ thể chúng hoàn toàn trụi lông kèm thêm một gương mặt nhăn nheo như đang trong trạng thái cáu kỉnh. Mèo Ai Cập còn có tên gọi khác là mèo Sphynx, mèo nhân sư, mèo không lông. Trông mèo nhân sư có vẻ kỳ dị vậy thôi nhưng chúng cũng là loài mèo được nhiều người trong giới thượng lưu yêu thích và dần đang được nuôi phổ biến.",
-                    pathSlider1: "./assets/img/Cats/meo-sphynx-1.png",
+                    pathSlider1: "./assets/img/Cats/meo-sphynx-1.jpg",
                     pathSlider2: "./assets/img/Cats/meo-sphynx-2.jpg",
                     pathSlider3: "./assets/img/Cats/meo-sphynx-3.jpg",
                     react: false,
@@ -436,7 +479,7 @@
                     id: 8,
                     path: "./assets/img/Cats/meo-ocicat.jpg",
                     name: "Mèo Ocicat",
-                    content: "Mèo Ocicat là một giống mèo nhà, có nét tương đồng với mèo hoang dã nhưng lại không có chứa DNA hoang dã trong nhóm gen của nó. Loài này có đặc điểm bất thường ở chỗ nó được phát hiện như một giống mèo hoang dã nhưng lại có tính tình của một con vật trong nhà",
+                    content: "Mèo Ocicat là một giống mèo nhà, có nét tương đồng với mèo hoang dã nhưng lại không có chứa DNA hoang dã trong nhóm gen của nó. Loài này có đặc điểm bất thường ở chỗ nó được phát hiện như một giống mèo hoang dã nhưng lại có tính tình của một con vật trong nhà.",
                     pathSlider1: "./assets/img/Cats/meo-ocicat-1.jpg",
                     pathSlider2: "./assets/img/Cats/meo-ocicat-2.jpg",
                     pathSlider3: "./assets/img/Cats/meo-ocicat-3.jpg",
@@ -446,7 +489,7 @@
                     id: 9,
                     path: "./assets/img/Cats/meo-ragdoll.jpg",
                     name: "Mèo Ragdoll",
-                    content: "Gần đây số lượng người nuôi mèo cảnh ngày càng gia tăng bởi sự dễ thương, ngoan ngoãn và thông minh của các “boss”. Những chú mèo cảnh luôn chiếm một vị trí vô cùng quan trọng trong lòng người nuôi, là “con cưng”, là người bạn thân. Mèo Ragdoll cũng vậy, tuy nhiên giống mèo này vẫn chưa thật sự phổ biến ở Việt Nam. Chỉ có thế bắt gặp một số ít gia đình chăm nuôi Ragdoll Cat",
+                    content: "Gần đây số lượng người nuôi mèo cảnh ngày càng gia tăng bởi sự dễ thương, ngoan ngoãn và thông minh của các “boss”. Những chú mèo cảnh luôn chiếm một vị trí vô cùng quan trọng trong lòng người nuôi, là “con cưng”, là người bạn thân. Mèo Ragdoll cũng vậy, tuy nhiên giống mèo này vẫn chưa thật sự phổ biến ở Việt Nam. Chỉ có thế bắt gặp một số ít gia đình chăm nuôi Ragdoll Cat.",
                     pathSlider1: "./assets/img/Cats/meo-ragdoll-1.jpg",
                     pathSlider2: "./assets/img/Cats/meo-ragdoll-2.jpg",
                     pathSlider3: "./assets/img/Cats/meo-ragdoll-3.jpg",
@@ -674,8 +717,11 @@
 
                 //phím esc left right
                 window.onkeydown = function(e){
-                    if(e.which == 27 && slider.style.display === 'block') {
+                    if(e.which == 27 && slider.style.display !== 'none') {
                         slider.style.display = 'none'
+                    }
+                    if(e.which == 27 && $('.search-box').style.display !== 'none') {
+                        $('.search-box').style.display = 'none'
                     }
                     if(e.which == 37 && slider.style.display === 'block') {
                         _this.prevSlider();

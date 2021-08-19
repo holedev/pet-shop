@@ -58,6 +58,24 @@ html {
     }
 }
 
+@keyframes scale {
+    0% {
+        transform: scale(1)
+    }
+    12.5% {
+        transform: scale(1.1)
+    }
+    25% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.1)
+    }
+    75% {
+        transform: scale(1)
+    }
+}
+
 /* --------------------------------------
 ------------- LOADING -------------------
 ------------------------------------ */
@@ -133,6 +151,13 @@ html {
     position: relative;
 }
 
+.header-right__item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-right__item.active
+a,
 .header-right__item.active {
     color: var(--active-color);
 }
@@ -325,6 +350,137 @@ html {
 /* --------------------------------------
 ------------SEARCH BOX END-------------
 ----------------------------------------- */
+
+
+
+
+
+
+
+/* ---------------------------------------
+------------- CONTACT BTN ----------------
+----------------------------------------- */
+
+.contact {
+    position: fixed;
+    right: 12px;
+    bottom: 20px;
+    z-index: 1;
+}
+
+.contact-icon {
+    font-size: 4rem;
+    background-image: linear-gradient(pink, blue);
+    padding: 4px 8px;
+    border-radius: 50%;
+    animation: scale ease-in-out 1.2s infinite;
+}
+
+.contact-icon:hover {
+    cursor: pointer;
+}
+
+.contact-form {
+    border-radius: 4px;
+    background-color: #ccc;
+    position: absolute;
+    left: -20%;
+    top: 100%;
+    transform: translate(-100%, -100%);
+    width: 230px;
+    overflow: hidden;
+    animation: fadeIn ease-in-out 0.3s;
+    display: none;
+}
+
+.contact-form.active {
+    display: block;
+}
+
+.contact-form__title {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: #e02a6c;
+    color: #fff;
+    padding: 8px;
+}
+
+.contact-form__info,
+.contact-form__message {
+    padding: 12px;
+}
+
+.contact-form__info-title,
+.contact-form__message-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.contact-form__info-name,
+.contact-form__info-mail,
+.contact-form__info-phone {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.contact-form__info-name__input,
+.contact-form__info-mail__input,
+.contact-form__info-phone__input,
+.contact-form__message-textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+
+.contact-form__message-title {
+
+}
+
+.contact-form__message-content {
+
+}
+
+.contact-form__message-textarea {
+    margin-top: 8px;
+    resize: none;
+    height: 100px;
+}
+
+.contact-form__submit {
+    width: 100%;
+}
+
+.contact-form__submit-btn {
+    width: 100%;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border: none;
+    background-color: #e02a6c;
+    font-weight: 600;
+    color: #fff;
+    padding: 4px 0;
+}
+
+.contact-form__submit-btn:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+
+
+
+
+
+/* ---------------------------------------
+------------- END CONATCT ----------------
+----------------------------------------- */
+
+
+
 
 
 

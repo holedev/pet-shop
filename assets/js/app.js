@@ -5,7 +5,8 @@ const inputSearch = $('.search-box__form-input')
 const overplay = $('.overplay')
 const headerRight = $('.header-right')
 const menuRightItems = $$('.header-right__item')
-
+const contactBtn = $('.contact-icon')
+const formContact = $('.contact-form ')
 
 //preloader
 preloader = function(){
@@ -52,11 +53,11 @@ overplay.onclick = function(){
 }
 
 //menu onclick
-activeMenu = function(e){
+activeMenu = function(itemMenu){
     menuRightItems.forEach(item => {
         item.classList.remove('active');
     });
-    e.classList.add('active');
+    itemMenu.classList.add('active');
     closeMenuMobile()
 }
 
@@ -65,3 +66,13 @@ menuRightItems.forEach(item => {
         activeMenu(this)
     }
 })
+
+
+//khi click vào icon contact ở page chó mèo
+contactBtn.onclick = () => {
+    formContact.classList.toggle('active')
+}
+
+$('.contact-form__submit-btn').onclick = () => {
+    formContact.classList.remove('active')
+}
