@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="main-introduce">
+            <div class="main-introduce reveal">
                 <div class="main-introduce__grid grid">
                     <h3 class="main-title">
                         Giới thiệu
@@ -116,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="main-pet">
+            <div class="main-pet reveal">
                 <div class="main-pet__grid grid">
                     <h3 class="main-title">
                         Thú cưng
@@ -156,7 +156,7 @@
                 </div>
             </div>
 
-            <div class="main-takecare">
+            <div class="main-takecare reveal">
                 <div class="main-takecare__grid grid">
                     <div class="main-takecare__left">
                         <div class="main-takecare__left-img">
@@ -184,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="main-promise">
+            <div class="main-promise reveal">
                 <div class="main-promise__grid grid">
                     <h3 class="main-title">
                         Cam kết
@@ -241,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="main-contact">
+            <div class="main-contact reveal">
                 <div class="main-contact__grid grid">
                     <h3 class="main-title">
                         Liên hệ
@@ -295,7 +295,7 @@
                 </div>
             </div>
 
-            <div class="main-map">
+            <div class="main-map reveal">
 
             </div>
         </section>
@@ -394,6 +394,24 @@
         scrollToComponent($('.pet'), $('.main-pet'))
         scrollToComponent($('.contact'), $('.main-contact'))
 
+        //reveal scroll
+        const revealItems = $$('.reveal')
+        const x = revealItems[0].getBoundingClientRect()
+        window.addEventListener('scroll', reveal)
+        function reveal(){
+            revealItems.forEach((item) => {
+                const windowHeight = window.innerHeight
+                const revealTop = item.getBoundingClientRect().top
+                
+                if (revealTop < windowHeight - 100) {
+                    item.classList.add('active')
+                } 
+                //reveal lại khi kéo lên xong lại kéo xuống =))
+                else {
+                    item.classList.remove('active')
+                }
+            })
+        }
     </script>
 </body>
 </html>

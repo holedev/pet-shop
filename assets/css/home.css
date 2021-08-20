@@ -37,7 +37,14 @@
 ------------------------------------- */
 
 .main-introduce {
+    transition: all ease-in-out 1.5s;
+    transform: translateY(150px);
+    opacity: 0;
+}
 
+.main-introduce.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .main-introduce__grid {
@@ -116,8 +123,15 @@
 ----------------------------------- */
 
 .main-pet {
+    position: relative;
     background-color:#fff;
     padding: 40px;
+}
+
+.main-pet.active 
+.main-pet__item {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .main-pet__grid {
@@ -137,6 +151,8 @@
     border-radius: 30px;
     box-shadow: 0 0 4px #e3afbc;
     overflow: hidden;
+    position: relative;
+    transition: all ease-in-out 1.5s;
 }
 
 .main-pet__item:hover 
@@ -149,10 +165,14 @@
 .main-pet__item:nth-child(even) {
     flex-direction: row-reverse;
     background-image: linear-gradient(to left top, #e4a1b2, #edc7b7);
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
 .main-pet__item:nth-child(odd) {
     background-image: linear-gradient(to right bottom, #e4a1b2, #edc7b7);
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .main-pet__item-img {
@@ -223,7 +243,16 @@
 -------------------------------------- */
 
 .main-takecare {
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+    position: relative;
+    z-index: 1;
+}
 
+.main-takecare.active {
+    opacity: 1;
+    transform: translateY(0)
 }
 
 .main-takecare__grid {
@@ -300,6 +329,14 @@
 
 .main-promise {
     background-color: #fff;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+}
+
+.main-promise.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .main-promise__grid {
@@ -358,6 +395,16 @@
     
 }
 
+.main-contact.active
+.main-contact__main-left,
+.main-contact.active
+.main-contact__main-right,
+.main-contact.active
+.main-contact__btn {
+    opacity: 1;
+    transform: translateX(0)
+}
+
 .main-contact__grid {
     padding: 40px 20px;
 }
@@ -377,7 +424,9 @@
 }
 
 .main-contact__main-left {
-
+    transform: translateX(-200%);
+    transition: all ease-in-out 1s;
+    opacity: 0;
 }
 
 .main-contact__main-left__item {
@@ -399,6 +448,9 @@
 
 .main-contact__main-right {
     flex: 2;
+    transition: all ease-in-out 1s;
+    transform: translateX(200%);
+    opacity: 0;
 }
 
 .main-contact__main-right__row1 {
@@ -429,7 +481,7 @@
 }
 
 .main-contact__submit {
-
+    
 }
 
 .main-contact__btn {
@@ -441,6 +493,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 2px;
+    transition: all ease-in-out 1s;
+    transform: translateX(100%);
+    opacity: 0;
 }
 
 .main-contact__btn-link {
@@ -471,6 +526,14 @@
     background-position: center;
     padding-top: 50%;
     filter: brightness(80%);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+}
+
+.main-map.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --------------------------------------
@@ -647,7 +710,7 @@
     }
 
     .main-introduce__grid {
-        padding: 40px;
+        padding: 40px 20px;
     }
 
     .main-pet__item {
