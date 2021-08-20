@@ -10,9 +10,7 @@ const formContact = $('.contact-form ')
 
 //preloader
 preloader = function(){
-    setTimeout(function(){
         $('.loading').style.display = 'none'
-    }, 1000)
 }
 
 //đóng, mở search pc
