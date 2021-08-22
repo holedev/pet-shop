@@ -1,0 +1,117 @@
+:root {
+    --header-color: #7FFF00;
+    --menu-color: #D2691E;
+    --background-color: #E6E6FA;
+    --text-color: #696969;
+    --header-height: 120px;
+    --nav-height: 34px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+.header {
+    
+}
+
+.header-tab {
+    min-height: var(--header-height);
+    padding: 8px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--header-color);
+    align-items: center;
+    z-index: 2;
+}
+
+.header-tab-content {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-tab-content__reponsive-icon {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+.header-tab-content__reponsive-icon i {
+    font-size: 2.8rem;
+    color: #fff;
+    padding: 4px 8px;
+}
+
+.hear-tab-content__search {
+    display: flex;
+    
+}
+
+.hear-tab-content__search-input {
+    border: 2px solid black;
+    border-right: 0;
+    border-radius: 20px 0 0 20px;
+    background-color: #fff;
+}
+
+.hear-tab-content__search-input > input {
+    font-size: 1.6rem;
+    outline: none;
+    padding: 4px;
+    margin: 8px;
+    border-color: transparent;
+    color: var(--text-color);
+}
+
+.hear-tab-content__search-icon {
+    border: 2px solid black;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--menu-color);
+}
+
+.hear-tab-content__search-icon > i {
+    font-size: 1.6rem;
+    padding: 4px;
+    margin: 8px;
+}
+
+.header-tab-content__menu {
+    
+}
+
+.header-tab-content__menu-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.header-tab-content__menu-list__item {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    margin: 4px;
+}
+
+.header-tab-content__menu-list__item a {
+    text-decoration: none;
+}
+
+.header-tab-content__menu-list__item a:hover {
+    background-color: #ccc;
+    color: black;
+}
