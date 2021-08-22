@@ -37,12 +37,12 @@ const app = {
                     Khách muốn ship tận nhà, gửi hình zalo mình ship đến!`,
             price: 7500000,
             sale: 0,
-            favorite: true,
+            favorite: 0,
             sold: 18,
             star: 5,
             brand: "Bảo Ngọc",
             origin: "Việt Nam",
-            new: true,
+            new: 0,
             pathCarousel: {
                 path1: "./assets/img/dog-shop/corgi-thuan-chung-1.jpg",
                 path2: "./assets/img/dog-shop/corgi-thuan-chung-2.jpg",
@@ -64,7 +64,7 @@ const app = {
             star: 4,
             brand: "Nguyễn Ánh",
             origin: "Việt Nam",
-            new: true,
+            new: 0,
             pathCarousel: {
                 path1: "./assets/img/dog-shop/poodle-nau-do-1.jpg",
                 path2: "./assets/img/dog-shop/poodle-nau-do-2.jpg",
@@ -883,50 +883,50 @@ const app = {
         const htmls = arr.map(function(product, index){
             return `
             <div class="col l-2-4 m-4 c-6" data-index="${index}">
-                <a href="" class="home-product-item">
-                <div class="home-product-item__img"
-                    style="background-image: url(${product.path}); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                </div>
-                <h4 class="home-product-item__name">
-                    ${product.title}
-                </h4>
-                <div class="home-product-item__price">
-                    <span style="display: ${product.sale ? "" : "none"}"class="home-product-item__price-old">${numberToCoin(product.price)}đ</span>
-                    <span class="home-product-item__price-current">
-                        ${product.sale ? numberToCoin((product.price * (100 - product.sale) / 100).toFixed()) : numberToCoin(product.price)}đ
-                    </span>
-                </div>
-                <div class="home-product-item__action">
-                    <span class="home-product-item__like">
-                    <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                    <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                    </span>
-                    <div class="home-product-item__rating">
-                    <i class="${product.star >= 1 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                    <i class="${product.star >= 2 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                    <i class="${product.star >= 3 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                    <i class="${product.star >= 4 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                    <i class="${product.star >= 5 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                <a onclick="return false" href="" class="home-product-item">
+                    <div class="home-product-item__img"
+                        style="background-image: url(${product.path}); background-repeat: no-repeat; background-position: center; background-size: cover;">
                     </div>
-                    <span class="home-product-item__sold">
-                        ${product.sold} đã bán
-                    </span>
-                </div>
+                    <h4 class="home-product-item__name">
+                        ${product.title}
+                    </h4>
+                    <div class="home-product-item__price">
+                        <span style="display: ${product.sale ? "" : "none"}"class="home-product-item__price-old">${numberToCoin(product.price)}đ</span>
+                        <span class="home-product-item__price-current">
+                            ${product.sale ? numberToCoin((product.price * (100 - product.sale) / 100).toFixed()) : numberToCoin(product.price)}đ
+                        </span>
+                    </div>
+                    <div class="home-product-item__action">
+                        <span class="home-product-item__like">
+                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                        </span>
+                        <div class="home-product-item__rating">
+                        <i class="${product.star >= 1 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                        <i class="${product.star >= 2 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                        <i class="${product.star >= 3 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                        <i class="${product.star >= 4 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                        <i class="${product.star >= 5 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                        </div>
+                        <span class="home-product-item__sold">
+                            ${product.sold} đã bán
+                        </span>
+                    </div>
 
-                <div class="home-product-item__origin">
-                    <span class="home-product-item__brand">${product.brand}</span>
-                    <span class="home-product-item__origin-name">${product.origin}</span>
-                </div>
+                    <div class="home-product-item__origin">
+                        <span class="home-product-item__brand">${product.brand}</span>
+                        <span class="home-product-item__origin-name">${product.origin}</span>
+                    </div>
 
-                <div style="display: ${product.favorite ? "block" : "none"}" class="home-product-item__favorite">
-                    <i class="fas fa-check"></i>
-                    <span>Yêu thích</span>
-                </div>
+                    <div style="display: ${product.favorite ? "block" : "none"}" class="home-product-item__favorite">
+                        <i class="fas fa-check"></i>
+                        <span>Yêu thích</span>
+                    </div>
 
-                <div style="display: ${product.sale ? "block" : "none"}" class="home-product-item__sale-off">
-                    <span class="home-product-item__sale-off-percent">${product.sale}%</span>
-                    <span class="home-product-item__sale-off-label">GIẢM</span>
-                </div>
+                    <div style="display: ${product.sale ? "block" : "none"}" class="home-product-item__sale-off">
+                        <span class="home-product-item__sale-off-percent">${product.sale}%</span>
+                        <span class="home-product-item__sale-off-label">GIẢM</span>
+                    </div>
                 </a>
             </div>
             `
@@ -935,15 +935,63 @@ const app = {
         
     },
     handleEvent: function(){
-        //this.renderProducts(this.products, $('.popular'))
+        const _this = this
+        const homeFilterBtns = $$('.btn.home-filter__label-btn')
+        const homeProductsList = $('.home-product>.row')
 
+        //mảng sản phẩm mới
         const newList = this.products.filter((product) => product.new)
+        //mảng sản phẩm yêu thích
         const favList = this.products.filter((product) => product.favorite)
-        console.log(newList)
-        console.log(favList)
+        //mảng các danh mục 
+        const homeFilter = [this.products, newList, favList]
 
-        //this.renderProducts(newList, $('.new'))
-        this.renderProducts(favList, $('.favorites'))
+        //array sort a-z (theo giá)
+        toArrAZ = function(arr){
+            const x = arr
+            return x.sort(function(a, b) {return a.price - b.price})
+        }
+        //array sort z-a (theo giá)
+        toArrZA = function(arr){
+            const x = arr
+            return x.sort(function(a, b) {return b.price - a.price})
+        }
+
+        //active home filter btn
+        activeHomeFilterBtn = function(btn){
+            homeFilterBtns.forEach(item => {
+                item.classList.remove('btn--primary');
+            });
+            btn.classList.add('btn--primary');
+        }
+        //onclick show list filter
+        homeFilterBtns.forEach((homeFilterBtn, index) => {
+            homeFilterBtn.onclick = function(){
+                activeHomeFilterBtn(this)
+                _this.renderProducts(homeFilter[index], homeProductsList)
+            }
+        })
+        //render list phổ biến khi vào trang
+        _this.renderProducts(this.products, homeProductsList)
+        
+
+        //render tăng dần
+        $('.sort--a-z').onclick = function(){
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    _this.renderProducts(toArrAZ(homeFilter[index]), homeProductsList)
+                }
+            })
+        }
+        //render giảm dần
+        $('.sort--z-a').onclick = function(){
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    _this.renderProducts(toArrZA(homeFilter[index]), homeProductsList)
+                }
+            })
+        }
+
     },
     start: function(){
         this.handleEvent()
