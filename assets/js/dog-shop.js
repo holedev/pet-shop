@@ -946,6 +946,51 @@ const app = {
         const homeFilterBtns = $$('.btn.home-filter__label-btn')
         const homeProductsList = $('.home-product>.row')
 
+        //signup, login
+        showSignUp = function(){
+            $('.modal').style.display = 'flex'
+            $('.auth-form.signup').style.display = "block"
+            $('.auth-form.login').style.display = "none"
+            document.body.style.overflow = "hidden"
+        }
+        showLogin = function(){
+            $('.modal').style.display = 'flex'
+            $('.auth-form.login').style.display = "block"
+            $('.auth-form.signup').style.display = "none"
+            document.body.style.overflow = "hidden"
+        }
+        closeOverplay = function(){
+            $('.modal').style.display = 'none'
+            $('.auth-form.login').style.display = "none"
+            $('.auth-form.signup').style.display = "none"
+            document.body.style.overflow = "auto"
+        }
+
+        window.onclick = function(e) {
+            if(e.target.classList.contains('modal__overplay')){
+                closeOverplay()
+            }
+        }
+
+        $$('.btn-signUp').forEach((item) => {
+            item.onclick = function(){
+                showSignUp()
+            }
+        })
+
+        $$('.btn-login').forEach((item) => {
+            item.onclick = function(){
+                showLogin()
+            }
+        })
+
+        $$('.auth-form__control-back').forEach((item) => {
+            item.onclick = function(){
+                closeOverplay()
+            }
+        })
+
+
         //mảng sản phẩm mới
         const newList = this.products.filter((product) => product.new)
         //mảng sản phẩm yêu thích
@@ -975,6 +1020,7 @@ const app = {
                 activeHomeFilterBtn(this)
                 _this.gotoPage(1)
                 _this.renderProducts(homeFilter[index], homeProductsList, _this.startItem, _this.endItem)
+                renderFilterPage()
             }
         })
         //render list phổ biến khi vào trang
@@ -1008,9 +1054,19 @@ const app = {
             `
         }
         $('.pagination-list').innerHTML = htmls
-        //active Page
         
-
+        //home filter page
+        renderFilterPage = function(){
+            $('.home-filter__page-num').innerHTML = `
+                <span class="home-filter__page-current">
+                    ${_this.currentPage}
+                </span>
+                /${numberPages}
+            `
+        }
+        renderFilterPage()
+        
+        //active Page
         activePageBtn = function(page){
             $$('.pagination-list li').forEach(item => {
                 item.classList.remove('active');
@@ -1021,7 +1077,7 @@ const app = {
         //active page khi load vào trang
         activePageBtn($$('.pagination-list li')[0])
 
-        //renderlist theo 3 nút
+        //renderlist theo phổ biến, mới, yêu thích
         function renderlist(){
             homeFilterBtns.forEach((homeFilterBtn, index) => {
                 if(homeFilterBtn.classList.contains('btn--primary')) {
@@ -1035,23 +1091,28 @@ const app = {
                 _this.currentPage = index + 1;
                 _this.gotoPage(_this.currentPage)
                 renderlist()
+                renderFilterPage()
             }
         })
 
         //next, prev btn page
-        $('.btn-nextPage').onclick = () => {
-            _this.nextPage()
-            renderlist()
-        }
+        $$('.btn-nextPage').forEach((item) => {
+            item.onclick = () => {
+                _this.nextPage()
+                renderlist()
+                renderFilterPage()
+            }
+        })
 
-        $('.btn-prevPage').onclick = () => {
-            homeFilterBtns.forEach((homeFilterBtn, index) => {
-                if(homeFilterBtn.classList.contains('btn--primary')) {
-                    _this.prevPage()
-                    _this.renderProducts(homeFilter[index], homeProductsList, _this.startItem, _this.endItem)
-                }
-            })
-        }
+        $$('.btn-prevPage').forEach((item) => {
+            item.onclick = () => {
+                _this.prevPage()
+                renderlist()
+                renderFilterPage()
+            }
+        })
+
+        
     },
     gotoPage: function (page) {
         this.currentPage = page

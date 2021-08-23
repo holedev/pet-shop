@@ -888,6 +888,25 @@ html {
   color: var(--primary-color);
 }
 
+/* ------------------------------------
+--------------- SLIDER ----------------
+-------------------------------------- */
+.slider {
+  background-color: #f5f5f5;
+}
+
+.slider-imgs {
+  position: relative;
+  width: 70%;
+  padding-top: 25%;
+  background: url(../img/dog-shop/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center center;
+}
+
+
+
 
 
 /* ------------------------------------
@@ -900,6 +919,10 @@ html {
 
 .main__content {
   padding-top: 32px;
+}
+
+.main__content > .col {
+  width: 100%;
 }
 
 
@@ -1010,14 +1033,16 @@ html {
   color: #555;
 }
 
-.home-filter__page-btn:first-child {
-  border-right: 1px solid #eee;
+.home-filter__page-btn:hover {
+  cursor: pointer;
 }
 
-.home-filter__page-btn--disable {
-  cursor: default;
-  background-color: #f9f9f9;
-  color: #eee;
+.home-filter__page-btn:active {
+  filter: brightness(95%);
+}
+
+.home-filter__page-btn:first-child {
+  border-right: 1px solid #eee;
 }
 
 .home-product {
