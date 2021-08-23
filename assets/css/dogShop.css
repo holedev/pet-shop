@@ -1220,24 +1220,31 @@ i.home-product-item__rating--gold {
   display: flex;
   align-items: center;
   justify-content: center;
-  list-style: none;
-  padding-left: 0;
 }
 
+.pagination-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-item__btn,
 .pagination-item {
   margin: 0 16px;
 }
 
-.pagination-item--active .pagination-item__link {
+.pagination-item.active {
   background-color: var(--primary-color);
   color: var(--while-color);
 }
 
-.pagination-item--active .pagination-item__link:hover {
+.pagination-item.active:hover {
   background-color: var(--primary-color-hover);
 }
 
-.pagination-item__link {
+.pagination-item,
+.pagination-item__btn {
   --height: 30px;
   display: block;
   text-decoration: none;
@@ -1248,6 +1255,11 @@ i.home-product-item__rating--gold {
   height: var(--height);
   line-height: var(--height);
   text-align: center;
+}
+
+.pagination-item:hover,
+.pagination-item__btn:hover {
+  cursor: pointer;
 }
 
 

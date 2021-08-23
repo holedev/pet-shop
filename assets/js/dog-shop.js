@@ -23,6 +23,10 @@ function numberToCoin(number){
 
 
 const app = {
+    currentPage: 1,
+    itemPerPage: 8,
+    startItem: 0,
+    endItem: 8,
     products: [
         {
             id: 1,
@@ -59,7 +63,7 @@ const app = {
                     Khách muốn ship tận nhà, gửi hình zalo mình ship đến!`,
             price: 3700000,
             sale: 0,
-            favorite: false,
+            favorite: true,
             sold: 12,
             star: 4,
             brand: "Nguyễn Ánh",
@@ -83,7 +87,7 @@ const app = {
                     Có nhận ship tận nhà!!`,
             price: 5500000,
             sale: 0,
-            favorite: true,
+            favorite: 0,
             sold: 17,
             star: 4,
             brand: "Nguyễn An",
@@ -621,7 +625,7 @@ const app = {
                     Cún nhà m nuôi đẻ, bảo đảm sức khỏe. đã tiêm 1 mũi vaccine, sổ sức khỏe đây đủ.`,
             price: 3600000,
             sale: 0,
-            favorite: true,
+            favorite: 0,
             sold: 16,
             star: 5,
             brand: "Lê Anh",
@@ -664,7 +668,7 @@ const app = {
                     Kb Zalo để xem nhiều clip chuồng và đc tư vấn kĩ hơn về mẫu mã.`,
             price: 700000,
             sale: 35,
-            favorite: true,
+            favorite: 0,
             sold: 9,
             star: 5,
             brand: "Hải Trúc",
@@ -879,57 +883,60 @@ const app = {
         },
         
     ],
-    renderProducts: function(arr, component) {
+
+    renderProducts: function(arr, component, start, end) {
         const htmls = arr.map(function(product, index){
-            return `
-            <div class="col l-2-4 m-4 c-6" data-index="${index}">
-                <a onclick="return false" href="" class="home-product-item">
-                    <div class="home-product-item__img"
-                        style="background-image: url(${product.path}); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                    </div>
-                    <h4 class="home-product-item__name">
-                        ${product.title}
-                    </h4>
-                    <div class="home-product-item__price">
-                        <span style="display: ${product.sale ? "" : "none"}"class="home-product-item__price-old">${numberToCoin(product.price)}đ</span>
-                        <span class="home-product-item__price-current">
-                            ${product.sale ? numberToCoin((product.price * (100 - product.sale) / 100).toFixed()) : numberToCoin(product.price)}đ
-                        </span>
-                    </div>
-                    <div class="home-product-item__action">
-                        <span class="home-product-item__like">
-                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                        </span>
-                        <div class="home-product-item__rating">
-                        <i class="${product.star >= 1 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                        <i class="${product.star >= 2 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                        <i class="${product.star >= 3 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                        <i class="${product.star >= 4 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
-                        <i class="${product.star >= 5 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+            if (index >= start && index < end) {
+                return `
+                <div class="col l-3 m-4 c-6" data-index="${index}">
+                    <a onclick="return false" href="" class="home-product-item">
+                        <div class="home-product-item__img"
+                            style="background-image: url(${product.path}); background-repeat: no-repeat; background-position: center; background-size: cover;">
                         </div>
-                        <span class="home-product-item__sold">
-                            ${product.sold} đã bán
-                        </span>
-                    </div>
-
-                    <div class="home-product-item__origin">
-                        <span class="home-product-item__brand">${product.brand}</span>
-                        <span class="home-product-item__origin-name">${product.origin}</span>
-                    </div>
-
-                    <div style="display: ${product.favorite ? "block" : "none"}" class="home-product-item__favorite">
-                        <i class="fas fa-check"></i>
-                        <span>Yêu thích</span>
-                    </div>
-
-                    <div style="display: ${product.sale ? "block" : "none"}" class="home-product-item__sale-off">
-                        <span class="home-product-item__sale-off-percent">${product.sale}%</span>
-                        <span class="home-product-item__sale-off-label">GIẢM</span>
-                    </div>
-                </a>
-            </div>
-            `
+                        <h4 class="home-product-item__name">
+                            ${product.title}
+                        </h4>
+                        <div class="home-product-item__price">
+                            <span style="display: ${product.sale ? "" : "none"}"class="home-product-item__price-old">${numberToCoin(product.price)}đ</span>
+                            <span class="home-product-item__price-current">
+                                ${product.sale ? numberToCoin((product.price * (100 - product.sale) / 100).toFixed()) : numberToCoin(product.price)}đ
+                            </span>
+                        </div>
+                        <div class="home-product-item__action">
+                            <span class="home-product-item__like">
+                            <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                            <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                            </span>
+                            <div class="home-product-item__rating">
+                            <i class="${product.star >= 1 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                            <i class="${product.star >= 2 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                            <i class="${product.star >= 3 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                            <i class="${product.star >= 4 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                            <i class="${product.star >= 5 ? "home-product-item__rating--gold" : ""} fas fa-star"></i>
+                            </div>
+                            <span class="home-product-item__sold">
+                                ${product.sold} đã bán
+                            </span>
+                        </div>
+    
+                        <div class="home-product-item__origin">
+                            <span class="home-product-item__brand">${product.brand}</span>
+                            <span class="home-product-item__origin-name">${product.origin}</span>
+                        </div>
+    
+                        <div style="display: ${product.favorite ? "block" : "none"}" class="home-product-item__favorite">
+                            <i class="fas fa-check"></i>
+                            <span>Yêu thích</span>
+                        </div>
+    
+                        <div style="display: ${product.sale ? "block" : "none"}" class="home-product-item__sale-off">
+                            <span class="home-product-item__sale-off-percent">${product.sale}%</span>
+                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                        </div>
+                    </a>
+                </div>
+                `
+            }
         })
         component.innerHTML = htmls.join('')
         
@@ -948,13 +955,11 @@ const app = {
 
         //array sort a-z (theo giá)
         toArrAZ = function(arr){
-            const x = arr
-            return x.sort(function(a, b) {return a.price - b.price})
+            return arr.sort(function(a, b) {return a.price - b.price})
         }
         //array sort z-a (theo giá)
         toArrZA = function(arr){
-            const x = arr
-            return x.sort(function(a, b) {return b.price - a.price})
+            return arr.sort(function(a, b) {return b.price - a.price})
         }
 
         //active home filter btn
@@ -968,30 +973,110 @@ const app = {
         homeFilterBtns.forEach((homeFilterBtn, index) => {
             homeFilterBtn.onclick = function(){
                 activeHomeFilterBtn(this)
-                _this.renderProducts(homeFilter[index], homeProductsList)
+                _this.gotoPage(1)
+                _this.renderProducts(homeFilter[index], homeProductsList, _this.startItem, _this.endItem)
             }
         })
         //render list phổ biến khi vào trang
-        _this.renderProducts(this.products, homeProductsList)
-        
+        _this.renderProducts(this.products, homeProductsList, this.startItem, this.endItem)
 
-        //render tăng dần
+        //render list giá tăng dần
         $('.sort--a-z').onclick = function(){
             homeFilterBtns.forEach((homeFilterBtn, index) => {
                 if(homeFilterBtn.classList.contains('btn--primary')) {
-                    _this.renderProducts(toArrAZ(homeFilter[index]), homeProductsList)
+                    _this.renderProducts(toArrAZ(homeFilter[index]), homeProductsList, _this.startItem, _this.endItem)
                 }
             })
         }
-        //render giảm dần
+        //render list giá giảm dần
         $('.sort--z-a').onclick = function(){
             homeFilterBtns.forEach((homeFilterBtn, index) => {
                 if(homeFilterBtn.classList.contains('btn--primary')) {
-                    _this.renderProducts(toArrZA(homeFilter[index]), homeProductsList)
+                    _this.renderProducts(toArrZA(homeFilter[index]), homeProductsList, _this.startItem, _this.endItem)
                 }
             })
         }
 
+        //render page
+        const numberPages = Math.ceil(this.products.length / this.itemPerPage)
+        let htmls = ""
+        for(let i = 1; i <= numberPages; i++) {
+            htmls += `
+                <li class="pagination-item" data-index="${i}">
+                    ${i}
+                </li>
+            `
+        }
+        $('.pagination-list').innerHTML = htmls
+        //active Page
+        
+
+        activePageBtn = function(page){
+            $$('.pagination-list li').forEach(item => {
+                item.classList.remove('active');
+            });
+            page.classList.add('active');
+        }
+
+        //active page khi load vào trang
+        activePageBtn($$('.pagination-list li')[0])
+
+        //renderlist theo 3 nút
+        function renderlist(){
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    _this.renderProducts(homeFilter[index], homeProductsList, _this.startItem, _this.endItem)
+                }
+            })
+        }
+
+        $$('.pagination-list li').forEach((item, index) => {
+            item.onclick = function(){
+                _this.currentPage = index + 1;
+                _this.gotoPage(_this.currentPage)
+                renderlist()
+            }
+        })
+
+        //next, prev btn page
+        $('.btn-nextPage').onclick = () => {
+            _this.nextPage()
+            renderlist()
+        }
+
+        $('.btn-prevPage').onclick = () => {
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    _this.prevPage()
+                    _this.renderProducts(homeFilter[index], homeProductsList, _this.startItem, _this.endItem)
+                }
+            })
+        }
+    },
+    gotoPage: function (page) {
+        this.currentPage = page
+        this.startItem = (page - 1) * this.itemPerPage
+        this.endItem = page * this.itemPerPage
+        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
+    },
+    nextPage: function () {
+        const numberPages = Math.ceil(this.products.length / this.itemPerPage)
+        this.currentPage++
+        if (this.currentPage > numberPages) {
+            this.currentPage = numberPages
+        }
+        this.startItem = (this.currentPage - 1) * this.itemPerPage
+        this.endItem = this.currentPage * this.itemPerPage
+        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
+    },
+    prevPage: function () {
+        this.currentPage--
+        if (this.currentPage < 1) {
+            this.currentPage = 1
+        }
+        this.startItem = (this.currentPage - 1) * this.itemPerPage
+        this.endItem = this.currentPage * this.itemPerPage
+        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
     },
     start: function(){
         this.handleEvent()
