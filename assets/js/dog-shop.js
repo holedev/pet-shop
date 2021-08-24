@@ -1127,7 +1127,23 @@ const app = {
         //search mobile
         $('.header-icon-search-mobile').onclick = function(){
             $('.header__search-box').classList.toggle('active');
+            closeMenuMobile()
         }
+
+        $('.header__cart').onclick = function(){
+            closeMenuMobile()
+        }
+
+        //menu mobile
+        $('.header-icon-menu-mobile').onclick = () => {
+            $('.menu-mobile').classList.toggle('active');
+        }
+
+        //close menumobile
+        closeMenuMobile = function () {
+            $('.menu-mobile').classList.remove('active');
+        }
+
     },
     gotoPage: function (page) {
         this.currentPage = page

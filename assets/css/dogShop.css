@@ -514,10 +514,11 @@ html {
 .header-icon-search-mobile {
   font-size: 2.6rem;
   color: var(--while-color);
+  padding: 4px 8px;
 }
 
 .header-icon-menu-mobile {
-  margin-right: 16px;
+  margin-right: 4px;
 }
 
 .header__cart {
@@ -904,6 +905,61 @@ html {
 .auth-form__help-forget {
   color: var(--primary-color);
 }
+
+/* -------------------------------------
+--------------- MENU MOBILE ------------
+--------------------------------------- */
+
+.menu-mobile {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 2;
+  padding: 20px 0;
+  transform: translateX(-100%);
+  transition: all linear 0.3s;
+  opacity: 0;
+}
+
+.menu-mobile.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu-mobile__logo {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu-mobile__logo img {
+  width: 100%;
+}
+
+.menu-mobile__list {
+  list-style: none;
+  margin-top: 20px;
+  
+}
+
+.menu-mobile__item {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.menu-mobile__item:hover,
+.menu-mobile__item:active {
+  background-color: #ccc;
+}
+
+.menu-mobile__item-text {
+  font-weight: 500;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
 
 /* ------------------------------------
 --------------- SLIDER ----------------
@@ -1476,6 +1532,10 @@ i.home-product-item__rating--gold {
 
 /* Điện thoại */
 @media (max-width: 739px) {
+  :root {
+    --header-height: 52px;
+    --nav-height: 0px;
+  }
   .hide-on-mobile {
     display: none;
   }
