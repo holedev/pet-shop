@@ -24,9 +24,9 @@ function numberToCoin(number){
 
 const app = {
     currentPage: 1,
-    itemPerPage: 8,
+    itemPerPage: 12,
     startItem: 0,
-    endItem: 8,
+    endItem: 12,
     products: [
         {
             id: 1,
@@ -1112,7 +1112,22 @@ const app = {
             }
         })
 
-        
+        //slider
+        const slider = ["./assets/img/dog-shop/banner-4.png", "./assets/img/dog-shop/banner-2.jpg", "./assets/img/dog-shop/banner-3.jpg", "./assets/img/dog-shop/banner.jpg"]
+        let indexSlider = 0;
+        setInterval(function(){
+            indexSlider++;
+            if (indexSlider > slider.length - 1) {
+                indexSlider = 0;
+            }
+            $('.slider-imgs img').src = slider[indexSlider];
+        }, 5000)
+
+
+        //search mobile
+        $('.header-icon-search-mobile').onclick = function(){
+            $('.header__search-box').classList.toggle('active');
+        }
     },
     gotoPage: function (page) {
         this.currentPage = page

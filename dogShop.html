@@ -16,7 +16,7 @@
     <div class="app">
         <header class="header">
             <div class="grid wide">
-                <nav class="header__nav">
+                <nav class="header__nav hide-on-mobile-tablet">
                     <ul class="header__nav-list">
                         <li class="header__nav-item header__nav-item--separate header__nav-item--qr">
                             Vào cửa hàng trên ứng dụng
@@ -133,7 +133,16 @@
                     </ul>
                 </nav>
                 <div class="header-search">
-                    <div class="header__logo">
+                    <div class="header-icon-mobile">
+                      <div class="header-icon-menu-mobile">
+                        <i class="fas fa-bars"></i>
+                      </div>
+                      <div class="header-icon-search-mobile">
+                        <i class="fas fa-search"></i>
+                      </div>
+                    </div>
+
+                    <div class="header__logo hide-on-mobile">
                         <a href="/" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -166,7 +175,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="header__search-select">
+                        <div class="header__search-select hide-on-mobile-tablet">
                             <span class="select__lable"> Trong shop </span>
                             <i class="fas fa-chevron-down select__icon"></i>
 
@@ -206,8 +215,18 @@
 
         <div class="slider">
           <div class="grid wide">
-            <div class="slider-imgs">
-              
+            <div class="slider-main">
+              <div class="slider-imgs">
+                <img width="100%" src="./assets/img/dog-shop/banner-4.png" alt="">
+              </div>
+              <div class="hide-on-mobile slider-mini">
+                <div class="slider-mini__item">
+                  <img width="100%" src="./assets/img/dog-shop/banner-mini.png" alt="">
+                </div>
+                <div class="slider-mini__item">
+                  <img width="100%" src="./assets/img/dog-shop/banner-mini-2.png" alt="">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -217,12 +236,12 @@
                 <div class="row main__content">
                   <div class="col">
                     <div class="home-filter">
-                      <span class="home-filter__label">Sắp xếp theo</span>
+                      <span class="home-filter__label hide-on-mobile-tablet">Sắp xếp theo</span>
                       <button class="btn btn--primary home-filter__label-btn">Phổ biến</button>
                       <button class="btn home-filter__label-btn">Mới nhất</button>
-                      <button class="btn home-filter__label-btn">Yêu thích</button>
+                      <button class="btn home-filter__label-btn margin-right-none-mobile">Yêu thích</button>
         
-                      <div class="select-input">
+                      <div class="select-input hide-on-mobile">
                         <span class="select-input__label">
                           Giá
                         </span>
@@ -237,7 +256,7 @@
                         </ul>
                       </div>
         
-                      <div class="home-filter__page">
+                      <div class="home-filter__page hide-on-mobile">
                         <span class="home-filter__page-num">
                           
                         </span>
@@ -390,6 +409,11 @@
                     </a>
                 </div>
                 </div>
+
+                <!-- Mua hàng -->
+                <div class="buy-product">
+
+                </div>
             </div>>
 
         </div>
@@ -397,7 +421,7 @@
         <footer class="footer">
             <div class="grid wide">
               <div class="row">
-                <div class="col l-2-4">
+                <div class="col l-3 m-6 c-6">
                   <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                   <ul class="footer-list">
                     <li class="footer-item">
@@ -411,7 +435,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col l-2-4">
+                <div class="col l-3 m-6 hide-on-mobile">
                   <h3 class="footer__heading">Giới thiệu</h3>
                   <ul class="footer-list">
                     <li class="footer-item">
@@ -425,21 +449,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col l-2-4">
-                  <h3 class="footer__heading">Danh mục</h3>
-                  <ul class="footer-list">
-                    <li class="footer-item">
-                      <a href="" class="footter-item__link">Trang điểm</a>
-                    </li>
-                    <li class="footer-item">
-                      <a href="" class="footter-item__link">Linh kiện</a>
-                    </li>
-                    <li class="footer-item">
-                      <a href="" class="footter-item__link">Điện tử</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col l-2-4">
+                <div class="col l-3 m-6 c-6">
                   <h3 class="footer__heading">Theo dõi</h3>
                   <ul class="footer-list">
                     <li class="footer-item">
@@ -462,7 +472,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col l-2-4">
+                <div class="col l-3 m-6 c-12">
                   <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                   <div class="footer__download">
                     <img src="./assets/img/QR.png" alt="" class="footer__download-qr">
