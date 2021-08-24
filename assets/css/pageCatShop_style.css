@@ -203,24 +203,75 @@ nav {
     
 .main-content-classify__pet-item-member__img {
     padding: 4px 4px 4px 4px;
-    
+    position: relative;
 }
 
-.main-content-classify__pet-item-member__img .main-content-classify__pet-item-member__img__button span {
-    
+.main-content-classify__pet-item-member__img-around {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    background-color: var(--header-color);
+    transition-duration: 0.5s;
+}
+
+.main-content-classify__pet-item-member__img-button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.main-content-classify__pet-item-member__img-around::after {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    content: "";
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: var(--header-color) transparent transparent var(--header-color);
+}
+
+
+
+.main-content-classify__pet-item-member__img-button:hover {
+    transform: scale(110%);
+}
+
+.main-content-classify__pet-item-member__img-button:active {
+    transform: scale(90%);
 }
 
 .main-content-classify__pet-item-member__name {
     text-align: center;
 }
+
+.main-content-classify__pet-item-member__name > h4 {
+    font-size: 2.4rem;
+}
+
+.main-content-classify__pet-item-member__name > h5 {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    color: black;
+}
+
+.main-content-classify__pet-item-member-price{
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.main-content-classify__pet-item-member-brand {
+    font-style: italic;
+    direction: rtl;
+    padding-right: 10px;
+}
+
     /* FOOTER */
 .footer {
+    margin-top: var(--header-height);
     background-color: var(--header-color);
     color: var(--text-color);
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    
 }
 
 .footer-container {
