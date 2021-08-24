@@ -189,11 +189,11 @@ nav {
 
 .main-content-classify__pet-item {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .main-content-classify__pet-item-member {
-    flex: 1;
-    width: 15%;
+    width: 21%;
     margin: 2%;
     border: 2px solid black;
     border-radius: 4px 4px 0 0;
@@ -215,11 +215,6 @@ nav {
     transition-duration: 0.5s;
 }
 
-.main-content-classify__pet-item-member__img-button {
-    padding: 8px;
-    cursor: pointer;
-}
-
 .main-content-classify__pet-item-member__img-around::after {
     position: absolute;
     top: 100%;
@@ -230,7 +225,10 @@ nav {
     border-color: var(--header-color) transparent transparent var(--header-color);
 }
 
-
+.main-content-classify__pet-item-member__img-button {
+    padding: 8px;
+    cursor: pointer;
+}
 
 .main-content-classify__pet-item-member__img-button:hover {
     transform: scale(110%);
@@ -262,8 +260,8 @@ nav {
 
 .main-content-classify__pet-item-member-brand {
     font-style: italic;
-    direction: rtl;
     padding-right: 10px;
+    direction: rtl;
 }
 
     /* FOOTER */
