@@ -269,7 +269,137 @@ const app = {
             </div>
             `
         })
-        $('.main-content-classify__pet-item').innerHTML = htmls.join('')
+        $('.cat').innerHTML = htmls.join('')
+        this.products.filter((product) => {
+            return product.new
+        })
+    },
+    handleEvent: function() {
+
+    },
+    start: function() {
+        this.render()
+        this.handleEvent()
+    }
+}
+
+const stuffItem = {
+    products: [
+        {
+            path: "./assets/img/cat-shop/nhameo.jpg",
+            name: "Nhà gỗ cho mèo",
+            price: "1,190,000",
+            brand: "Việt Nam"
+        },
+        {
+            path: "./assets/img/cat-shop/suatam.jpg",
+            name: "Sữa tắm cho mèo",
+            price: "110,000",
+            brand: "Mỹ"
+        },
+        {
+            path: "./assets/img/cat-shop/bammong.jpg",
+            name: "Đồ bấm móng chân mèo",
+            price: "35,000",
+            brand: "Việt Nam"
+        },
+    ],
+    render: function() {
+        const htmls = this.products.map(function(product) {
+            return `
+            <div class="main-content-classify__pet-item-member">
+                <div class="main-content-classify__pet-item-member__img">
+                    <img src="${product.path}" alt="" width="100%">
+                    <div class="main-content-classify__pet-item-member__img-around">
+                        <div class="main-content-classify__pet-item-member__img-button">
+                            Chốt Đơn
+                        </div>
+                    </div>
+                </div>
+                <div class="main-content-classify__pet-item-member__name">
+                    <h4>${product.name}</h4>
+                </div>
+                <div class="main-content-classify__pet-item-member-price">
+                    <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                </div>
+                <div class="main-content-classify__pet-item-member-brand">
+                    <small>Xuất xứ: <span>${product.brand}</span></small>
+                </div>
+            </div>
+            `
+        })
+        $('.stuff').innerHTML = htmls.join('')
+        this.products.filter((product) => {
+            return product.new
+        })
+    },
+    handleEvent: function() {
+
+    },
+    start: function() {
+        this.render()
+        this.handleEvent()
+    }
+}
+
+const medicineItem = {
+    products: [
+        {
+            path: "./assets/img/cat-shop/broadline.jpg",
+            name: "Broadline phòng trị nội & ngoại kí sinh",
+            price: "840,000",
+            brand: "Pháp"
+        },
+        {
+            path: "./assets/img/cat-shop/frontlineplus.jpg",
+            name: "Frontline plus phòng trị bọ chét",
+            price: "460,000",
+            brand: "Pháp"
+        },
+        {
+            path: "./assets/img/cat-shop/tuyp.jpg",
+            name: "Gel dinh dưỡng",
+            price: "154,000",
+            brand: "Mỹ"
+        },
+        {
+            path: "./assets/img/cat-shop/cjao.jpg",
+            name: "Cjao Churu",
+            price: "10,000",
+            brand: "Nhật Bản"
+        },
+        {
+            path: "./assets/img/cat-shop/whiskas.jpg",
+            name: "Whiskas",
+            price: "12,000",
+            brand: "Mỹ"
+        },
+    ],
+    render: function() {
+        const htmls = this.products.map(function(product) {
+            return `
+            <div class="main-content-classify__pet-item-member">
+                <div class="main-content-classify__pet-item-member__img">
+                    <img src="${product.path}" alt="" width="100%">
+                    <div class="main-content-classify__pet-item-member__img-around">
+                        <div class="main-content-classify__pet-item-member__img-button">
+                            Chốt Đơn
+                        </div>
+                    </div>
+                </div>
+                <div class="main-content-classify__pet-item-member__name">
+                    <h4>${product.name}</h4>
+                </div>
+                <div class="main-content-classify__pet-item-member-price">
+                    <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                </div>
+                <div class="main-content-classify__pet-item-member-brand">
+                    <small>Xuất xứ: <span>${product.brand}</span></small>
+                </div>
+            </div>
+            `
+        })
+        $('.medicine').innerHTML = htmls.join('')
         this.products.filter((product) => {
             return product.new
         })
@@ -284,3 +414,5 @@ const app = {
 }
 
 app.start()
+stuffItem.start()
+medicineItem.start()

@@ -400,7 +400,19 @@ nav {
 
     /* Reponsive */
 @media only screen and (max-width: 1220px) {
-    
+    .main-content-classify__pet-item-member {
+        width: 25%;
+        margin: 4%;
+    }
+
+    .main-content-classify__pet-item-member__name > h4 {
+        font-size: 1.8rem;
+    }
+
+    .main-content-classify__pet-item-member-price{
+        font-size: 2rem;
+    }
+
     .footer-container-col__wrapper > h4 {
         font-size: 2.8rem;
     }
@@ -460,6 +472,11 @@ nav {
 }
 
 @media only screen and (max-width: 890px) {
+    .main-content-classify__pet-item-member {
+        width: 40%;
+        margin: 5%;
+    }
+    
     .footer {
         margin-top: var(--header-height);
     }
@@ -488,14 +505,79 @@ nav {
 }
 
 @media only screen and (max-width: 680px) {
-    .header-tab-content__reponsive-icon {
-        left: 0;
-        top: 110px;
+    .header-tab {
+        padding: 8px 40px 0 5px;
+    }
+
+    .main-content-classify__pet-item-member {
+        width: 84%;
+        margin: 8%;
     }
 }
 
+@media only screen and (max-width: 615px) {
+    .header-tab {
+        min-height: auto;
+    }
+    .header-tab-content__logo img {
+        width: 80%;
+    }
+} 
+
 @media only screen and (max-width: 500px) {
+    .header-tab-content__reponsive-icon {
+        top: 2rem;
+    }
+
+    .main-content-classify__pet-title > h3 {
+        font-size: 1.4rem;
+    }
+
+    .main-content-classify__pet-item-member-price {
+        font-size: 1.6rem;
+    }
+    
     .footer-container-col.col1 {
         display: none;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .header-tab-content__reponsive-icon {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .header-tab-content__reponsive-icon {
+        font-size: 0.8rem;
+    }
+
+    .main-content h3 {
+        border-radius: 0;
+        background-color: transparent;
+        color: var(--text-color);
+    }
+
+    .main-content-classify__pet-title {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .header-tab-content__reponsive-icon {
+        font-size: 0.4rem;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .header-tab-content__reponsive-icon {
+        top: 5px;
+        font-size: 4px;
+    }
+
+    .main {
+        margin-top: 80px;
     }
 }
