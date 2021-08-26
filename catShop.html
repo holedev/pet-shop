@@ -7,9 +7,18 @@
         <title>Shop cats</title>
         <link rel="stylesheet" href="./assets/css/pageCatShop_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+        <script src="js/jquery-v3.6.0.min.js"></script>
     </head>
     <body>
+        <div id="buttonmove">
+            <a id="gototop" href="javascript:;">
+                <i class="fas fa-arrow-circle-up"></i>
+            </a>
+            <br>
+            <a id="gotobot" href="javascript:;">
+                <i class="fas fa-arrow-circle-down"></i>
+            </a>
+        </div>
         <div class="app">
             <div class="header">
                 <div class="header-tab">
@@ -196,6 +205,15 @@
         </div>
 
         <script src="./assets/js/cats-shop.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function() {
+                $("#gototop").hide()
+
+                $(window).scroll(function() {
+                     
+                })
+            })
+        </script>
         <script>
             const iconMenu = $('.header-tab-content__reponsive-icon')
             const listMenu = $('.header-tab-content__menu')
