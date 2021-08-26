@@ -883,12 +883,11 @@ const app = {
         },
         
     ],
-
     renderProducts: function(arr, component, start, end) {
         const htmls = arr.map(function(product, index){
             if (index >= start && index < end) {
                 return `
-                <div class="col l-3 m-4 c-6" data-index="${index}">
+                <div class="product-item col l-3 m-4 c-6" data-index="${index}">
                     <a onclick="return false" href="" class="home-product-item">
                         <div class="home-product-item__img"
                             style="background-image: url(${product.path}); background-repeat: no-repeat; background-position: center; background-size: cover;">
@@ -941,6 +940,164 @@ const app = {
         component.innerHTML = htmls.join('')
         
     },
+    renderShopingCard: function(arr, id){
+        const htmls = `
+        <div class="buy-product" data-index="${id}">
+            <div class="buy-product__left">
+            <div class="buy-product__img" style="background-image: url(${arr[id].path});" >
+                
+            </div>
+            <div class="buy-product__info">
+                <div class="buy-product__info-left">
+                <div class="buy-product__info-img">
+                    <img width="100%" src="./assets/img/avtar.png" alt="avatar">
+                </div>
+                <div class="buy-product__info-more">
+                    <div class="buy-product__info-more__brand">
+                        ${arr[id].brand}
+                    </div>
+                    <div class="buy-product__info-more-content">
+                        <div class="buy-product__info-more__origin">
+                            ${arr[id].origin}
+                        </div>
+                        <div class="buy-product__info-more__star">
+                        <span>
+                            ${arr[id].star}
+                        </span>
+                        <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="buy-product__info-right">
+                <div class="buy-product__info-more-follow">
+                    <div class="buy-product__info-more-icon">
+                    <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="buy-product__info-more-text">
+                    Theo dõi
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="buy-product__right">
+            <div class="buy-product__name">
+                ${arr[id].title}
+            </div>
+            <div class="buy-product__price">
+                <div class="buy-product__price-new">
+                    ${arr[id].sale ? numberToCoin((arr[id].price * (100 - arr[id].sale) / 100).toFixed()) : numberToCoin(arr[id].price)}đ
+                </div>
+                <div style="display: ${arr[id].sale ? 'flex' : 'none'}" class="buy-product__sale-off">
+                    <div class="buy-product__price-old">
+                        ${numberToCoin(arr[id].price)}đ
+                    </div>
+                <div class="buy-product__sale-number">
+                    Giảm
+                    <span>
+                        ${arr[id].sale}
+                    </span>
+                    %
+                </div>
+                </div>
+                <div class="buy-product__sold">
+                <div class="buy-product__sold-icon">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </div>
+                <div class="buy-product__sold-number">
+                    ${arr[id].sold} lượt mua
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="buy-product__quantity">
+                <div class="buy-product__quantity-left">
+                Chọn số lượng:
+                </div>
+                <div class="buy-product__quantity-right">
+                <div class="buy-product__quantity-btn sub-btn active">
+
+                </div>
+                <div class="buy-product__quantity-number">
+                    1
+                </div>
+                <div class="buy-product__quantity-btn add-btn">
+
+                </div>
+                </div>
+            </div>
+            <div class="buy-product__note">
+                <div class="buy-product__note-icon">
+                <i class="fas fa-exclamation"></i>
+                </div>
+                <div class="buy-product__text">
+                Chỉ được mua tối đa
+                <span>
+                    5
+                </span>
+                sản phẩm.
+                </div>
+            </div>
+            <div class="buy-product__action">
+                <div class="buy-product__action-cartplus">
+                <div class="buy-product__action-icon">
+                    <i class="fas fa-cart-plus"></i>
+                </div>
+                <div class="buy-product__action-text">
+                    Thêm vào giỏ
+                </div>
+                </div>
+                <div class="buy-product__action-buynow">
+                <div class="buy-product__action-icon">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div class="buy-product__action-text">
+                    Mua ngay
+                </div>
+                </div>
+            </div>
+            <hr>
+            <div class="buy-product__more-list">
+                <div class="buy-product__more-item">
+                <div class="buy-product__more-title">
+                    Ưu đãi dành cho bạn
+                </div>
+                <div class="buy-product__more-content">
+                    <div class="buy-product__more-icon">
+                    <i style="color: #14babd" class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="buy-product__more-text">
+                    Miễn phí vận chuyển
+                    </div>
+                </div>
+                <div class="buy-product__more-note-icon">
+                    <i class="fas fa-exclamation"></i>
+                </div>
+                </div>
+                <hr>
+                <div class="buy-product__more-item">
+                <div class="buy-product__more-title">
+                    Quyền lợi khách hàng
+                </div>
+                <div class="buy-product__more-content">
+                    <div class="buy-product__more-icon">
+                    <i style="color: #74bd8f"class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="buy-product__more-text">
+                    48 giờ hoàn trả
+                    </div>
+                </div>
+                <div class="buy-product__more-note-icon">
+                    <i class="fas fa-exclamation"></i>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        `
+        $('.buy-render').innerHTML = htmls
+    },
     handleEvent: function(){
         const _this = this
         const homeFilterBtns = $$('.btn.home-filter__label-btn')
@@ -951,18 +1108,30 @@ const app = {
             $('.modal').style.display = 'flex'
             $('.auth-form.signup').style.display = "block"
             $('.auth-form.login').style.display = "none"
+            $('.buy-render').classList.remove('active')
             document.body.style.overflow = "hidden"
         }
         showLogin = function(){
             $('.modal').style.display = 'flex'
             $('.auth-form.login').style.display = "block"
             $('.auth-form.signup').style.display = "none"
+            $('.buy-render').classList.remove('active')
+            document.body.style.overflow = "hidden"
+        }
+        showInfoProduct = function(){
+            $('.modal').style.display = 'flex'
+            $('.auth-form.login').style.display = "none"
+            $('.auth-form.signup').style.display = "none"
+            setTimeout(function() {
+                $('.buy-render').classList.add('active')
+            })
             document.body.style.overflow = "hidden"
         }
         closeOverplay = function(){
             $('.modal').style.display = 'none'
             $('.auth-form.login').style.display = "none"
             $('.auth-form.signup').style.display = "none"
+            $('.buy-render').classList.remove('active')
             document.body.style.overflow = "auto"
         }
 
@@ -989,6 +1158,19 @@ const app = {
                 closeOverplay()
             }
         })
+
+        //render thông tin
+        $('.home-product').onclick = function(e){
+            const x = e.target.closest('.product-item')
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    _this.renderShopingCard(homeFilter[index], x.dataset.index)
+                }
+            })
+            setTimeout(function() {
+                showInfoProduct()
+            }, 10)
+        }
 
 
         //mảng sản phẩm mới
@@ -1142,6 +1324,24 @@ const app = {
         //close menumobile
         closeMenuMobile = function () {
             $('.menu-mobile').classList.remove('active');
+        }
+
+        //show, hide thanh mua hàng trên mobile
+        $('.buy-render').onscroll = function () {
+            const height = this.offsetHeight;
+            const x = $('.buy-product__action').getBoundingClientRect().top
+            console.log(x)
+            if (x < height + 40) {
+                $('.action-mobile').classList.remove('active')
+            }else {
+                $('.action-mobile').classList.add('active')
+            }
+        }
+
+        window.onresize = function(){
+            if (window.innerWidth > 1024){
+                $('.action-mobile').classList.remove('active')
+            }
         }
 
     },
