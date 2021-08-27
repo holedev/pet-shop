@@ -245,13 +245,13 @@ const app = {
         },
     ],
     render: function() {
-        const htmls = this.products.map(function(product){
+        const htmls = this.products.map(function(product, index){
             return `
             <div class="main-content-classify__pet-item-member">
                 <div class="main-content-classify__pet-item-member__img">
                     <img src="${product.path}" alt="" width="100%">
                     <div class="main-content-classify__pet-item-member__img-around">
-                        <div class="main-content-classify__pet-item-member__img-button">
+                        <div id="${index}" class="main-content-classify__pet-item-member__img-button" onclick="advert()">
                             Chốt Đơn
                         </div>
                     </div>
@@ -270,9 +270,6 @@ const app = {
             `
         })
         $('.cat').innerHTML = htmls.join('')
-        this.products.filter((product) => {
-            return product.new
-        })
     },
     handleEvent: function() {
 
@@ -311,7 +308,7 @@ const stuffItem = {
                 <div class="main-content-classify__pet-item-member__img">
                     <img src="${product.path}" alt="" width="100%">
                     <div class="main-content-classify__pet-item-member__img-around">
-                        <div class="main-content-classify__pet-item-member__img-button">
+                        <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
                             Chốt Đơn
                         </div>
                     </div>
@@ -329,9 +326,6 @@ const stuffItem = {
             `
         })
         $('.stuff').innerHTML = htmls.join('')
-        this.products.filter((product) => {
-            return product.new
-        })
     },
     handleEvent: function() {
 
@@ -382,7 +376,7 @@ const medicineItem = {
                 <div class="main-content-classify__pet-item-member__img">
                     <img src="${product.path}" alt="" width="100%">
                     <div class="main-content-classify__pet-item-member__img-around">
-                        <div class="main-content-classify__pet-item-member__img-button">
+                        <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
                             Chốt Đơn
                         </div>
                     </div>
@@ -400,12 +394,9 @@ const medicineItem = {
             `
         })
         $('.medicine').innerHTML = htmls.join('')
-        this.products.filter((product) => {
-            return product.new
-        })
     },
     handleEvent: function() {
-
+        
     },
     start: function() {
         this.render()

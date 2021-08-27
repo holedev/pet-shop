@@ -276,6 +276,17 @@ nav {
     direction: rtl;
 }
 
+.main-content-classify__pet-item.buy {
+    display: block;
+    text-align: center;
+}
+
+.main-content-classify__pet-item-title {
+    font-size: 3vh;
+    padding-top: 5px;
+    font-style: italic;
+}
+
     /* FOOTER */
 .footer {
     margin-top: var(--header-height);
@@ -425,6 +436,10 @@ nav {
         font-size: 2rem;
     }
 
+    .main-content-classify__pet-item.buy img {
+        width: 20%;
+    }
+
     .footer-container-col__wrapper > h4 {
         font-size: 2.8rem;
     }
@@ -488,6 +503,10 @@ nav {
         width: 40%;
         margin: 5%;
     }
+
+    .main-content-classify__pet-item.buy img {
+        width: 30%;
+    }
     
     .footer {
         margin-top: var(--header-height);
@@ -528,9 +547,14 @@ nav {
 }
 
 @media only screen and (max-width: 615px) {
+    .main-content-classify__pet-item.buy img {
+        width: 40%;
+    }
+    
     .header-tab {
         min-height: auto;
     }
+
     .header-tab-content__logo img {
         width: 80%;
     }
@@ -574,6 +598,10 @@ nav {
 
     .main-content-classify__pet-title {
         text-align: center;
+    }
+
+    .main-content-classify__pet-item.buy img {
+        width: 50%;
     }
 }
 

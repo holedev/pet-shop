@@ -9,15 +9,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div id="buttonmove">
-            <a href="javascript:;">
-                <i  id="gototop" class="fas fa-arrow-circle-up"></i>
-            </a>
-            <br>
-            <a id="gotobot" href="javascript:;">
-                <i class="fas fa-arrow-circle-down"></i>
-            </a>
-        </div>
         <div class="app">
             <div class="header">
                 <div class="header-tab">
@@ -46,25 +37,25 @@
                                     <span>
                                         <i class="fas fa-cat"></i>
                                     </span>
-                                    <a href="#">Thú cưng</a>
+                                    <a href="#pet">Thú cưng</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
                                         <i class="fas fa-archive"></i>
                                     </span>
-                                    <a href="#">Vật dụng</a>
+                                    <a href="#stuff">Vật dụng</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
                                         <i class="fas fa-capsules"></i>
                                     </span>
-                                    <a href="#">Thuốc bổ & trị liệu</a>
+                                    <a href="#medicine">Thuốc bổ & trị liệu</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
-                                    <a href="#">Thanh toán</a>
+                                    <a href="#buy">Thanh toán</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
@@ -81,7 +72,7 @@
             <div class="main">
                 <div class="main-content">
                     <div class="main-content-classify__pet">
-                        <div class="main-content-classify__pet-title">
+                        <div id="pet" class="main-content-classify__pet-title">
                             <h3>
                                 Những chiếc mèo cute lạc lối
                             </h3>
@@ -89,7 +80,7 @@
                         <div class="main-content-classify__pet-item cat">
                             <!-- catShop.js -->
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="stuff" class="main-content-classify__pet-title">
                             <h3>
                                 Vật dụng
                             </h3>
@@ -97,7 +88,7 @@
                         <div class="main-content-classify__pet-item stuff">
                             <!-- catShop.js -->
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="medicine" class="main-content-classify__pet-title">
                             <h3>
                                 Thuốc bổ và trị liệu
                             </h3>
@@ -105,13 +96,21 @@
                         <div class="main-content-classify__pet-item medicine">
                             <!-- catShop.js -->
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="buy" class="main-content-classify__pet-title">
                             <h3>
                                 Thanh toán
                             </h3>
                         </div>
                         <div class="main-content-classify__pet-item buy">
-                            
+                            <div class="main-content-classify__pet-item-title">
+                                Vì tình hình dịch covid, trại hiện tại không 
+                                thể vận chuyển hàng hóa, chân thành xin lỗi 
+                                quý khách vì sự bất tiện này, mong hẹn gặp 
+                                lại quý khách lần sau.
+                            </div>
+                            <div class="main-content-classify__pet-item-img">
+                                <img src="./assets/img/cat-shop/loading-cat-paper.gif" alt="" width="10%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,7 +207,7 @@
             const iconMenu = $('.header-tab-content__reponsive-icon')
             const listMenu = $('.header-tab-content__menu')
             var flag = false
-
+            
             // open - close menu list
             iconMenu.onclick = function () {
                 if (!flag) {
@@ -220,6 +219,13 @@
                     flag = false
                 }
             }
+
+            // order advert
+            function advert() {
+                alert("Sản phẩm đã được ghi nhận.")
+            }
+
+
         </script>
     </body>
 </html>
