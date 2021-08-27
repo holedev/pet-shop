@@ -42,7 +42,7 @@ const app = {
             price: 7500000,
             sale: 0,
             favorite: 0,
-            sold: 18,
+            sold: 225,
             star: 5,
             brand: "Bảo Ngọc",
             origin: "Việt Nam",
@@ -64,7 +64,7 @@ const app = {
             price: 3700000,
             sale: 0,
             favorite: true,
-            sold: 12,
+            sold: 157,
             star: 4,
             brand: "Nguyễn Ánh",
             origin: "Việt Nam",
@@ -88,7 +88,7 @@ const app = {
             price: 5500000,
             sale: 0,
             favorite: 0,
-            sold: 17,
+            sold: 179,
             star: 4,
             brand: "Nguyễn An",
             origin: "Việt Nam",
@@ -114,7 +114,7 @@ const app = {
             price: 6000000,
             sale: 0,
             favorite: 0,
-            sold: 25,
+            sold: 206,
             star: 5,
             brand: "An Lê",
             origin: "Việt Nam",
@@ -157,7 +157,7 @@ const app = {
             price: 25000,
             sale: 0,
             favorite: true,
-            sold: 112,
+            sold: 189,
             star: 4,
             brand: "Arela Pet Shop",
             origin: "Việt Nam",
@@ -179,7 +179,7 @@ const app = {
             price: 6000000,
             sale: 0,
             favorite: true,
-            sold: 52,
+            sold: 156,
             star: 5,
             brand: "Lê Đông Bình",
             origin: "Việt Nam",
@@ -198,7 +198,7 @@ const app = {
             price: 3500000,
             sale: 0,
             favorite: false,
-            sold: 1,
+            sold: 198,
             star: 4,
             brand: "Nguyễn Văn Tưởng",
             origin: "Việt Nam",
@@ -219,7 +219,7 @@ const app = {
             price: 450000,
             sale: 15,
             favorite: true,
-            sold: 152,
+            sold: 151,
             star: 4,
             brand: "Arele Pet",
             origin: "Việt Nam",
@@ -260,7 +260,7 @@ const app = {
             price: 6000000,
             sale: 0,
             favorite: true,
-            sold: 1,
+            sold: 181,
             star: 5,
             brand: "Cún Cưng",
             origin: "Việt Nam",
@@ -303,7 +303,7 @@ const app = {
             price: 5700000,
             sale: 0,
             favorite: true,
-            sold: 22,
+            sold: 101,
             star: 4,
             brand: "Nguyễn Ánh",
             origin: "Việt Nam",
@@ -324,7 +324,7 @@ const app = {
             price: 3900000,
             sale: 0,
             favorite: false,
-            sold: 27,
+            sold: 272,
             star: 5,
             brand: "Nguyễn Ánh",
             origin: "Việt Nam",
@@ -369,7 +369,7 @@ const app = {
             price: 3000000,
             sale: 0,
             favorite: true,
-            sold: 12,
+            sold: 127,
             star: 5,
             brand: "Shop Pet",
             origin: "Việt Nam",
@@ -391,7 +391,7 @@ const app = {
             price: 3200000,
             sale: 0,
             favorite: true,
-            sold: 2,
+            sold: 298,
             star: 5,
             brand: "Poodle Pet",
             origin: "Việt Nam",
@@ -436,7 +436,7 @@ const app = {
             price: 4000000,
             sale: 0,
             favorite: true,
-            sold: 11,
+            sold: 114,
             star: 5,
             brand: "Pull Shop",
             origin: "Việt Nam",
@@ -457,7 +457,7 @@ const app = {
             price: 1200000,
             sale: 0,
             favorite: true,
-            sold: 5,
+            sold: 164,
             star: 3,
             brand: "Nguyễn An",
             origin: "Việt Nam",
@@ -478,7 +478,7 @@ const app = {
             price: 1500000,
             sale: 0,
             favorite: true,
-            sold: 21,
+            sold: 190,
             star: 4,
             brand: "Fox Shop",
             origin: "Việt Nam",
@@ -499,7 +499,7 @@ const app = {
             price: 1700000,
             sale: 0,
             favorite: true,
-            sold: 2,
+            sold: 120,
             star: 3,
             brand: "Pom Shop",
             origin: "Việt Nam",
@@ -540,7 +540,7 @@ const app = {
             price: 1450000,
             sale: 15,
             favorite: true,
-            sold: 29,
+            sold: 152,
             star: 4,
             brand: "Arele Shop",
             origin: "Việt Nam",
@@ -586,7 +586,7 @@ const app = {
             price: 1500000,
             sale: 0,
             favorite: true,
-            sold: 12,
+            sold: 129,
             star: 4,
             brand: "Shop Bắc Kinh",
             origin: "Việt Nam",
@@ -606,7 +606,7 @@ const app = {
             price: 500000,
             sale: 0,
             favorite: true,
-            sold: 24,
+            sold: 241,
             star: 5,
             brand: "Uyên My",
             origin: "Việt Nam",
@@ -626,7 +626,7 @@ const app = {
             price: 3600000,
             sale: 0,
             favorite: 0,
-            sold: 16,
+            sold: 169,
             star: 5,
             brand: "Lê Anh",
             origin: "Việt Nam",
@@ -649,7 +649,7 @@ const app = {
             price: 2300000,
             sale: 0,
             favorite: true,
-            sold: 9,
+            sold: 176,
             star: 5,
             brand: "Văn Quang",
             origin: "Việt Nam",
@@ -669,7 +669,7 @@ const app = {
             price: 700000,
             sale: 35,
             favorite: 0,
-            sold: 9,
+            sold: 129,
             star: 5,
             brand: "Hải Trúc",
             origin: "Việt Nam",
@@ -709,7 +709,7 @@ const app = {
             price: 3900000,
             sale: 0,
             favorite: true,
-            sold: 19,
+            sold: 145,
             star: 5,
             brand: "Thanh An",
             origin: "Việt Nam",
@@ -729,7 +729,7 @@ const app = {
             price: 4500000,
             sale: 0,
             favorite: true,
-            sold: 12,
+            sold: 126,
             star: 4,
             brand: "Shop Bắc Hà",
             origin: "Việt Nam",
@@ -749,7 +749,7 @@ const app = {
             price: 7500000,
             sale: 0,
             favorite: true,
-            sold: 2,
+            sold: 212,
             star: 5,
             brand: "Shop TPHCM",
             origin: "Việt Nam",
@@ -769,7 +769,7 @@ const app = {
             price: 5000000,
             sale: 0,
             favorite: true,
-            sold: 1,
+            sold: 124,
             star: 5,
             brand: "Shop TPHCM",
             origin: "Việt Nam",
@@ -788,7 +788,7 @@ const app = {
             price: 4000000,
             sale: 0,
             favorite: true,
-            sold: 18,
+            sold: 181,
             star: 5,
             brand: "Shop Poodle",
             origin: "Việt Nam",
@@ -809,7 +809,7 @@ const app = {
             price: 3000000,
             sale: 0,
             favorite: true,
-            sold: 14,
+            sold: 145,
             star: 4,
             brand: "An Lê",
             origin: "Việt Nam",
@@ -832,7 +832,7 @@ const app = {
             price: 3400000,
             sale: 0,
             favorite: true,
-            sold: 12,
+            sold: 124,
             star: 5,
             brand: "Dương Tiễn",
             origin: "Việt Nam",
@@ -851,7 +851,7 @@ const app = {
             price: 5200000,
             sale: 0,
             favorite: true,
-            sold: 11,
+            sold: 118,
             star: 4,
             brand: "Shop pet",
             origin: "Việt Nam",
@@ -881,6 +881,9 @@ const app = {
             },
             phone: "0122 234 234",
         },
+        
+    ],
+    carts: [
         
     ],
     renderProducts: function(arr, component, start, end) {
@@ -940,7 +943,7 @@ const app = {
         component.innerHTML = htmls.join('')
         
     },
-    renderShopingCard: function(arr, id){
+    renderShopingCart: function(arr, id){
         const htmls = `
         <div class="buy-product" data-index="${id}">
             <div class="buy-product__left">
@@ -1039,7 +1042,7 @@ const app = {
                 sản phẩm.
                 </div>
             </div>
-            <div class="buy-product__action">
+            <div class="buy-product__action" data-index="${id}">
                 <div class="buy-product__action-cartplus">
                 <div class="buy-product__action-icon">
                     <i class="fas fa-cart-plus"></i>
@@ -1098,6 +1101,34 @@ const app = {
         `
         $('.buy-render').innerHTML = htmls
     },
+    renderCarts: function(){
+        const htmls = this.carts.map((cart, index) => {
+            return `
+            <li class="header__cart-item" data-index="${index}">
+            <img src="${cart.path}" alt="" class="header__cart-img">
+            <div class="header__cart-item-info">
+                <div class="header__cart-item-head">
+                <h5 class="header__cart-item-name">
+                    ${cart.name}
+                </h5>
+                <div class="header__cart-item-wrap">
+                    <span class="header__cart-item-price">${cart.price}</span>
+                    <span class="header__cart-item-mul">x</span>
+                    <span class="header__cart-item-quantity">${cart.quantity}</span>
+                </div>
+                </div>
+                <div class="header__cart-item-body">
+                <span class="header__cart-item__brand">
+                    Shop: ${cart.brand}
+                </span>
+                <span class="header__cart-item-remove" data-index="${index}">Xóa</span>
+                </div>
+            </div>
+            </li>
+            `
+        })
+        $('.header__cart-list-item').innerHTML = htmls.join("")
+    },
     handleEvent: function(){
         const _this = this
         const homeFilterBtns = $$('.btn.home-filter__label-btn')
@@ -1122,9 +1153,7 @@ const app = {
             $('.modal').style.display = 'flex'
             $('.auth-form.login').style.display = "none"
             $('.auth-form.signup').style.display = "none"
-            setTimeout(function() {
-                $('.buy-render').classList.add('active')
-            })
+            $('.buy-render').classList.add('active')
             document.body.style.overflow = "hidden"
         }
         closeOverplay = function(){
@@ -1164,12 +1193,10 @@ const app = {
             const x = e.target.closest('.product-item')
             homeFilterBtns.forEach((homeFilterBtn, index) => {
                 if(homeFilterBtn.classList.contains('btn--primary')) {
-                    _this.renderShopingCard(homeFilter[index], x.dataset.index)
+                    _this.renderShopingCart(homeFilter[index], x.dataset.index)
                 }
             })
-            setTimeout(function() {
-                showInfoProduct()
-            }, 10)
+            showInfoProduct()
         }
 
 
@@ -1330,12 +1357,57 @@ const app = {
         $('.buy-render').onscroll = function () {
             const height = this.offsetHeight;
             const x = $('.buy-product__action').getBoundingClientRect().top
-            console.log(x)
             if (x < height + 40) {
                 $('.action-mobile').classList.remove('active')
             }else {
                 $('.action-mobile').classList.add('active')
             }
+        }
+
+        //check cart rỗng hay không
+        checkCart = function(){
+            if(_this.carts.length) {
+                $('.header__cart-list-no-cart').style.display = 'none'
+                $('.header__cart-list-has-cart').style.display = 'block'
+            } else {
+                $('.header__cart-list-no-cart').style.display = 'block'
+                $('.header__cart-list-has-cart').style.display = 'none'
+            }
+        }
+
+        //add vào giỏ hàng
+        $('.buy-render').onclick = function(e){
+            const cartplusBtn = e.target.closest('.buy-product__action-cartplus')
+            const id = cartplusBtn.parentElement.dataset.index
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    const obj = {
+                        id: id,
+                        path:  homeFilter[index][id].path,
+                        name:  homeFilter[index][id].title,
+                        brand:  homeFilter[index][id].brand,
+                        price:  homeFilter[index][id].price,
+                        quantity: 1
+                    }
+                    _this.carts.unshift(obj)
+                    _this.renderCarts()
+                    checkCart()
+                }
+            })
+        }
+
+        //xoá sản phẩm trong giỏ
+        $('.header__cart-list-item').onclick = function(e){
+            const deleteProductBtn = e.target.closest('.header__cart-item-remove')
+            const id = deleteProductBtn.dataset.index
+            _this.carts.splice(id, 1)
+            _this.renderCarts()
+            checkCart()
+        }
+
+
+        $('.action-mobile__close').onclick = () => {
+            closeOverplay()
         }
 
         window.onresize = function(){
