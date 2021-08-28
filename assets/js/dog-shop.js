@@ -27,6 +27,8 @@ const app = {
     itemPerPage: 12,
     startItem: 0,
     endItem: 12,
+    quantity: 1,
+    countCart: 0,
     products: [
         {
             id: 1,
@@ -943,7 +945,7 @@ const app = {
         component.innerHTML = htmls.join('')
         
     },
-    renderShopingCart: function(arr, id){
+    renderShoppingCart: function(arr, id){
         const htmls = `
         <div class="buy-product" data-index="${id}">
             <div class="buy-product__left">
@@ -1022,7 +1024,7 @@ const app = {
                 <div class="buy-product__quantity-btn sub-btn active">
 
                 </div>
-                <div class="buy-product__quantity-number">
+                <div onclick="return false"class="buy-product__quantity-number">
                     1
                 </div>
                 <div class="buy-product__quantity-btn add-btn">
@@ -1042,8 +1044,8 @@ const app = {
                 sản phẩm.
                 </div>
             </div>
-            <div class="buy-product__action" data-index="${id}">
-                <div class="buy-product__action-cartplus">
+            <div class="buy-product__action">
+                <div class="buy-product__action-cartplus" data-index="${id}">
                 <div class="buy-product__action-icon">
                     <i class="fas fa-cart-plus"></i>
                 </div>
@@ -1051,7 +1053,7 @@ const app = {
                     Thêm vào giỏ
                 </div>
                 </div>
-                <div class="buy-product__action-buynow">
+                <div class="buy-product__action-buynow" data-index="${id}">
                 <div class="buy-product__action-icon">
                     <i class="far fa-credit-card"></i>
                 </div>
@@ -1193,7 +1195,8 @@ const app = {
             const x = e.target.closest('.product-item')
             homeFilterBtns.forEach((homeFilterBtn, index) => {
                 if(homeFilterBtn.classList.contains('btn--primary')) {
-                    _this.renderShopingCart(homeFilter[index], x.dataset.index)
+                    _this.renderShoppingCart(homeFilter[index], x.dataset.index)
+                    _this.quantity = 1;
                 }
             })
             showInfoProduct()
@@ -1375,25 +1378,64 @@ const app = {
             }
         }
 
+        addProduct = function(component){
+            _this.quantity++;
+                if(_this.quantity >= 5){
+                    _this.quantity = 5;
+                    component.classList.add('active')
+                }
+        }
+
+        subProduct = function(component){
+            _this.quantity--;
+                if(_this.quantity <= 1){
+                    _this.quantity = 1;
+                    component.classList.add('active')
+                }
+                
+        }
+
         //add vào giỏ hàng
         $('.buy-render').onclick = function(e){
             const cartplusBtn = e.target.closest('.buy-product__action-cartplus')
-            const id = cartplusBtn.parentElement.dataset.index
-            homeFilterBtns.forEach((homeFilterBtn, index) => {
-                if(homeFilterBtn.classList.contains('btn--primary')) {
-                    const obj = {
-                        id: id,
-                        path:  homeFilter[index][id].path,
-                        name:  homeFilter[index][id].title,
-                        brand:  homeFilter[index][id].brand,
-                        price:  homeFilter[index][id].price,
-                        quantity: 1
-                    }
-                    _this.carts.unshift(obj)
-                    _this.renderCarts()
-                    checkCart()
+            const addQuantity = e.target.closest('.add-btn')
+            const subQuantity = e.target.closest('.sub-btn')
+            const quantityBtns = e.target.closest('.buy-product__quantity')
+            if (quantityBtns){
+                const quantityBtnsArr = quantityBtns.querySelectorAll('.buy-product__quantity-btn')
+                quantityBtnsArr.forEach((item) => {
+                    item.classList.remove('active')
+                })
+                if(addQuantity){
+                    addProduct(addQuantity)
                 }
-            })
+                if(subQuantity){
+                    subProduct(subQuantity)
+                }
+                $('.buy-product__quantity-number').innerHTML = _this.quantity;
+            }
+            
+            if (cartplusBtn){
+                const id = cartplusBtn.dataset.index
+                homeFilterBtns.forEach((homeFilterBtn, index) => {
+                    if(homeFilterBtn.classList.contains('btn--primary')) {
+                        const obj = {
+                            id: id,
+                            path:  homeFilter[index][id].path,
+                            name:  homeFilter[index][id].title,
+                            brand:  homeFilter[index][id].brand,
+                            price:  homeFilter[index][id].price,
+                            quantity: _this.quantity,
+                        }
+                        _this.carts.unshift(obj)
+                        $('.header__cart-notice').innerHTML = ++_this.countCart;
+                        _this.quantity = 1
+                        $('.buy-product__quantity-number').innerHTML = _this.quantity;
+                        _this.renderCarts()
+                        checkCart()
+                    }
+                })
+            }
         }
 
         //xoá sản phẩm trong giỏ
@@ -1401,6 +1443,7 @@ const app = {
             const deleteProductBtn = e.target.closest('.header__cart-item-remove')
             const id = deleteProductBtn.dataset.index
             _this.carts.splice(id, 1)
+            $('.header__cart-notice').innerHTML = --_this.countCart;
             _this.renderCarts()
             checkCart()
         }
