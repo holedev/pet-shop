@@ -888,6 +888,9 @@ const app = {
     carts: [
         
     ],
+    users: [
+        
+    ],
     renderProducts: function(arr, component, start, end) {
         const htmls = arr.map(function(product, index){
             if (index >= start && index < end) {
@@ -1175,12 +1178,14 @@ const app = {
         $$('.btn-signUp').forEach((item) => {
             item.onclick = function(){
                 showSignUp()
+                clearSignUp()
             }
         })
 
         $$('.btn-login').forEach((item) => {
             item.onclick = function(){
                 showLogin()
+                clearLogin()
             }
         })
 
@@ -1448,14 +1453,146 @@ const app = {
             checkCart()
         }
 
-
+        //đóng modal
         $('.action-mobile__close').onclick = () => {
             closeOverplay()
         }
 
+        //resize
         window.onresize = function(){
             if (window.innerWidth > 1024){
                 $('.action-mobile').classList.remove('active')
+            }
+        }
+
+        //FORM SIGNUP LOGIN
+        //success notify
+        successNotify = function(message) {
+            $('.notify').style.display = 'block'
+            $('.notify__body-icon').classList.add('success')
+            $('.notify__body-icon').classList.remove('fail')
+            $('.notify__body-content span').innerHTML = message
+        }
+
+        //error notify
+        errorNotify = function(message) {
+            $('.notify').style.display = 'block'
+            $('.notify__body-icon').classList.add('fail')
+            $('.notify__body-icon').classList.remove('success')
+            $('.notify__body-content span').innerHTML = message
+        }
+
+        //close notify
+        $('.notify__close-btn').onclick = function(){
+            $('.notify').style.display = 'none'
+        }
+
+        const signUpEmail = $('.email-signUp')
+        const signUpPw = $('.pw-signUp')
+        const signUpConfirm = $('.confirm-pw-signUp')
+        const loginEmail = $('.email-login')
+        const loginPw = $('.pw-login')
+
+        //kiểm tra mail
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+        //check mail
+        checkEmail = function(email) {
+            email.onblur = function(){
+                validateEmail(email.value) ? this.parentElement.classList.remove('error') : this.parentElement.classList.add('error')
+            }
+            email.oninput = function(){
+                this.parentElement.classList.remove('error')
+            }
+        }
+        //check pw
+        checkPw = function(password) {
+            password.onblur = function(){
+                this.value.length >= 6 ? this.parentElement.classList.remove('error') : this.parentElement.classList.add('error')
+            }
+            password.oninput = function(){
+                this.parentElement.classList.remove('error')
+            }
+        }
+        //check confirm PW
+        checkConfirmPw = function(password) {
+            password.onblur = function(){
+                (!(checkError($('.pw-signUp'))) && this.value.trim() === $('.pw-signUp').value.trim()) ? this.parentElement.classList.remove('error') : this.parentElement.classList.add('error')
+            }
+            password.oninput = function(){
+                this.parentElement.classList.remove('error')
+            }
+        }
+        
+        checkEmail(signUpEmail)
+        checkPw(signUpPw)
+        checkConfirmPw(signUpConfirm)
+        checkEmail(loginEmail)
+        checkPw(loginPw)
+
+        checkError = function(component){
+            return component.parentElement.classList.contains('error') || component.value.trim() === ''
+        }
+
+        clearSignUp = function(){
+            signUpEmail.value = null
+            signUpPw.value = null
+            signUpConfirm.value = null
+            $$('.auth-form.signup .auth-form__group').forEach((item) => {
+                item.classList.remove('error')
+            })
+        }
+            
+        clearLogin = function(){
+            loginEmail.value = null
+            loginPw.value = null
+            $$('.auth-form.login .auth-form__group').forEach((item) => {
+                item.classList.remove('error')
+            })
+        }
+
+        $('.signUp-btn').onclick = function(){
+            const email = signUpEmail
+            const pw = signUpPw
+            const confirm = signUpConfirm
+
+            if (!(checkError(email)) && !(checkError(pw)) && !(checkError(confirm))) {
+                const obj = {
+                    email: email.value.trim(),
+                    password: pw.value.trim(),
+                }
+                _this.users.unshift(obj)
+                successNotify("Đăng kí thành công!")
+                showLogin()
+                clearLogin()
+            } 
+            else {
+                errorNotify("Vui lòng điền đầy đủ thông tin!")
+            }
+        }
+
+        //show tài khoản sau khi đăng nhập (ẩn login signup)
+        showUser = function(){
+            $('.header__nav-user').style.display = 'flex'
+            $('.btn-signUp').style.display = 'none'
+            $('.btn-login').style.display = 'none'
+        }
+
+        //kiểm tra đăng nhập
+        $('.login-btn').onclick = function(){
+            const mail = $('.email-login')
+            const pw = $('.pw-login')
+            
+            const user = _this.users.filter(function(user) {
+                return mail.value.trim() === user.email && pw.value.trim() === user.password
+            })
+            if (user.length != 0) {
+                showUser()
+                closeOverplay()
+            } else {
+                errorNotify("Đăng nhập thất bại!")
             }
         }
 

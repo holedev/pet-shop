@@ -148,10 +148,11 @@ html {
   min-height: 2.6rem;
 }
 
-.header__nav-user {
+.header__nav-item.header__nav-user {
   display: flex;
   justify-items: center;
   position: relative;
+  display: none;
 }
 
 .header__nav-user:hover .header__nav-user-menu {
@@ -924,6 +925,23 @@ html {
   color: var(--primary-color);
 }
 
+.auth-form__group.error 
+.auth-form__input {
+  border-color: red;
+}
+
+.auth-form__group.error 
+span{
+  display: block;
+}
+
+.auth-form__group span{
+  color: red;
+  font-size: 1.2rem;
+  margin-left: 12px;
+  display: none;
+}
+
 .auth-form__input {
   width: 100%;
   height: 40px;
@@ -933,6 +951,7 @@ html {
   font-size: 1.4rem;
   border: 1px solid var(--border-color);
   border-radius: 2px;
+  margin-bottom: 4px;
 }
 
 .auth-form__input:focus {
@@ -1486,6 +1505,87 @@ hr {
 
 .action-mobile__close::after {
   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* --------------------------------------
+--------------- NOTIFY -----------------
+--------------------------------------- */
+
+.notify{
+  --growth-from: 0;
+  --growth-to: 1;
+  background-color: #fff;
+  padding-bottom: 12px;
+  min-width: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* display: none; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3),
+              2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.notify__head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  background-color: var(--primary-color)
+}
+.notify__head-text{
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight:400;
+  color: #fff;
+}
+.notify__body{
+  padding: 20px 0;
+}
+.notify__body-icon{
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+
+.notify__body-icon i {
+  display: none;
+}
+
+.notify__body-icon.success
+.success {
+  display: block;
+}
+
+.notify__body-icon.fail
+.fail {
+  display: block;
+}
+
+.notify__body-content {
+  text-align: center;
+}
+
+.notify__body-content span{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.notify__close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notify__close-btn{
+  background: #ccc;
+}
+
+.notify__close-btn:hover{
+  cursor: pointer;
+  background-color: #bbb;
 }
 
 

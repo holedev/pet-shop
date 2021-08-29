@@ -110,7 +110,7 @@
 
                         <!-- logo đăng nhập -->
 
-                        <!-- <li class="header__nav-item header__nav-user">
+                        <li class="header__nav-item header__nav-user">
                             <img src="./assets/img/avtar.png"
                                 alt="" class="header__nav-user-img">
                             <span class="header__nav-user-name">BY1410</span>
@@ -129,7 +129,7 @@
                                     <a href="">Đăng xuất</a>
                                 </li>
                             </ul>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav>
                 <div class="header-search">
@@ -322,14 +322,17 @@
 
                         <div class="auth-form__form">
                             <div class="auth-form__group">
-                                <input name="Email" type="text" class="auth-form__input" placeholder="Nhập Email" />
+                                <input name="Email" type="text" class="auth-form__input email-signUp" placeholder="Nhập Email" />
+                                <span>Định dạng email không hợp lệ!</span>
                             </div>
                             <div class="auth-form__group">
-                                <input name="password" type="password" class="auth-form__input"
+                                <input name="password" type="password" class="auth-form__input pw-signUp"
                                     placeholder="Nhập mật khẩu" />
+                                <span>Mật khẩu không hợp lệ (ít nhất 6 kí tự)</span>
                             </div>
                             <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu" />
+                                <input type="password" class="auth-form__input confirm-pw-signUp" placeholder="Nhập lại mật khẩu" />
+                                <span>Mật khẩu không hợp lệ!</span>
                             </div>
                         </div>
 
@@ -344,7 +347,7 @@
 
                         <div class="auth-form__control">
                             <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                            <button class="btn btn--primary">ĐĂNG KÝ</button>
+                            <button class="btn btn--primary signUp-btn">ĐĂNG KÝ</button>
                         </div>
                     </div>
 
@@ -377,17 +380,19 @@
                             <input
                                 name="Email"
                                 type="text"
-                                class="auth-form__input"
+                                class="auth-form__input email-login"
                                 placeholder="Nhập Email"
                             />
+                            <span>Định dạng email không hợp lệ!</span>
                             </div>
                             <div class="auth-form__group">
                             <input
                                 name="password"
                                 type="password"
-                                class="auth-form__input"
+                                class="auth-form__input pw-login"
                                 placeholder="Nhập mật khẩu"
                             />
+                            <span>Mật khẩu không hợp lệ (ít nhất 6 kí tự)</span>
                             </div>
                         </div>
             
@@ -401,7 +406,7 @@
             
                         <div class="auth-form__control">
                             <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                            <button class="btn btn--primary">ĐĂNG KÝ</button>
+                            <button class="btn btn--primary login-btn">ĐĂNG NHẬP</button>
                         </div>
                     </div>
 
@@ -577,7 +582,29 @@
                   </div>
                 </div>
 
-          
+                <div class="notify" style="display: none;">
+                  <div class="notify__head">
+                    <div class="notify__head-text">
+                      Thông báo
+                    </div>
+                  </div>
+                  <div class="notify__body">
+                    <div class="notify__body-icon">
+                      <i style="color: #27ae60;" class="far success fa-check-circle"></i>
+                      <i style="color: red;" class="far fail fa-times-circle"></i>
+                    </div>
+                    <div class="notify__body-content">
+                      <span>
+                        Đăng kí thành công !
+                      </span>
+                    </div>
+                  </div>
+                  <div class="notify__close">
+                    <div class="btn notify__close-btn">
+                      Đóng
+                    </div>
+                  </div>
+                </div>
 
                 
                 <div class="action-mobile">
