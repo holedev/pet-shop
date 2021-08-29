@@ -29,6 +29,7 @@ const app = {
     endItem: 12,
     quantity: 1,
     countCart: 0,
+    isLogin: false,
     products: [
         {
             id: 1,
@@ -889,7 +890,6 @@ const app = {
         
     ],
     users: [
-        
     ],
     renderProducts: function(arr, component, start, end) {
         const htmls = arr.map(function(product, index){
@@ -1421,25 +1421,31 @@ const app = {
             }
             
             if (cartplusBtn){
-                const id = cartplusBtn.dataset.index
-                homeFilterBtns.forEach((homeFilterBtn, index) => {
-                    if(homeFilterBtn.classList.contains('btn--primary')) {
-                        const obj = {
-                            id: id,
-                            path:  homeFilter[index][id].path,
-                            name:  homeFilter[index][id].title,
-                            brand:  homeFilter[index][id].brand,
-                            price:  homeFilter[index][id].price,
-                            quantity: _this.quantity,
+                if (_this.isLogin) {
+                    const id = cartplusBtn.dataset.index
+                    homeFilterBtns.forEach((homeFilterBtn, index) => {
+                        if(homeFilterBtn.classList.contains('btn--primary')) {
+                            const obj = {
+                                id: id,
+                                path:  homeFilter[index][id].path,
+                                name:  homeFilter[index][id].title,
+                                brand:  homeFilter[index][id].brand,
+                                price:  homeFilter[index][id].price,
+                                quantity: _this.quantity,
+                            }
+                            _this.carts.unshift(obj)
+                            $('.header__cart-notice').innerHTML = ++_this.countCart;
+                            _this.quantity = 1
+                            $('.buy-product__quantity-number').innerHTML = _this.quantity;
+                            _this.renderCarts()
+                            checkCart()
                         }
-                        _this.carts.unshift(obj)
-                        $('.header__cart-notice').innerHTML = ++_this.countCart;
-                        _this.quantity = 1
-                        $('.buy-product__quantity-number').innerHTML = _this.quantity;
-                        _this.renderCarts()
-                        checkCart()
-                    }
-                })
+                    })
+                } else {
+                    errorNavLogin("Vui lòng đăng nhập trước!")
+                    // showLogin()
+                    // clearLogin()
+                }
             }
         }
 
@@ -1469,14 +1475,28 @@ const app = {
         //success notify
         successNotify = function(message) {
             $('.notify').style.display = 'block'
+            $('.notify__nav-login').style.display = 'none'
+            $('.notify__close-btn').style.display = 'flex'
             $('.notify__body-icon').classList.add('success')
             $('.notify__body-icon').classList.remove('fail')
             $('.notify__body-content span').innerHTML = message
         }
 
         //error notify
-        errorNotify = function(message) {
+        errorNotify = function(message, login) {
             $('.notify').style.display = 'block'
+            $('.notify__nav-login').style.display = 'none'
+            $('.notify__close-btn').style.display = 'flex'
+            $('.notify__body-icon').classList.add('fail')
+            $('.notify__body-icon').classList.remove('success')
+            $('.notify__body-content span').innerHTML = message
+        }
+
+        //error nav login
+        errorNavLogin = function(message) {
+            $('.notify').style.display = 'block'
+            $('.notify__nav-login').style.display = 'flex'
+            $('.notify__close-btn').style.display = 'none'
             $('.notify__body-icon').classList.add('fail')
             $('.notify__body-icon').classList.remove('success')
             $('.notify__body-content span').innerHTML = message
@@ -1486,6 +1506,14 @@ const app = {
         $('.notify__close-btn').onclick = function(){
             $('.notify').style.display = 'none'
         }
+
+        //nav login from notify
+        $('.notify__nav-login').onclick = function(){
+            $('.notify').style.display = 'none'
+            clearLogin()
+            showLogin()
+        }
+
 
         const signUpEmail = $('.email-signUp')
         const signUpPw = $('.pw-signUp')
@@ -1580,6 +1608,12 @@ const app = {
             $('.btn-login').style.display = 'none'
         }
 
+        hideUser = function(){
+            $('.header__nav-user').style.display = 'none'
+            $('.btn-signUp').style.display = 'flex'
+            $('.btn-login').style.display = 'flex'
+        }
+
         //kiểm tra đăng nhập
         $('.login-btn').onclick = function(){
             const mail = $('.email-login')
@@ -1591,10 +1625,19 @@ const app = {
             if (user.length != 0) {
                 showUser()
                 closeOverplay()
+                _this.isLogin = true
             } else {
-                errorNotify("Đăng nhập thất bại!")
+                errorNotify("Sai tên tài khoản hoặc mật khẩu!")
             }
         }
+
+        //log out
+        $$('.logout-btn').forEach((item) => {
+            item.onclick = () => {
+                hideUser()
+                _this.isLogin = false
+            }
+        })
 
     },
     gotoPage: function (page) {

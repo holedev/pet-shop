@@ -885,11 +885,14 @@ html {
 ---------------------------------- */
 
 .auth-form {
+  --growth-from: 0.5;
+  --growth-to: 1;
   overflow: hidden;
   width: 500px;
   background-color: var(--while-color);
   border-radius: 5px;
   padding: 12px 0;
+  animation: growth linear 0.1s;
 }
 
 .auth-form.signup {
@@ -1581,6 +1584,11 @@ hr {
 
 .notify__close-btn{
   background: #ccc;
+}
+
+.notify__nav-login:hover {
+  cursor: pointer;
+  filter: brightness(95%)
 }
 
 .notify__close-btn:hover{
