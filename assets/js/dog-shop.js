@@ -889,8 +889,6 @@ const app = {
     carts: [
         
     ],
-    users: [
-    ],
     renderProducts: function(arr, component, start, end) {
         const htmls = arr.map(function(product, index){
             if (index >= start && index < end) {
@@ -1175,10 +1173,13 @@ const app = {
             }
         }
 
+        //close menu-mobile
+
         $$('.btn-signUp').forEach((item) => {
             item.onclick = function(){
                 showSignUp()
                 clearSignUp()
+                closeMenuMobile()
             }
         })
 
@@ -1186,6 +1187,7 @@ const app = {
             item.onclick = function(){
                 showLogin()
                 clearLogin()
+                closeMenuMobile()
             }
         })
 
@@ -1356,10 +1358,13 @@ const app = {
             $('.menu-mobile').classList.toggle('active');
         }
 
-        //close menumobile
+        //close menu mobile
         closeMenuMobile = function () {
             $('.menu-mobile').classList.remove('active');
+            $('.action-mobile').classList.remove('active')
         }
+
+        
 
         //show, hide thanh mua hàng trên mobile
         $('.buy-render').onscroll = function () {
@@ -1372,7 +1377,7 @@ const app = {
             }
         }
 
-        //check cart rỗng hay không
+        //check giỏ hàng rỗng hay không
         checkCart = function(){
             if(_this.carts.length) {
                 $('.header__cart-list-no-cart').style.display = 'none'
@@ -1383,6 +1388,7 @@ const app = {
             }
         }
 
+        //thêm sp
         addProduct = function(component){
             _this.quantity++;
                 if(_this.quantity >= 5){
@@ -1390,7 +1396,7 @@ const app = {
                     component.classList.add('active')
                 }
         }
-
+        //giảm sp
         subProduct = function(component){
             _this.quantity--;
                 if(_this.quantity <= 1){
@@ -1398,6 +1404,29 @@ const app = {
                     component.classList.add('active')
                 }
                 
+        }
+
+        //thêm hàng vào giỏ
+        addCart = function(id){
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    const obj = {
+                        id: id,
+                        path:  homeFilter[index][id].path,
+                        name:  homeFilter[index][id].title,
+                        brand:  homeFilter[index][id].brand,
+                        price:  homeFilter[index][id].price,
+                        quantity: _this.quantity,
+                    }
+                    _this.carts.unshift(obj)
+                    $('.header__cart-notice').innerHTML = ++_this.countCart;
+                    _this.quantity = 1
+                    $('.buy-product__quantity-number').innerHTML = _this.quantity;
+                    _this.renderCarts()
+                    checkCart()
+                }
+            successNotify("Thêm vào giỏ thành công!")
+            })
         }
 
         //add vào giỏ hàng
@@ -1423,29 +1452,20 @@ const app = {
             if (cartplusBtn){
                 if (_this.isLogin) {
                     const id = cartplusBtn.dataset.index
-                    homeFilterBtns.forEach((homeFilterBtn, index) => {
-                        if(homeFilterBtn.classList.contains('btn--primary')) {
-                            const obj = {
-                                id: id,
-                                path:  homeFilter[index][id].path,
-                                name:  homeFilter[index][id].title,
-                                brand:  homeFilter[index][id].brand,
-                                price:  homeFilter[index][id].price,
-                                quantity: _this.quantity,
-                            }
-                            _this.carts.unshift(obj)
-                            $('.header__cart-notice').innerHTML = ++_this.countCart;
-                            _this.quantity = 1
-                            $('.buy-product__quantity-number').innerHTML = _this.quantity;
-                            _this.renderCarts()
-                            checkCart()
-                        }
-                    })
+                    addCart(id)
                 } else {
                     errorNavLogin("Vui lòng đăng nhập trước!")
-                    // showLogin()
-                    // clearLogin()
                 }
+            }
+        }
+
+        $('.action-mobile__cartplus').onclick = function(){
+            if(_this.isLogin) {
+                const id = this.parentElement.parentElement.querySelector('.buy-product').dataset.index
+                addCart(id)
+            } else {
+                errorNavLogin("Vui lòng đăng nhập trước!")
+                $('.action-mobile').classList.remove('active')
             }
         }
 
@@ -1483,7 +1503,7 @@ const app = {
         }
 
         //error notify
-        errorNotify = function(message, login) {
+        errorNotify = function(message) {
             $('.notify').style.display = 'block'
             $('.notify__nav-login').style.display = 'none'
             $('.notify__close-btn').style.display = 'flex'
@@ -1581,20 +1601,32 @@ const app = {
             })
         }
 
+        //local Storage
+
         $('.signUp-btn').onclick = function(){
             const email = signUpEmail
             const pw = signUpPw
             const confirm = signUpConfirm
-
+            const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+            
             if (!(checkError(email)) && !(checkError(pw)) && !(checkError(confirm))) {
-                const obj = {
-                    email: email.value.trim(),
-                    password: pw.value.trim(),
+                const checkMail = users.filter(function(user) {
+                    return email.value.trim() === user.email
+                })
+                //check mail đã có hay chưa
+                if (checkMail.length > 0) {
+                    errorNotify("Email đã tồn tại!")
+                } else {
+                    const obj = {
+                        email: email.value.trim(),
+                        password: pw.value.trim(),
+                    }
+                    users.unshift(obj)
+                    localStorage.setItem('users', JSON.stringify(users))
+                    successNotify("Đăng kí thành công!")
+                    showLogin()
+                    clearLogin()
                 }
-                _this.users.unshift(obj)
-                successNotify("Đăng kí thành công!")
-                showLogin()
-                clearLogin()
             } 
             else {
                 errorNotify("Vui lòng điền đầy đủ thông tin!")
@@ -1604,22 +1636,38 @@ const app = {
         //show tài khoản sau khi đăng nhập (ẩn login signup)
         showUser = function(){
             $('.header__nav-user').style.display = 'flex'
-            $('.btn-signUp').style.display = 'none'
-            $('.btn-login').style.display = 'none'
+            $('.avatar-mobile').style.display = 'flex'
+            $$('.btn-signUp').forEach((item) => {
+                item.style.display = 'none'
+            })
+            $$('.btn-login').forEach((item) => {
+                item.style.display = 'none'
+            })
+            $('.logout-btn.header__nav-user-item').style.display = 'block'
+            $('.menu-mobile__item.logout-btn').style.display = 'flex'
         }
 
         hideUser = function(){
             $('.header__nav-user').style.display = 'none'
-            $('.btn-signUp').style.display = 'flex'
-            $('.btn-login').style.display = 'flex'
+            $('.avatar-mobile').style.display = 'none'
+            $$('.btn-signUp').forEach((item) => {
+                item.style.display = 'flex'
+            })
+            $$('.btn-login').forEach((item) => {
+                item.style.display = 'flex'
+            })
+            $$('.logout-btn').forEach((item) => {
+                item.style.display = 'none'
+            })
         }
 
         //kiểm tra đăng nhập
         $('.login-btn').onclick = function(){
             const mail = $('.email-login')
             const pw = $('.pw-login')
-            
-            const user = _this.users.filter(function(user) {
+            const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+
+            const user = users.filter(function(user) {
                 return mail.value.trim() === user.email && pw.value.trim() === user.password
             })
             if (user.length != 0) {
@@ -1636,6 +1684,7 @@ const app = {
             item.onclick = () => {
                 hideUser()
                 _this.isLogin = false
+                closeMenuMobile()
             }
         })
 
