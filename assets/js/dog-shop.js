@@ -35,9 +35,8 @@ const app = {
             id: 1,
             path: "./assets/img/dog-shop/corgi-thuan-chung.jpg",
             title: "Corgi thuần chủng",
-            content: `Chúng tôi có shipper nhận ship tới nhà bạn trước 18g theo đúng quy định chỉ thị 16+
+            content: `Chúng tôi có shipper nhận ship tới nhà bạn trước 18g theo đúng quy định chỉ thị 16+.
                     Tìm bố mẹ cho các bé chó Corgi nhà đẻ hơn 2 tháng, ăn cơm, ăn hạt rất khoẻ.
-                    Đực - Cái có đủ…
                     Đã chich ngừa đầy đủ và sổ giun!
                     Các bé ngoan và rất thông minh! Mông to, chân lùn!
                     Giá 7,5 triệu/bé
@@ -1098,6 +1097,12 @@ const app = {
                     <i class="fas fa-exclamation"></i>
                 </div>
                 </div>
+                <hr>
+                <div class="buy-product__content">
+                <div class="buy-product__content-text">
+                    ${arr[id].content}
+                </div>
+                </div>
             </div>
             </div>
         </div>
@@ -1164,6 +1169,7 @@ const app = {
             $('.auth-form.login').style.display = "none"
             $('.auth-form.signup').style.display = "none"
             $('.buy-render').classList.remove('active')
+            $('.notify').style.display = "none"
             document.body.style.overflow = "auto"
         }
 
@@ -1207,6 +1213,11 @@ const app = {
                 }
             })
             showInfoProduct()
+            
+            //scroll tới đầu của sản phẩm khi render
+            $('.buy-render').scroll({
+                top: 0,
+            });
         }
 
 
