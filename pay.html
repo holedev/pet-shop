@@ -49,10 +49,10 @@
                     <div class="main-address__body">
                         <div class="main-address__body-left">
                             <div class="main-address__body-info">
-                                <span>
+                                <span class="name">
                                     Lê Hồ
                                 </span>
-                                <span>
+                                <span class="phone">
                                     0799754184
                                 </span>
                             </div>
@@ -371,14 +371,14 @@
                     </div>
                     <div class="new-address__body">
                         <div class="new-address__group">
-                            <input placeholder="Họ và tên" type="text" class="new-address__input">
-                            <input placeholder="Số điện thoại" type="text" class="new-address__input">
+                            <input placeholder="Họ và tên" id="name" type="text" class="new-address__input">
+                            <input placeholder="Số điện thoại" id="phone" type="text" class="new-address__input">
                         </div>
                         <div class="new-address__group">
-                            <input placeholder="Tỉnh/Thành phố, Quận/Huyện, Phường/Xã" type="text" class="new-address__input">
+                            <input id="province" placeholder="Phường/Xã, Quận/Huyện, Tỉnh/Thành phố" type="text" class="new-address__input">
                         </div>
                         <div class="new-address__group">
-                            <input placeholder="Địa chỉ cụ thể" type="text" class="new-address__input">
+                            <input id="homeNumber" placeholder="Địa chỉ cụ thể" type="text" class="new-address__input">
                         </div>
                         <div class="new-address__group">
                             <div class="new-address__group-head">
@@ -542,7 +542,81 @@
     </div>
 
     <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
 
+        const nameInput = $('#name')
+        const phoneInput = $('#phone')
+        const provinceInput = $('#province')
+        const homeNumberInput = $('#homeNumber')
+
+        showNewAddress = function(){
+            $('.modal').style.display = 'flex';
+            $('.new-address').style.display = 'block'
+            $('.voucher').style.display = 'none'
+            $$('.new-address__input').forEach((item) => {
+                if (item.value === '') {
+                    item.classList.remove('error')
+                }
+            })
+            clearInput()
+            document.body.style.overflow = 'hidden'
+        }
+        showVoucher = function(){
+            $('.modal').style.display = 'flex';
+            $('.new-address').style.display = 'none'
+            $('.voucher').style.display = 'block'
+            document.body.style.overflow = 'hidden'
+        }
+        closeOverplay = function(){
+            $('.modal').style.display = 'none';
+            $('.new-address').style.display = 'none'
+            $('.voucher').style.display = 'none'
+            document.body.style.overflow = 'auto'
+        }
+
+        //đóng mở hộp thoại
+        $('.main-address__body-btn').onclick = showNewAddress
+        $('.main-voucher__head-right').onclick = showVoucher
+        $$('.back-btn').forEach((item) => {
+            item.onclick = closeOverplay
+        })
+
+        clearInput = function(){
+            $$('.new-address__input').forEach((item) => {
+                item.value = null;
+            })
+        }
+
+        $$('.new-address__input').forEach((item) => {
+            item.oninput = function(){
+                item.classList.remove('error')
+            }
+        })
+
+        $('.complete-btn').onclick = function () {
+            let flag = true
+            $$('.new-address__input').forEach((item) => {
+                if (item.value === '') {
+                    item.classList.add('error')
+                    flag = false;
+                }
+            })
+            if(flag){
+                $('.main-address__body-info .name').innerHTML = nameInput.value
+                $('.main-address__body-info .phone').innerHTML = phoneInput.value
+                $('.main-address__body-address').innerHTML = `${homeNumberInput.value}, ${provinceInput.value}`
+                closeOverplay()
+            }
+        }
+
+        $('.voucher__body-box-input').oninput = function(){
+            if(this.value != ''){
+                $('.voucher__body-box-btn').classList.add('active')
+            } else {
+                $('.voucher__body-box-btn').classList.remove('active')
+            }
+        }
     </script>
 </body>
 </html>

@@ -142,6 +142,7 @@
     padding: 8px 12px;
     border-radius: 4px;
     min-width: 152px;
+    text-align: center;
 }
 
 .main-address__body-btn:hover {
@@ -352,6 +353,7 @@
 .main-voucher__head-right{
     color: #0055aa;
     font-size: 1.5rem;
+    text-align: right;
 }
 
 .main-voucher__head-right:hover {
@@ -496,6 +498,9 @@ hr {
     width: 100%;
     padding: 4px 12px;
     border-radius: 4px;
+}
+.new-address__input.error {
+    border: 1px solid red;
 }
 .new-address__group-head{
     font-size: 1.5rem;
