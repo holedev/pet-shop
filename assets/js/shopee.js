@@ -1099,7 +1099,7 @@ const app = {
                 </div>
                 <hr>
                 <div class="buy-product__content">
-                <div class="buy-product__content-text">
+                <div title="${arr[id].content}" class="buy-product__content-text">
                     ${arr[id].content}
                 </div>
                 </div>
