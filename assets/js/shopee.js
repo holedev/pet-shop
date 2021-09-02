@@ -6,7 +6,6 @@ const $$ = document.querySelectorAll.bind(document)
 function reverseString(string){
     return string.split("").reverse().join("")
 }
-
 //chuyển số sang dạng chuỗi tiền tệ (xxx.xxx.xxxđ)
 function numberToCoin(number){
     const string = number.toString();
@@ -30,6 +29,7 @@ const app = {
     quantity: 1,
     countCart: 0,
     isLogin: false,
+    idUser: null,
     products: [
         {
             id: 1,
@@ -1053,14 +1053,14 @@ const app = {
                     Thêm vào giỏ
                 </div>
                 </div>
-                <div class="buy-product__action-buynow" data-index="${id}">
+                <a target="_blank" href="pay.html" class="buy-product__action-buynow" data-index="${id}">
                 <div class="buy-product__action-icon">
                     <i class="far fa-credit-card"></i>
                 </div>
                 <div class="buy-product__action-text">
                     Mua ngay
                 </div>
-                </div>
+                </a>
             </div>
             <hr>
             <div class="buy-product__more-list">
@@ -1109,8 +1109,8 @@ const app = {
         `
         $('.buy-render').innerHTML = htmls
     },
-    renderCarts: function(){
-        const htmls = this.carts.map((cart, index) => {
+    renderCarts: function(arr){
+        const htmls = arr.map((cart, index) => {
             return `
             <li class="header__cart-item" data-index="${index}">
             <img src="${cart.path}" alt="" class="header__cart-img">
@@ -1141,6 +1141,22 @@ const app = {
         const _this = this
         const homeFilterBtns = $$('.btn.home-filter__label-btn')
         const homeProductsList = $('.home-product>.row')
+        const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+        const objLS = localStorage.getItem('obj') ? JSON.parse(localStorage.getItem('obj')) : {}
+
+        //isLogin
+        isLogin = function(){
+            if(_this.isLogin) {
+                $('.header__cart-notice').style.display = 'block'
+                $('.header__cart-list-no-cart').style.display = 'none'
+                $('.header__cart-list-has-cart').style.display = 'block'
+            } else { 
+                $('.header__cart-notice').style.display = 'none'
+                $('.header__cart-list-no-cart').style.display = 'block'
+                $('.header__cart-list-has-cart').style.display = 'none'
+            }
+        }
+        isLogin()
 
         //signup, login
         showSignUp = function(){
@@ -1390,16 +1406,18 @@ const app = {
 
         //check giỏ hàng rỗng hay không
         checkCart = function(){
-            if(_this.carts.length) {
+            if(users[_this.idUser].carts.length !== 0) {
                 $('.header__cart-list-no-cart').style.display = 'none'
                 $('.header__cart-list-has-cart').style.display = 'block'
             } else {
                 $('.header__cart-list-no-cart').style.display = 'block'
                 $('.header__cart-list-has-cart').style.display = 'none'
             }
+            $('.header__cart-notice').innerHTML = users[_this.idUser].carts.length;
+            _this.renderCarts(users[_this.idUser].carts)
         }
 
-        //thêm sp
+        //thêm số lượng sp
         addProduct = function(component){
             _this.quantity++;
                 if(_this.quantity >= 5){
@@ -1407,7 +1425,7 @@ const app = {
                     component.classList.add('active')
                 }
         }
-        //giảm sp
+        //giảm số lượng sp
         subProduct = function(component){
             _this.quantity--;
                 if(_this.quantity <= 1){
@@ -1415,6 +1433,12 @@ const app = {
                     component.classList.add('active')
                 }
                 
+        }
+
+        //localStorage mua từ giỏ -> true, mua ngay -> false
+        setLocalStorage = function(key, value){
+            objLS[key] = value
+            localStorage.setItem('obj', JSON.stringify(objLS))
         }
 
         //thêm hàng vào giỏ
@@ -1428,21 +1452,40 @@ const app = {
                         brand:  homeFilter[index][id].brand,
                         price:  homeFilter[index][id].price,
                         quantity: _this.quantity,
-                    }
-                    _this.carts.unshift(obj)
-                    $('.header__cart-notice').innerHTML = ++_this.countCart;
+                    }                    
+                    users[_this.idUser].carts.unshift(obj)
+                    localStorage.setItem('users', JSON.stringify(users))
                     _this.quantity = 1
                     $('.buy-product__quantity-number').innerHTML = _this.quantity;
-                    _this.renderCarts()
                     checkCart()
                 }
             successNotify("Thêm vào giỏ thành công!")
             })
         }
 
+        //thêm sản phẩm vào mua ngay
+        addFastCart = function(id) {
+            homeFilterBtns.forEach((homeFilterBtn, index) => {
+                if(homeFilterBtn.classList.contains('btn--primary')) {
+                    const obj = {
+                        path:  homeFilter[index][id].path,
+                        name:  homeFilter[index][id].title,
+                        brand:  homeFilter[index][id].brand,
+                        price:  homeFilter[index][id].price,
+                        quantity: _this.quantity,
+                    }  
+                    fastCart = []                  
+                    fastCart.unshift(obj)
+                    localStorage.setItem('fastCart', JSON.stringify(fastCart))
+                }
+            })
+            setLocalStorage('flag', false)
+        }
+
         //add vào giỏ hàng
         $('.buy-render').onclick = function(e){
             const cartplusBtn = e.target.closest('.buy-product__action-cartplus')
+            const buynowBtn = e.target.closest('.buy-product__action-buynow')
             const addQuantity = e.target.closest('.add-btn')
             const subQuantity = e.target.closest('.sub-btn')
             const quantityBtns = e.target.closest('.buy-product__quantity')
@@ -1468,26 +1511,37 @@ const app = {
                     errorNavLogin("Vui lòng đăng nhập trước!")
                 }
             }
+
+            if (buynowBtn){
+                const id = buynowBtn.dataset.index
+                addFastCart(id)
+            }
         }
 
+        //action mobile onclick
         $('.action-mobile__cartplus').onclick = function(){
-            if(_this.isLogin) {
-                const id = this.parentElement.parentElement.querySelector('.buy-product').dataset.index
-                addCart(id)
-            } else {
-                errorNavLogin("Vui lòng đăng nhập trước!")
-                $('.action-mobile').classList.remove('active')
-            }
+            const id = this.parentElement.parentElement.querySelector('.buy-product').dataset.index
+            addCart(id)
+            $('.action-mobile').classList.remove('active')
+        }
+        $('.action-mobile__buynow').onclick = function(){
+            const id = this.parentElement.parentElement.querySelector('.buy-product').dataset.index
+            addFastCart(id)
+            $('.action-mobile').classList.remove('active')
         }
 
         //xoá sản phẩm trong giỏ
         $('.header__cart-list-item').onclick = function(e){
             const deleteProductBtn = e.target.closest('.header__cart-item-remove')
             const id = deleteProductBtn.dataset.index
-            _this.carts.splice(id, 1)
-            $('.header__cart-notice').innerHTML = --_this.countCart;
-            _this.renderCarts()
+            users[_this.idUser].carts.splice(id, 1)
+            localStorage.setItem('users', JSON.stringify(users))
             checkCart()
+        }
+
+        //thanh toán
+        $('.header__cart-pay-cart').onclick = function(){
+            setLocalStorage('flag', true)
         }
 
         //đóng modal
@@ -1618,7 +1672,7 @@ const app = {
             const email = signUpEmail
             const pw = signUpPw
             const confirm = signUpConfirm
-            const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+            const usersSignup = users
             
             if (!(checkError(email)) && !(checkError(pw)) && !(checkError(confirm))) {
                 const checkMail = users.filter(function(user) {
@@ -1629,11 +1683,14 @@ const app = {
                     errorNotify("Email đã tồn tại!")
                 } else {
                     const obj = {
+                        id: users.length,
                         email: email.value.trim(),
                         password: pw.value.trim(),
+                        carts: [],
+                        isLogin: false,
                     }
-                    users.unshift(obj)
-                    localStorage.setItem('users', JSON.stringify(users))
+                    usersSignup.push(obj)
+                    localStorage.setItem('users', JSON.stringify(usersSignup))
                     successNotify("Đăng kí thành công!")
                     showLogin()
                     clearLogin()
@@ -1656,8 +1713,11 @@ const app = {
             })
             $('.logout-btn.header__nav-user-item').style.display = 'block'
             $('.menu-mobile__item.logout-btn').style.display = 'flex'
-        }
 
+            _this.isLogin = true;
+            isLogin()
+            checkCart()
+        }
         hideUser = function(){
             $('.header__nav-user').style.display = 'none'
             $('.avatar-mobile').style.display = 'none'
@@ -1670,21 +1730,42 @@ const app = {
             $$('.logout-btn').forEach((item) => {
                 item.style.display = 'none'
             })
+            _this.isLogin = false;
+            isLogin()
+
+            users.forEach((user) => {
+                user.isLogin = false;
+            })
+            localStorage.setItem('users', JSON.stringify(users))
         }
 
         //kiểm tra đăng nhập
         $('.login-btn').onclick = function(){
             const mail = $('.email-login')
             const pw = $('.pw-login')
-            const users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+            const usersLogin = users
+            let id
 
-            const user = users.filter(function(user) {
-                return mail.value.trim() === user.email && pw.value.trim() === user.password
+            const user = usersLogin.find(function(user, index) {
+                id = index
+                return mail.value.trim() === user.email && pw.value.trim() === user.password 
             })
-            if (user.length != 0) {
+
+            //gán id account
+            _this.idUser = id
+
+            if (user) {
+                _this.isLogin = true
+
+                //isLogin (localStorage)
+                usersLogin.forEach((user) => {
+                    user.isLogin = false;
+                })
+                usersLogin[_this.idUser].isLogin = true;
+                localStorage.setItem('users', JSON.stringify(usersLogin));
+
                 showUser()
                 closeOverplay()
-                _this.isLogin = true
             } else {
                 errorNotify("Sai tên tài khoản hoặc mật khẩu!")
             }
@@ -1693,8 +1774,8 @@ const app = {
         //log out
         $$('.logout-btn').forEach((item) => {
             item.onclick = () => {
-                hideUser()
                 _this.isLogin = false
+                hideUser()
                 closeMenuMobile()
             }
         })

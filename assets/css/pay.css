@@ -196,7 +196,7 @@
     list-style: none;
 }
 .main-cart__item{
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 .cart-item__title{
     display: flex;
@@ -468,6 +468,11 @@ hr {
     background-color: var(--primary-color-hover)
 }
 
+.main-pay__order-btn.btn--disable:hover {
+    background-color: #c3c3c3;
+    cursor: no-drop;
+}
+
 /* --------------MODAL----------------- */
 
 .new-address,
@@ -541,8 +546,7 @@ hr {
 
 .voucher{
     /* display: block; */
-    width: 600px;
-    max-width: 100%;
+    width: 520px;
 }
 .voucher__head{
     display: flex;
@@ -694,5 +698,23 @@ hr {
     }
     .main-pay__order-right {
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .new-address__group {
+        flex-direction: column;
+    }
+    .voucher {
+        width: 100%;
+    }
+    .voucher__body-box {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .voucher__body-box-input {
+        flex: none;
+        min-height: 20px;
+        width: 100%;
     }
 }
