@@ -7,10 +7,12 @@ const headerRight = $('.header-right')
 const menuRightItems = $$('.header-right__item')
 const contactBtn = $('.contact-icon')
 const formContact = $('.contact-form ')
+const scrollTop = $('.scrollTop')
+const headerMobile = $('.header-mobile')
 
 //preloader
 preloader = function(){
-        $('.loading').style.display = 'none'
+    $('.loading').style.display = 'none'
 }
 
 //đóng, mở search pc
@@ -38,11 +40,13 @@ showMenuMobile = function(){
     document.body.style.overflow = 'hidden'
 }
 
-$('.header-mobile').onclick = function(){
-    if (headerRight.clientHeight == 0){
-        showMenuMobile()
-    } else {
-        closeMenuMobile()
+if(headerMobile) {
+    headerMobile.onclick = function(){
+        if (headerRight.clientHeight == 0){
+            showMenuMobile()
+        } else {
+            closeMenuMobile()
+        }
     }
 }
 
@@ -56,7 +60,9 @@ activeMenu = function(itemMenu){
         item.classList.remove('active');
     });
     itemMenu.classList.add('active');
-    closeMenuMobile()
+    if (!(itemMenu.classList.contains('shop'))) {
+        closeMenuMobile()
+    }
 }
 
 menuRightItems.forEach(item => {
@@ -65,12 +71,69 @@ menuRightItems.forEach(item => {
     }
 })
 
+//scroll
+scrollToComponent = function(title, component) {
+    title.onclick = function(){
+        window.scroll({
+            top: component.offsetTop - 56,
+        });
+        activeMenu(this)
+    }
+}
+
+//scrollTop
+if (scrollTop) {
+    scrollTop.onclick = function(){
+        scrollToComponent(this, $('.app'))
+    }
+}
+
+
+//mở menu con mobile
+if ($('.shop')) {
+    $('.shop').onclick = function(){
+        const subMenu = $('.header-right__item-more-list')
+        if (subMenu.clientHeight === 0) {
+            subMenu.classList.add('active')
+            $('.header-right__item-icon__add').style.display = 'none'
+            $('.header-right__item-icon__sub').style.display = 'block'
+        } else {
+            $('.header-right__item-icon__add').style.display = 'block'
+            $('.header-right__item-icon__sub').style.display = 'none'
+            subMenu.classList.remove('active')
+        }
+    }
+}
+
 
 //khi click vào icon contact ở page chó mèo
-contactBtn.onclick = () => {
-    formContact.classList.toggle('active')
+if (contactBtn) {
+    contactBtn.onclick = () => {
+        formContact.classList.toggle('active')
+    }
+    
+    $('.contact-form__submit-btn').onclick = () => {
+        formContact.classList.remove('active')
+    }
 }
 
-$('.contact-form__submit-btn').onclick = () => {
-    formContact.classList.remove('active')
+window.onscroll = function () {
+    const scrollY = window.scrollY
+    if (scrollTop) {
+        if (scrollY > 100) {
+            scrollTop.style.display = 'block'
+        } else {
+            scrollTop.style.display = 'none'
+        }
+    }
 }
+
+window.onclick = (e) => {
+    if (!(e.target.closest('.shop'))) {
+        const subMenuList = $('.header-right__item-more-list')
+        if (subMenuList) {
+            subMenuList.classList.remove('active')
+        }
+    }
+}
+

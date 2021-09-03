@@ -292,6 +292,14 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Thông báo chốt đơn -->
+                <div class="covid-notify">
+                    <div class="covid-notify__gif"></div>
+                    <div class="covid-notify__content">
+                        Đơn hàng của bạn đang được xử lí ...
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -389,6 +397,7 @@
             $('.modal').style.display = 'flex';
             $('.new-address').style.display = 'block'
             $('.voucher').style.display = 'none'
+            $('.covid-notify').style.display = 'none'
             $$('.new-address__input').forEach((item) => {
                 if (item.value === '') {
                     item.classList.remove('error')
@@ -400,7 +409,15 @@
         showVoucher = function(){
             $('.modal').style.display = 'flex';
             $('.new-address').style.display = 'none'
+            $('.covid-notify').style.display = 'none'
             $('.voucher').style.display = 'block'
+            document.body.style.overflow = 'hidden'
+        }
+        showCovidNotify = function(){
+            $('.modal').style.display = 'flex';
+            $('.new-address').style.display = 'none'
+            $('.voucher').style.display = 'none'
+            $('.covid-notify').style.display = 'block'
             document.body.style.overflow = 'hidden'
         }
         closeOverplay = function(){
@@ -594,6 +611,8 @@
         $('.main-pay__body-number.total-calc').innerHTML = numberToCoin(feeTotal + priceTotal) + "đ"
 
         $('.main-pay__order-btn').onclick = function() {
+            showCovidNotify()
+            setTimeout(closeOverplay, 5000)
             this.classList.add('btn--disable')
             this.innerHTML = "Đang xử lí ..."
         }

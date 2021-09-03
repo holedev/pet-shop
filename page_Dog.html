@@ -42,7 +42,9 @@
             <header class="header">
                 <div class="grid header-grid">
                     <div class="header-left">
-                        <img src="./assets/img/logo.png" alt="" class="header-left__logo">
+                        <a href="index.html">
+                            <img src="./assets/img/logo.png" alt="" class="header-left__logo">
+                        </a>
                     </div>
                     <div class="header-mobile">
                         <i class="fas fa-bars"></i>
@@ -55,17 +57,42 @@
                                 </a>
                             </li>
                             <li class="intro header-right__item">
-                                <a href="intro.html">
+                                <a target="_blank" href="intro.html">
                                     Giới thiệu
                                 </a>
                             </li>
                             <li class="pet header-right__item active">
-                                <a href="index.html">
-                                    Chuyên mục thú cưng
+                                <a onclick="return false" href="">
+                                    Thú cưng
                                 </a>
                             </li>
-                            <li class="contact header-right__item">
+                            <!-- <li class="contact header-right__item">
                                 Liên hệ
+                            </li> -->
+                            <li class="shop header-right__item">
+                                <span>
+                                    Cửa hàng
+                                </span>
+                                <span class="header-right__item-more">
+                                    <span class="header-right__item-icon__add">
+                                        +
+                                    </span>
+                                    <span style="display: none" class="header-right__item-icon__sub">
+                                        -
+                                    </span>
+                                </span>
+                                <ul class="header-right__item-more-list">
+                                    <li class="header-right__item-more-item">
+                                        <a target="_blank" href="shopee.html">
+                                            Mua bán chó
+                                        </a>
+                                    </li>
+                                    <li class="header-right__item-more-item">
+                                        <a target="_blank" href="catShop.html">
+                                            Mua bán mèo
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <div class="header-right__search">
@@ -690,6 +717,52 @@
             </footer>
         </div>
     
+    <!-- Contact -->
+    <section class="contact-main">
+        <div class="contact-icon">
+            <i class="fas fa-headset"></i>
+        </div>
+        <div class="contact-form">
+            <div class="contact-form__title">
+                Liên lạc với chúng tôi
+            </div>
+            <div class="contact-form__info">
+                <div class="contact-form__info-title">
+                    Nhập thông tin của bạn *
+                </div>
+                <div class="contact-form__info-name">
+                    <input type="text" placeholder="Nhập tên của bạn" class="contact-form__info-name__input">
+                </div>
+                <div class="contact-form__info-mail">
+                    <input type="text" placeholder="Nhập email của bạn" class="contact-form__info-mail__input">
+                </div>
+                <div class="contact-form__info-phone">
+                    <input type="text" placeholder="Nhập số điện thoại của bạn" class="contact-form__info-phone__input">
+                </div>
+            </div>
+            <div class="contact-form__message">
+                <div class="contact-form__message-title">
+                    Tin nhắn
+                </div>
+                <div class="contact-form__message-content">
+                    <textarea class="contact-form__message-textarea" name="" id="" cols="10" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="contact-form__submit">
+                <button class="contact-form__submit-btn">
+                    Gửi
+                </button>
+            </div>
+        </div>
+    </section>
+
+     <!-- Scroll to top -->
+    <section class="scrollTop">
+        <div class="scrollTop-icon">
+            <i class="fas fa-arrow-circle-up"></i>
+        </div>
+    </section>
+
         <script src="./assets/js/app.js"></script>
         <script>
             const iconMenuDog = $('.main-body-table__icon')

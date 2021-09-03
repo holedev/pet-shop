@@ -146,18 +146,23 @@ html {
     font-size: 1.6rem;
     text-transform: uppercase;
     background-color: transparent;
-    padding: 8px;
     font-weight: 400;
     color: #fff;
     position: relative;
 }
 
-.header-right__item a {
+.header-right__item > a {
     text-decoration: none;
+    padding: 8px;
     color: #fff;
+    display: block;
 }
 
-.header-right__item.active a,
+.shop {
+    padding: 8px;
+}
+
+.header-right__item.active > a,
 .header-right__item.active {
     color: var(--active-color);
 }
@@ -184,10 +189,60 @@ html {
     opacity: 1;
 }
 
+.header-right__item:hover > a,
 .header-right__item:hover {
     color: var(--active-color);
     cursor: pointer;
 }
+
+.header-right__item-more {
+    font-size: 2rem;
+    display: none;
+}
+
+.header-right__item-more-list {
+    position: absolute;
+    background-color: #000;
+    list-style: none;
+    width: 160px;
+    top: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 0;
+    display: none;
+    animation: fadeIn linear 0.5s;
+}
+
+.header-right__item-more-list.active {
+    display: block;
+}
+
+.header-right__item-more-list::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30px;
+    top: -30px;
+    left: 0;
+}
+
+.header-right__item-more-item {
+    text-align: center;
+}
+
+.header-right__item-more-item:hover {
+    background-color: #ccc;
+}
+
+.header-right__item-more-item a {
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-weight: 400;
+}
+
 
 
 .header-right__search {
@@ -262,7 +317,7 @@ html {
     height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    z-index: 2;
     display: none;
     animation: fadeIn ease 0.4s;
 }
@@ -479,7 +534,34 @@ html {
 ------------- END CONATCT ----------------
 ----------------------------------------- */
 
+/* ----------------------------------------
+------------- SCROLL TOP -----------------
+----------------------------------------- */
 
+.scrollTop {
+    position: fixed;
+    right: 12px;
+    bottom: 90px;
+    display: none;
+}
+
+.scrollTop:hover {
+    cursor: pointer;
+}
+
+.scrollTop-icon {
+    animation: fadeIn ease-in-out 0.5s;
+    transition: all 0.5s ease-in-out;
+}
+
+.scrollTop i {
+    font-size: 4rem;
+}
+
+
+/* ----------------------------------------
+------------- END SCROLL TOP --------------
+----------------------------------------- */
 
 
 
@@ -687,6 +769,13 @@ html {
     .header-right__item {
         display: block;
         width: 100%;
+    }
+
+    .header-right__item a {
+        padding: 12px 40px;
+    }
+
+    .shop {
         padding: 12px 40px;
     }
 
@@ -696,6 +785,47 @@ html {
 
     .header-right__item:hover::after {
         display: none;
+    }
+
+    .header-right__item.shop:hover {
+        background-color: #000
+    }
+
+    .shop {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-right__item-more {
+        display: inline-block;
+    }
+
+    .header-right__item-more-list {
+        margin-top: 4px;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        position: relative;
+        min-width: 100%;
+        display: none;
+    }
+
+    .header-right__item-more-list.active {
+        display: block;
+    }
+
+    .header-right__item-more-item:hover a {
+        color: #333;
+        transform: translateX(12px);
+        transition: all linear 0.25s;
+    }
+
+    .header-right__item-more-item a {
+        padding: 12px 0;
+        width: 100%;
+        text-align: left;
     }
 
     .header-right__search {
@@ -716,6 +846,15 @@ html {
 @media only screen and (max-width: 480px) {
     html {
         font-size: 56%;
+    }
+
+    .shop {
+        justify-content:center;
+        gap: 8px;
+    }
+
+    .header-right__item-more-item a {
+        text-align: center;
     }
 
     .footer-content {

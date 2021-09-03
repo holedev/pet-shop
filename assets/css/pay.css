@@ -614,6 +614,23 @@ hr {
     text-align: center;
 }
 
+.covid-notify{
+    background-color: #fff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    display: none;
+}
+.covid-notify__gif {
+    background-image: url(../img/loading.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding-top: 50%;
+}
+.covid-notify__content{
+    font-size: 1.6rem;
+}
+
 /* ------------------------------
 ---------- RESPONSIVE ----------
 -------------------------------- */

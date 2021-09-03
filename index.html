@@ -30,16 +30,49 @@
                 <div class="header-right">
                     <ul class="header-right__list">
                         <li class="home header-right__item active">
-                            Trang chủ
+                            <a onclick="return false" href="">
+                                Trang chủ
+                            </a>
                         </li>
                         <li class="intro header-right__item">
-                            Giới thiệu
+                            <a onclick="return false" href="">
+                                Giới thiệu
+                            </a>
                         </li>
                         <li class="pet header-right__item">
-                            Chuyên mục thú cưng
+                            <a onclick="return false" href="">
+                                Thú cưng
+                            </a>
                         </li>
                         <li class="contact header-right__item">
-                            Liên hệ
+                            <a onclick="return false" href="">
+                                Liên hệ
+                            </a>
+                        </li>
+                        <li class="shop header-right__item">
+                            <span>
+                                Cửa hàng
+                            </span>
+                            <span class="header-right__item-more">
+                                <span class="header-right__item-icon__add">
+                                    +
+                                </span>
+                                <span style="display: none" class="header-right__item-icon__sub">
+                                    -
+                                </span>
+                            </span>
+                            <ul class="header-right__item-more-list">
+                                <li class="header-right__item-more-item">
+                                    <a target="_blank" href="shopee.html">
+                                        Mua bán chó
+                                    </a>
+                                </li>
+                                <li class="header-right__item-more-item">
+                                    <a target="_blank" href="catShop.html">
+                                        Mua bán mèo
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <div class="header-right__search">
@@ -378,16 +411,6 @@
 
     <script src="./assets/js/app.js"></script>
     <script>
-        
-        //scroll
-        scrollToComponent = function(title, component) {
-            title.onclick = function(){
-                window.scroll({
-                    top: component.offsetTop - 56,
-                });
-                activeMenu(this)
-            }
-        }
 
         scrollToComponent($('.home'), $('.main-top'))
         scrollToComponent($('.intro'), $('.main-introduce'))
