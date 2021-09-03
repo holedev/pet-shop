@@ -230,7 +230,7 @@
                         <div class="back-btn btn modal__action-btn">
                             Trở lại
                         </div>
-                        <div class="complete-btn btn modal__action-btn">
+                        <div class="complete-btn submit-address btn modal__action-btn">
                             Hoàn thành
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                         <div class="back-btn btn modal__action-btn">
                             Trở lại
                         </div>
-                        <div class="complete-btn btn modal__action-btn">
+                        <div class="complete-btn submit-voucher btn modal__action-btn">
                             OK
                         </div>
                     </div>
@@ -446,7 +446,7 @@
             }
         })
 
-        $('.complete-btn').onclick = function () {
+        $('.complete-btn.submit-address').onclick = function () {
             let flag = true
             $$('.new-address__input').forEach((item) => {
                 if (item.value === '') {
@@ -470,6 +470,16 @@
             }
         }
         
+        $('.submit-voucher').onclick = closeOverplay
+
+        $$('.new-address__group-address-type').forEach((item) => {
+            item.onclick = function(){
+                $$('.new-address__group-address-type').forEach((itemm) => {
+                    itemm.classList.remove('active')
+                })
+                item.classList.add('active')
+            }
+        })
 
         //đảo ngược chuỗi (cắt sang mảng -> đảo ngược mảng -> nối lại thành chuỗi)
         function reverseString(string){
@@ -610,11 +620,16 @@
         $('.main-pay__body-number.feeTotal').innerHTML = numberToCoin(feeTotal) + "đ"
         $('.main-pay__body-number.total-calc').innerHTML = numberToCoin(feeTotal + priceTotal) + "đ"
 
+        let flag = true
+
         $('.main-pay__order-btn').onclick = function() {
-            showCovidNotify()
-            setTimeout(closeOverplay, 5000)
-            this.classList.add('btn--disable')
-            this.innerHTML = "Đang xử lí ..."
+            if (flag) {
+                showCovidNotify()
+                setTimeout(closeOverplay, 5000)
+                this.classList.add('btn--disable')
+                this.innerHTML = "Đang xử lí ..."
+                flag = false;
+            } 
         }
     
     </script>
