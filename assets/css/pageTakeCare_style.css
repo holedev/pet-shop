@@ -212,6 +212,10 @@ table.main-content-table__3 tr:nth-last-child(1) {
     .main-content-title {
         font-size: 2.8rem;
     }
+
+    .main-content-item__container-label {
+        font-size: 2.4rem;
+    }
 }
 
 @media only screen and (max-width: 660px) {
@@ -224,8 +228,15 @@ table.main-content-table__3 tr:nth-last-child(1) {
         font-size: 2rem;
     }
 
-    ..main-end-content__text {
+    .main-end-content__text {
         line-height: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .main-content-item {
+        width: 60%;
+        margin-left: 20%;
     }
 }
 
@@ -249,8 +260,73 @@ table.main-content-table__3 tr:nth-last-child(1) {
     }
 }
 
+@media only screen and (max-width: 520px) {
+    .main-content-item__container-label {
+        font-size: 2rem;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     .main-content-table {
         font-size: 1.6rem;
+    }
+
+    .main-content-title-around-text {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .main-content-title-around-text::before {
+        transform: translateY(-10%);
+        border-width: 1.2rem;
+    }
+    
+    .main-content-title-around-text::after {
+        transform: translateY(-10%);
+        border-width: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .main-content-item__container-label {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .main-content-item__container-label {
+        font-size: 1.6rem;
+    }
+
+    .main-content-title-around-text::before {
+        border-style: none;
+    }
+    
+    .main-content-title-around-text::after {
+        border-style: none;
+    }
+
+    .main-content-title-around-text {
+        font-style: italic;
+        font-weight: bolder;
+        text-transform: uppercase;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .main-content-item__container-label {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .main-content-item__container-label {
+        line-height: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        border-radius: none;
+        box-shadow: none;
     }
 }
