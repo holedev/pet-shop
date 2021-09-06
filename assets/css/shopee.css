@@ -412,6 +412,11 @@
   padding: 8px 12px 8px 0;
 }
 
+.header-icon-menu-mobile:hover,
+.header-icon-search-mobile:hover {
+  cursor: pointer;
+}
+
 .header-icon-menu-mobile {
   margin-right: 4px;
 }
@@ -726,58 +731,6 @@
   display: inline-block;
 }
 
-/* Search history */
-
-.header__search-history {
-  display: none;
-  position: absolute;
-  top: calc(100% + 2px);
-  left: 0;
-  width: calc(100% - 16px);
-  background-color: var(--while-color);
-  border-radius: 2px;
-  box-shadow: 0 1px 5px #999;
-  z-index: 1;
-}
-
-.header__history-heading {
-  margin: 12px 12px 8px 16px;
-  font-size: 1.4rem;
-  color: #999;
-  font-weight: 400;
-}
-
-.header__history-list {
-  margin-bottom: 0;
-  padding-top: 0px;
-  padding-left: 0px;
-  list-style: none;
-}
-
-.header__history-list-item {
-  height: 38px;
-  padding: 0px 16px;
-  border-radius: 2px;
-}
-
-.header__history-list-item:hover {
-  cursor: pointer;
-  background-color: #c5c2c2;
-}
-
-.header__history-item-link {
-  display: block;
-  width: 100%;
-  line-height: 38px;
-  text-decoration: none;
-  font-size: 1.4rem;
-  color: var(--text-color);
-}
-
-.header__search-input:focus ~ .header__search-history {
-  display: block;
-}
-
 /* --------------------------------
 ------------- AUTH FORM ------------
 ---------------------------------- */
@@ -963,6 +916,18 @@ span{
   background: #fff;
   overflow: auto;
   padding: 20px;
+  position: relative;
+}
+
+.buy-product__close-icon {
+  font-size: 3rem;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  cursor: pointer;
+}
+.buy-product__close-icon:hover {
+  opacity: 0.6;
 }
 
 .buy-product::-webkit-scrollbar {
@@ -1080,6 +1045,7 @@ span{
 }
 
 .buy-product__name {
+  width: calc(100% - 3rem);
   font-size: 2.8rem;
   line-height: 3.2rem;
   max-height: 6.4rem;
@@ -1449,8 +1415,8 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3),
-              2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.08),
+              2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 .notify__head{
   display: flex;
@@ -1588,6 +1554,7 @@ hr {
 .menu-mobile__item:hover,
 .menu-mobile__item:active {
   background-color: var(--primary-color-hover);
+  cursor: pointer;
 }
 
 .menu-mobile__item-text,
@@ -2054,6 +2021,10 @@ i.home-product-item__rating--gold {
     left: 0;
     width: 100%;
     z-index: 10;
+  }
+
+  .buy-product__name {
+    width: 100%;
   }
 
   .slider {

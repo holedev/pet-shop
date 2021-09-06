@@ -639,6 +639,7 @@ html {
 
 .footer-main__item:hover {
     cursor: pointer;
+    color: #fff;
 }
 
 .footer-right {
