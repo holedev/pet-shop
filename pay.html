@@ -511,7 +511,7 @@
                     fee = (Math.floor(Math.random() * 100000))
                 } while (fee < 10000);
                 feeTotal += fee
-                priceTotal += item.price
+                priceTotal += item.price * item.quantity
                 return `
                 <li class="main-cart__item" data-index="${index}">
                         <div class="cart-item__title">
@@ -573,11 +573,11 @@
                                             <div class="ship-method__description">
                                                 Nhận hàng vào
                                                 <span>
-                                                    ${date.getDay() + 3 > 30 ? date.getDay() + 3 - 30 : date.getDay() + 3} Th${date.getDay() + 3 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
+                                                    ${date.getDate() + 3 > 30 ? date.getDate() + 3 - 30 : date.getDate() + 3} Th${date.getDate() + 3 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
                                                 </span>
                                                 -
                                                 <span>
-                                                    ${date.getDay() + 8 > 30 ? date.getDay() + 8 - 30 : date.getDay() + 8} Th${date.getDay() + 8 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
+                                                    ${date.getDate() + 8 > 30 ? date.getDate() + 8 - 30 : date.getDate() + 8} Th${date.getDate() + 8 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
                                                 </span>
                                             </div>
                                         </div>
@@ -602,7 +602,8 @@
             $('.main-cart__list').innerHTML = htmls.join('\n')
         }
 
-
+        //flag: true -> mua ngay
+        //flag: false 
         if (objLS.flag) {
             let id
             users.find((user, index) => {
@@ -610,8 +611,6 @@
                 return user.isLogin === true
             })
             render(users[id].carts)
-            console.log(feeTotal)
-            console.log(priceTotal)
         } else {
             render(fastCart)
         }
@@ -620,6 +619,9 @@
         $('.main-pay__body-number.feeTotal').innerHTML = numberToCoin(feeTotal) + "đ"
         $('.main-pay__body-number.total-calc').innerHTML = numberToCoin(feeTotal + priceTotal) + "đ"
 
+
+
+        //clicked đặt hàng
         let flag = true
 
         $('.main-pay__order-btn').onclick = function() {
