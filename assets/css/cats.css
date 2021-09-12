@@ -804,6 +804,16 @@
     :root {
         --gap: 0;
     }
+
+    .box-comment__name-input,
+    .box-comment__content-input {
+        padding: 0 12px;
+    }
+
+    .box-comment__name-label,
+    .box-comment__content-label {
+        left: 4px;
+    }
     
     .main-top__content-item {
         width: 100%;

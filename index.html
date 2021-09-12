@@ -329,7 +329,7 @@
                 </div>
             </div>
 
-            <div class="main-map reveal">
+            <div class="main-map">
 
             </div>
         </section>
@@ -420,8 +420,9 @@
 
         //reveal scroll
         const revealItems = $$('.reveal')
-        const x = revealItems[0].getBoundingClientRect()
         window.addEventListener('scroll', reveal)
+
+        //reveal
         function reveal(){
             revealItems.forEach((item) => {
                 const windowHeight = window.innerHeight
@@ -436,6 +437,7 @@
                 }
             })
         }
+
     </script>
 </body>
 </html>

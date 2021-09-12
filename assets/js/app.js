@@ -74,8 +74,9 @@ menuRightItems.forEach(item => {
 //scroll
 scrollToComponent = function(title, component) {
     title.onclick = function(){
+        const scrollTop = component.offsetTop - 68
         window.scroll({
-            top: component.offsetTop - 56,
+            top: scrollTop,
         });
         activeMenu(this)
     }

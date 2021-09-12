@@ -1,7 +1,7 @@
 .main {
     background-color: var(--background-color);
-    margin-top: var(--header-height);
     overflow-x: hidden;
+    margin-top: var(--header-height);
 }
 
 .main-top{
@@ -10,7 +10,7 @@
     background-position:center;
     background-size: cover;
     width: 100%;
-    padding-top:50%;
+    padding-top: 50%;
     position: relative;
 }
 
@@ -527,14 +527,7 @@
     background-position: center;
     padding-top: 50%;
     filter: brightness(80%);
-    transform: translateY(100px);
-    opacity: 0;
     transition: all ease-in-out 1s;
-}
-
-.main-map.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* --------------------------------------
