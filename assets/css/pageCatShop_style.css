@@ -446,6 +446,7 @@ nav {
 
     .header-tab-content__reponsive-icon {
         display: block;
+        top: 14rem;
     }
 
     .header-tab-content__menu.active {
@@ -521,6 +522,10 @@ nav {
         max-width: 120px;
     }
 
+    .header-tab-content__reponsive-icon {
+        top: 10rem;
+    }
+
     .footer-container-col.col3 {
         display: none;
     }
@@ -548,6 +553,10 @@ nav {
 
     .header-tab-content__logo img {
         width: 80%;
+    }
+
+    .header-tab-content__reponsive-icon {
+        top: 2rem;
     }
 } 
 
@@ -599,6 +608,13 @@ nav {
 @media only screen and (max-width: 360px) {
     .header-tab-content__reponsive-icon {
         font-size: 0.4rem;
+        top: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .header-tab-content__reponsive-icon {
+        top: 0.8rem;
     }
 }
 
