@@ -30,7 +30,7 @@
                 </div>
                 <div class="header-right">
                     <ul class="header-right__list">
-                        <li class="home header-right__item active">
+                        <li class="home header-right__item">
                             <a onclick="return false" href="">
                                 Trang chủ
                             </a>
@@ -436,6 +436,14 @@
                     item.classList.remove('active')
                 }
             })
+        }
+
+        //esc thoát search-box
+        window.onkeydown = function(e){
+            if(e.which == 27 && $('.search-box').style.display !== 'none') {
+                    $('.search-box').style.display = 'none'
+                    document.body.style.overflow = 'auto'
+                }
         }
 
     </script>

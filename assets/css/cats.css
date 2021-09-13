@@ -508,6 +508,25 @@
     margin-bottom: 24px;
 }
 
+.main-direction {
+    padding: 12px;
+}
+
+.main-direction__grid {
+    
+}
+
+.main-direction__content {
+    font-size: 1.6rem;
+    text-align: right;
+}
+
+.main-direction__content i {
+    font-size: 2rem;
+    transform: rotate(-30deg)
+}
+
+
 
 
 /* ----------------------------------------
@@ -879,6 +898,14 @@
 
     .main__sub-title {
         font-size: 2rem;
+    }
+
+    .main-comment__commented {
+        padding: 12px 4px;
+    }
+
+    .main-direction__content {
+        text-align: center;
     }
 
     .page-slider__grid {

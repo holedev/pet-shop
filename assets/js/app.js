@@ -56,10 +56,6 @@ overplay.onclick = function(){
 
 //menu onclick
 activeMenu = function(itemMenu){
-    menuRightItems.forEach(item => {
-        item.classList.remove('active');
-    });
-    itemMenu.classList.add('active');
     if (!(itemMenu.classList.contains('shop'))) {
         closeMenuMobile()
     }

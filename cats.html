@@ -22,7 +22,7 @@
             <div class="grid header-grid">
                 <div class="header-left">
                     <a href="index.html">
-                        <img src="./assets/img/logo.png" alt="" class="header-left__logo">
+                        <img src="./assets/img/logo-demo.png" alt="" class="header-left__logo">
                     </a>
                 </div>
                 <div class="header-mobile">
@@ -40,11 +40,11 @@
                                 Giới thiệu
                             </a>
                         </li>
-                        <li class="pet header-right__item active">
-                            <a href="" onclick="return false">
-                                Thú cưng
+                        <!-- <li class="pet header-right__item">
+                            <a href="page_Dog.html">
+                                Cún
                             </a>
-                        </li>
+                        </li> -->
                         <li class="shop header-right__item">
                             <span>
                                 Cửa hàng
@@ -253,6 +253,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="main-direction">
+                <div class="main-direction__grid grid">
+                    <div class="main-direction__content">
+                        <i class="fas fa-bone"></i>
+                        Và đừng quên ghé thăm những chú cún dễ thương
+                        <a href="page_Dog.html">tại đây</a>
+                        nữa nhé.
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="slider">
@@ -305,6 +316,8 @@
                 </div>
 
         </section>
+
+        
 
         <footer class="footer">
             <section class="footer-content grid">
@@ -433,9 +446,6 @@
         const slider_grid = $('.page-slider__grid')
         const textContent = $('.page-slider__content-info__text')
         const moreTextBtn = $('.page-slider__content-info__more')
-
-        //hàm trong app.js
-        scrollToComponent($('.pet'), $('.app'))
 
         const app = {
             currentSilder: 0,
@@ -690,6 +700,7 @@
                 const slider = $('.slider')
                 const prevBtn = $('.page-slider__prevBtn')
                 const nextBtn = $('.page-slider__nextBtn')
+
                 //onclick show thông tin mèo
                 catItems.forEach(catItem => {
                     catItem.onclick = function(){
@@ -750,9 +761,11 @@
                 window.onkeydown = function(e){
                     if(e.which == 27 && slider.style.display !== 'none') {
                         slider.style.display = 'none'
+                        document.body.style.overflow = 'auto'
                     }
                     if(e.which == 27 && $('.search-box').style.display !== 'none') {
                         $('.search-box').style.display = 'none'
+                        document.body.style.overflow = 'auto'
                     }
                     if(e.which == 37 && slider.style.display === 'block') {
                         _this.prevSlider();
