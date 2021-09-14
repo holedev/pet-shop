@@ -115,7 +115,7 @@
                         <li class="header__nav-item header__nav-user">
                             <img src="./assets/img/avtar.png"
                                 alt="" class="header__nav-user-img">
-                            <span class="header__nav-user-name">User</span>
+                            <span class="header__nav-user-name user-show">User</span>
 
                             <ul class="header__nav-user-menu">
                                 <li class="header__nav-user-item">
@@ -229,6 +229,8 @@
 
         <div class="main">
             <div class="grid wide">
+
+                <!-- trang chủ -->
                 <div class="row main__content">
                   <div class="col">
                     <div class="home-filter">
@@ -288,6 +290,7 @@
         
                   </div>
                 </div>
+
               </div>
         </div>
 
@@ -305,6 +308,9 @@
                         </div>
 
                         <div class="auth-form__form">
+                            <div class="auth-form__group">
+                              <input type="text" class="auth-form__input user-name" placeholder="Nhập tên tài khoản" />
+                            </div>
                             <div class="auth-form__group">
                                 <input name="Email" type="text" class="auth-form__input email-signUp" placeholder="Nhập Email" />
                                 <span>Định dạng email không hợp lệ!</span>
@@ -472,7 +478,7 @@
               <div class="menu-mobile__item-img">
                 <img src="./assets/img/avtar.png" alt="" width="100%">
               </div>
-              <div class="menu-mobile__item-name">
+              <div class="menu-mobile__item-name user-show">
                 User
               </div>
             </li>

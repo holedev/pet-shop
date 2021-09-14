@@ -50,10 +50,10 @@
                         <div class="main-address__body-left">
                             <div class="main-address__body-info">
                                 <span class="name">
-                                    Lê Hồ
+                                    User
                                 </span>
                                 <span class="phone">
-                                    0799754184
+                                    (+84)787898111
                                 </span>
                             </div>
                             <div class="main-address__body-address">
@@ -510,106 +510,110 @@
                 do {
                     fee = (Math.floor(Math.random() * 100000))
                 } while (fee < 10000);
-                feeTotal += fee
-                priceTotal += item.price * item.quantity
-                return `
-                <li class="main-cart__item" data-index="${index}">
-                        <div class="cart-item__title">
-                            <div class="cart-item__brand">
-                                <div class="cart-item__brand-icon">
-                                    <i class="fal fa-store"></i>
-                                </div>
-                                <div class="cart-item__brand-name">
-                                    ${item.brand}
-                                </div>
+            feeTotal += fee
+            priceTotal += item.price * item.quantity
+            return `
+            <li class="main-cart__item" data-index="${index}">
+                    <div class="cart-item__title">
+                        <div class="cart-item__brand">
+                            <div class="cart-item__brand-icon">
+                                <i class="fal fa-store"></i>
                             </div>
-                            <div class="cart-item__mess">
-                                <div class="cart-item__mess-icon">
-                                    <i class="fas fa-comments-alt"></i>
-                                </div>
-                                <div class="cart-item__mess-text">
-                                    Chat ngay
-                                </div>
+                            <div class="cart-item__brand-name">
+                                ${item.brand}
                             </div>
                         </div>
-                        <div class="cart-item__body">
-                            <div class="cart-item__left">
-                                <div class="cart-item__left-img">
-                                    <img width="100%" src="${item.path}"" alt="">
-                                </div>
-                                <div class="cart-item__left-name">
-                                    ${item.name}
-                                </div>
+                        <div class="cart-item__mess">
+                            <div class="cart-item__mess-icon">
+                                <i class="fas fa-comments-alt"></i>
                             </div>
-                            <div class="cart-item__middle">
-                                <div class="cart-item__middle-price">
-                                    ${numberToCoin(item.price)}đ
-                                </div>
-                                <div class="cart-item__middle-quantity">
-                                    ${item.quantity}
-                                </div>
-                                <div class="cart-item__right-total">
-                                    ${numberToCoin(item.quantity * item.price)}đ
-                                </div>
+                            <div class="cart-item__mess-text">
+                                Chat ngay
                             </div>
                         </div>
-                        <div class="cart-item__more">
-                            <div class="cart-item__more-content">
-                                <div class="cart-item__note">
-                                    <span>
-                                        Lời nhắn: 
-                                    </span>
-                                    <input placeholder="Lưu ý cho người bán ..." type="text" class="cart-item__note__input">
-                                </div>
-                                <div class="cart-item__ship">
-                                    <div class="cart-item__ship-method">
-                                        <div class="cart-item__ship-method-head">
-                                            Đơn vị vận chuyển
+                    </div>
+                    <div class="cart-item__body">
+                        <div class="cart-item__left">
+                            <div class="cart-item__left-img">
+                                <img width="100%" src="${item.path}"" alt="">
+                            </div>
+                            <div class="cart-item__left-name">
+                                ${item.name}
+                            </div>
+                        </div>
+                        <div class="cart-item__middle">
+                            <div class="cart-item__middle-price">
+                                ${numberToCoin(item.price)}đ
+                            </div>
+                            <div class="cart-item__middle-quantity">
+                                ${item.quantity}
+                            </div>
+                            <div class="cart-item__right-total">
+                                ${numberToCoin(item.quantity * item.price)}đ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item__more">
+                        <div class="cart-item__more-content">
+                            <div class="cart-item__note">
+                                <span>
+                                    Lời nhắn: 
+                                </span>
+                                <input placeholder="Lưu ý cho người bán ..." type="text" class="cart-item__note__input">
+                            </div>
+                            <div class="cart-item__ship">
+                                <div class="cart-item__ship-method">
+                                    <div class="cart-item__ship-method-head">
+                                        Đơn vị vận chuyển
+                                    </div>
+                                    <div class="cart-item__ship-method-content">
+                                        <div class="ship-method__title">
+                                            Nhanh
                                         </div>
-                                        <div class="cart-item__ship-method-content">
-                                            <div class="ship-method__title">
-                                                Nhanh
-                                            </div>
-                                            <div class="ship-method__description">
-                                                Nhận hàng vào
-                                                <span>
-                                                    ${date.getDate() + 3 > 30 ? date.getDate() + 3 - 30 : date.getDate() + 3} Th${date.getDate() + 3 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
-                                                </span>
-                                                -
-                                                <span>
-                                                    ${date.getDate() + 8 > 30 ? date.getDate() + 8 - 30 : date.getDate() + 8} Th${date.getDate() + 8 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
-                                                </span>
-                                            </div>
+                                        <div class="ship-method__description">
+                                            Nhận hàng vào
+                                            <span>
+                                                ${date.getDate() + 3 > 30 ? date.getDate() + 3 - 30 : date.getDate() + 3} Th${date.getDate() + 3 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
+                                            </span>
+                                            -
+                                            <span>
+                                                ${date.getDate() + 8 > 30 ? date.getDate() + 8 - 30 : date.getDate() + 8} Th${date.getDate() + 8 > 30 ? date.getMonth() + 2: date.getMonth() + 1}
+                                            </span>
                                         </div>
                                     </div>
-                                    <div class="cart-item__fee">
-                                        ${numberToCoin(fee)}đ
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="cart-item__more-total">
-                                <div class="cart-item__more-total-content">
-                                    Tổng số tiền (1 sản phẩm):
-                                    <span>
-                                        ${numberToCoin(item.quantity * item.price + fee)}đ
-                                    </span>
+                                <div class="cart-item__fee">
+                                    ${numberToCoin(fee)}đ
                                 </div>
                             </div>
                         </div>
-                    </li>
-                `
+                        <div class="cart-item__more-total">
+                            <div class="cart-item__more-total-content">
+                                Tổng số tiền (1 sản phẩm):
+                                <span>
+                                    ${numberToCoin(item.quantity * item.price + fee)}đ
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            `
             })
             $('.main-cart__list').innerHTML = htmls.join('\n')
         }
 
-        //flag: true -> mua ngay
-        //flag: false 
+
+
+        //flag: true -> mua theo danh sách
+        //flag: false -> mua ngay
         if (objLS.flag) {
             let id
             users.find((user, index) => {
                 id = index
                 return user.isLogin === true
             })
+
+            $('.name').innerHTML = users[id].userName
             render(users[id].carts)
         } else {
             render(fastCart)

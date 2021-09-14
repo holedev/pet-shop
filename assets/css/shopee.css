@@ -1572,6 +1572,7 @@ hr {
 .slider {
   background-color: #f5f5f5;
   padding-top: 8px;
+  /* display: none; */
 }
 
 .slider-main {
@@ -1624,6 +1625,7 @@ hr {
 
 .main__content {
   padding-top: 32px;
+  /* display: none; */
 }
 
 .main__content > .col {

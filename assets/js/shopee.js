@@ -1356,7 +1356,7 @@ const app = {
             showLogin()
         }
 
-
+        const userName = $('.user-name')
         const signUpEmail = $('.email-signUp')
         const signUpPw = $('.pw-signUp')
         const signUpConfirm = $('.confirm-pw-signUp')
@@ -1426,6 +1426,7 @@ const app = {
         //local Storage
 
         $('.signUp-btn').onclick = function(){
+            const account = userName.value ? userName.value : "User"
             const email = signUpEmail
             const pw = signUpPw
             const confirm = signUpConfirm
@@ -1441,6 +1442,7 @@ const app = {
                 } else {
                     const obj = {
                         id: users.length,
+                        userName: account,
                         email: email.value.trim(),
                         password: pw.value.trim(),
                         carts: [],
@@ -1520,7 +1522,10 @@ const app = {
                 })
                 usersLogin[_this.idUser].isLogin = true;
                 localStorage.setItem('users', JSON.stringify(usersLogin));
-
+                
+                $$('.user-show').forEach((item) => {
+                    item.innerHTML = usersLogin[_this.idUser].userName
+                })
                 showUser()
                 closeOverplay()
             } else {
@@ -1538,11 +1543,14 @@ const app = {
         })
 
     },
+    renderNumberPage(number){
+        this.startItem = (number - 1) * this.itemPerPage
+        this.endItem = number * this.itemPerPage
+        activePageBtn($$('.pagination-list li')[number - 1])
+    },
     gotoPage: function (page) {
         this.currentPage = page
-        this.startItem = (page - 1) * this.itemPerPage
-        this.endItem = page * this.itemPerPage
-        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
+        this.renderNumberPage(this.currentPage)
     },
     nextPage: function () {
         const numberPages = Math.ceil(this.products.length / this.itemPerPage)
@@ -1550,18 +1558,14 @@ const app = {
         if (this.currentPage > numberPages) {
             this.currentPage = numberPages
         }
-        this.startItem = (this.currentPage - 1) * this.itemPerPage
-        this.endItem = this.currentPage * this.itemPerPage
-        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
+        this.renderNumberPage(this.currentPage)
     },
     prevPage: function () {
         this.currentPage--
         if (this.currentPage < 1) {
             this.currentPage = 1
         }
-        this.startItem = (this.currentPage - 1) * this.itemPerPage
-        this.endItem = this.currentPage * this.itemPerPage
-        activePageBtn($$('.pagination-list li')[this.currentPage - 1])
+        this.renderNumberPage(this.currentPage)
     },
     start: function(){
         this.handleEvent()
