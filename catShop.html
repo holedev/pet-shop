@@ -8,6 +8,8 @@
         <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/pageCatShop_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./assets/js/jquery-3.6.0.min.js">
+        
     </head>
     <body>
         <div class="app">
@@ -57,6 +59,12 @@
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
                                     <a href="#buy">Thanh toán</a>
+                                </li>
+                                <li class="header-tab-content__menu-list__item">
+                                    <span>
+                                        <i class="fas fa-luggage-cart"></i>
+                                    </span>
+                                    <a href="#comment">Đánh giá</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
@@ -111,6 +119,52 @@
                             </div>
                             <div class="main-content-classify__pet-item-img">
                                 <img src="./assets/img/cat-shop/loading-cat-paper.gif" alt="" width="10%">
+                            </div>
+                        </div>
+                        <div id="comment" class="main-content-classify__pet-title">
+                            <h3>
+                                Đánh giá
+                            </h3>
+                        </div>
+                        <div class="main-content-comment">
+                            <div class="client">
+                                <input type="text" placeholder="Nhập bình luận..." class="col70" id="add-comment">
+                                <input type="button" name="add" class="col10" value="Thêm" id="add-item">
+                            </div>
+                            <div class="ctrl">
+                                <div class="item">
+                                    <div class="avatar col10">
+                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
+                                    </div>
+                                    <div class="content-comment col80">
+                                        Bạn làm Web dễ thương quá ạ :333
+                                    </div>
+                                    <div class="delete col10">
+                                        <input type="button" name="delete" value="Xóa">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="avatar col10">
+                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
+                                    </div>
+                                    <div class="content-comment col80">
+                                        Bạn làm Web có người yêu chưa í
+                                    </div>
+                                    <div class="delete col10">
+                                        <input type="button" name="delete" value="Xóa">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="avatar col10">
+                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
+                                    </div>
+                                    <div class="content-comment col80">
+                                        Có bán mèo nào dthw như chủ web không?
+                                    </div>
+                                    <div class="delete col10">
+                                        <input type="button" name="delete" value="Xóa">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,6 +258,7 @@
         </div>
 
         <script src="./assets/js/cats-shop.js" type="text/javascript"></script>
+        <script src="./assets/js/commentCatShop.js" type="text/javascript"></script>
         <script>
             const iconMenu = $('.header-tab-content__reponsive-icon')
             const listMenu = $('.header-tab-content__menu')

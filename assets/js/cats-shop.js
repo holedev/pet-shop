@@ -407,3 +407,4 @@ const medicineItem = {
 app.start()
 stuffItem.start()
 medicineItem.start()
+

@@ -278,12 +278,50 @@ nav {
     font-style: italic;
 }
 
+.client {
+    text-align: center;
+    padding: 10px;
+}
+
+.col90 {
+    width: 90%;
+}
+
+.col80 {
+    width: 80%;
+}
+
+.col70 {
+    width: 70%;
+}
+
+.col20 {
+    width: 20%;
+}
+
+.col10 {
+    width: 10%;
+}
+
+input {
+    padding: 5px;
+}
+
+.item {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.content-comment {
+    padding: 5px;
+}
+
     /* FOOTER */
 .footer {
     margin-top: var(--header-height);
     background-color: var(--header-color);
     color: var(--text-color);
-    
 }
 
 .footer-container {
