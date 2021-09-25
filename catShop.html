@@ -8,8 +8,11 @@
         <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/pageCatShop_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Jquery -->
         <script src="./assets/js/jquery-3.6.0.min.js"></script>
         <script src="./assets/js/commentCatShop.js"></script>
+        
+        
     </head>
     <body>
         <div class="app">
@@ -257,11 +260,10 @@
             </div>
         </div>
 
-        <script src="./assets/js/cats-shop.js" type="text/javascript"></script>
-        
+        <script src="./assets/js/cats-shop.js"></script>
         <script>
-            const iconMenu = $('.header-tab-content__reponsive-icon')
-            const listMenu = $('.header-tab-content__menu')
+            const iconMenu = document.querySelector('.header-tab-content__reponsive-icon')
+            const listMenu = document.querySelector('.header-tab-content__menu')
             var flag = false
             
             // open - close menu list
@@ -280,8 +282,6 @@
             function advert() {
                 alert("Sản phẩm đã được ghi nhận.")
             }
-
-
         </script>
     </body>
 </html>

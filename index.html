@@ -427,6 +427,8 @@
             revealItems.forEach((item) => {
                 const windowHeight = window.innerHeight
                 const revealTop = item.getBoundingClientRect().top
+
+                // scrollY - offsetTop < innerHeight
                 
                 if (revealTop < windowHeight - 100) {
                     item.classList.add('active')

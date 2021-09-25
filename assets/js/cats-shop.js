@@ -1,8 +1,6 @@
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
+const app = (() => {
 
-const app = {
-    products: [
+    const products = [
         {
             path: "./assets/img/cat-shop/cat_1.jpg",
             name: "Maincoon (Female)",
@@ -243,42 +241,38 @@ const app = {
             price: "150,000,000",
             brand: "Trung Quốc"
         },
-    ],
-    render: function() {
-        const htmls = this.products.map(function(product, index){
-            return `
-            <div class="main-content-classify__pet-item-member">
-                <div class="main-content-classify__pet-item-member__img">
-                    <img src="${product.path}" alt="" width="100%">
-                    <div class="main-content-classify__pet-item-member__img-around">
-                        <div id="${index}" class="main-content-classify__pet-item-member__img-button" onclick="advert()">
-                            Chốt Đơn
+    ]
+
+    return {
+        render() {
+            const htmls = products.map(function(product, index){
+                return `
+                <div class="main-content-classify__pet-item-member">
+                    <div class="main-content-classify__pet-item-member__img">
+                        <img src="${product.path}" alt="" width="100%">
+                        <div class="main-content-classify__pet-item-member__img-around">
+                            <div id="${index}" class="main-content-classify__pet-item-member__img-button" onclick="advert()">
+                                Chốt Đơn
+                            </div>
                         </div>
                     </div>
+                    <div class="main-content-classify__pet-item-member__name">
+                        <h4>${product.name}</h4>
+                        <h5>(Pedigreed Cats)</h5>
+                    </div>
+                    <div class="main-content-classify__pet-item-member-price">
+                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                    </div>
+                    <div class="main-content-classify__pet-item-member-brand">
+                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    </div>
                 </div>
-                <div class="main-content-classify__pet-item-member__name">
-                    <h4>${product.name}</h4>
-                    <h5>(Pedigreed Cats)</h5>
-                </div>
-                <div class="main-content-classify__pet-item-member-price">
-                    <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                </div>
-                <div class="main-content-classify__pet-item-member-brand">
-                    <small>Xuất xứ: <span>${product.brand}</span></small>
-                </div>
-            </div>
-            `
-        })
-        $('.cat').innerHTML = htmls.join('')
-    },
-    handleEvent: function() {
-
-    },
-    start: function() {
-        this.render()
-        this.handleEvent()
+                `
+            })
+            document.querySelector('.cat').innerHTML = htmls.join('')
+        }
     }
-}
+})().render()
 
 const stuffItem = {
     products: [
@@ -393,7 +387,7 @@ const medicineItem = {
             </div>
             `
         })
-        $('.medicine').innerHTML = htmls.join('')
+        document.querySelector('.medicine').innerHTML = htmls.join('')
     },
     handleEvent: function() {
         
@@ -403,8 +397,5 @@ const medicineItem = {
         this.handleEvent()
     }
 }
-
-app.start()
 stuffItem.start()
 medicineItem.start()
-

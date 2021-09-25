@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#add-item").click(function() {
+        alert('a')
         var content = $("#add-comment").val()
 
         $("div.ctrl").prepend(`
