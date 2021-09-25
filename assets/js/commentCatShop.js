@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#add-item").click(function() {
         var content = $("#add-comment").val()
 
-        $(".ctrl").prepend(`
+        $("div.ctrl").prepend(`
             <div class="item">
                 <div class="avatar col10">
                     <img src="./assets/img/avtar.png" alt="avatar" width="50%">
