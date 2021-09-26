@@ -21,6 +21,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.goToTop > a > i {
+    font-size: 4rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    color: #696969;
+}
+
+.goToTop > a > i:active {
+    color: var(--header-color);
+}
+
     /* HEADER */
 .header {
     color: var(--text-color);
@@ -303,6 +315,10 @@ nav {
     width: 10%;
 }
 
+.col5 {
+    width: 5%;
+}
+
 input {
     padding: 5px;
 }
@@ -313,8 +329,20 @@ input {
     align-items: center;
 }
 
+div.item .delete {
+    text-align: center;
+}
+
+div.avatar {
+    text-align: center;
+}
+
 .content-comment {
     padding: 5px;
+}
+
+.active-comment {
+    border: 2px solid darkred;
 }
 
     /* FOOTER */

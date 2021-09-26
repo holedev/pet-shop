@@ -1,4 +1,4 @@
-const app = (() => {
+const app = (function() {
 
     const products = [
         {
@@ -319,7 +319,7 @@ const stuffItem = {
             </div>
             `
         })
-        $('.stuff').innerHTML = htmls.join('')
+        document.querySelector('.stuff').innerHTML = htmls.join('')
     },
     handleEvent: function() {
 
