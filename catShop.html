@@ -12,7 +12,6 @@
         <script src="./assets/js/jquery-3.6.0.min.js"></script>
         <script src="./assets/js/commentCatShop.js"></script>
         
-        
     </head>
     <body>
         <div class="goToTop">
@@ -49,7 +48,7 @@
                                     <span>
                                         <i class="fas fa-cat"></i>
                                     </span>
-                                    <a id="pets" href="javascript:;">Thú cưng</a>
+                                    <a id="pets" href="#pet">Thú cưng</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
@@ -61,19 +60,19 @@
                                     <span>
                                         <i class="fas fa-capsules"></i>
                                     </span>
-                                    <a href="#medicines">Thuốc bổ & trị liệu</a>
+                                    <a id="medicines" href="#medicine">Thuốc bổ & trị liệu</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
-                                    <a href="#buys">Thanh toán</a>
+                                    <a id="buys" href="#buy">Thanh toán</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
-                                    <a href="#comments">Đánh giá</a>
+                                    <a id="comments" href="#comment">Đánh giá</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
@@ -106,7 +105,7 @@
                         <div class="main-content-classify__pet-item stuff">
                             <!-- catShop.js -->
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="medicine" class="main-content-classify__pet-title">
                             <h3>
                                 Thuốc bổ và trị liệu
                             </h3>
@@ -114,7 +113,7 @@
                         <div class="main-content-classify__pet-item medicine">
                             <!-- catShop.js -->
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="buy" class="main-content-classify__pet-title">
                             <h3>
                                 Thanh toán
                             </h3>
@@ -130,48 +129,79 @@
                                 <img src="./assets/img/cat-shop/loading-cat-paper.gif" alt="" width="10%">
                             </div>
                         </div>
-                        <div class="main-content-classify__pet-title">
+                        <div id="comment" class="main-content-classify__pet-title">
                             <h3>
                                 Đánh giá
                             </h3>
                         </div>
                         <div class="main-content-comment">
                             <div class="client">
-                                <input type="text" placeholder="Nhập bình luận..." class="col70" id="add-comment">
-                                <input type="button" value="Thêm" id="add-item">
+                                <input type="text" placeholder="Tên bạn là..." class="col20" id="add-name">
+                                <input type="text" placeholder="Nhập bình luận..." class="col60" id="add-comment">
+                                <input type="button" value="Thêm" class="" id="add-item">
                             </div>
                             <div class="ctrl">
-                                <div class="item">
-                                    <div class="avatar col10">
-                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
+                                <div>
+                                    <div class="item">
+                                        <div class="avatar col10">
+                                            <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+                                        </div>
+                                        <div class="content-comment col80">
+                                            <div class="name_User">Hac_Cau</div>
+                                            <div class="content-comment-text">Bạn làm Web dễ thương quá ạ :333</div>
+                                        </div>
+                                        <div class="delete col10">
+                                            <input type="button" name="delete" value="Xóa">
+                                        </div>
                                     </div>
-                                    <div class="content-comment col80">
-                                        Bạn làm Web dễ thương quá ạ :333
+                                    <div class="item-reply">
+                                        <div class="content-comment_reply">
+                                            <div class="avatar col10">
+                                                <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+                                            </div>
+                                            <div class="content-comment col80">
+                                                <div class="name_User">Rogit20</div>
+                                                <div class="content-comment-text">Ủa mua mèo hay đi thả thính vậy bạn?</div>
+                                            </div>
+                                            <div class="delete col10">
+                                                <input type="button" name="delete" value="Xóa">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="delete col10">
-                                        <input type="button" name="delete" value="Xóa">
+                                    <div class="content-comment_reply write">
+                                        <input type="text" placeholder="Tên bạn là..." class="col20" id="add-name-reply">
+                                        <input type="text" placeholder="Nhập bình luận..." class="col60" id="add-comment-reply">
+                                        <input type="button" value="Phản hồi" class="" id="add-item-reply">
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="avatar col10">
-                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
-                                    </div>
-                                    <div class="content-comment col80">
-                                        Bạn làm Web có người yêu chưa í
-                                    </div>
-                                    <div class="delete col10">
-                                        <input type="button" name="delete" value="Xóa">
+
+                                <div>
+                                    <div class="item">
+                                        <div class="avatar col10">
+                                            <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+                                        </div>
+                                        <div class="content-comment col80">
+                                            <div class="name_User">Yasuo</div>
+                                            <div class="content-comment-text">Bạn làm Web có người yêu chưa í</div>
+                                        </div>
+                                        <div class="delete col10">
+                                            <input type="button" name="delete" value="Xóa">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="avatar col10">
-                                        <img src="./assets/img/avtar.png" alt="avatar" width="50%">
-                                    </div>
-                                    <div class="content-comment col80">
-                                        Có bán mèo nào dthw như chủ web không?
-                                    </div>
-                                    <div class="delete col10">
-                                        <input type="button" name="delete" value="Xóa">
+
+                                <div>
+                                    <div class="item">
+                                        <div class="avatar col10">
+                                            <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+                                        </div>
+                                        <div class="content-comment col80">
+                                            <div class="name_User">Murad</div>
+                                            <div class="content-comment-text">Có bán mèo nào dthw như chủ web không?</div>
+                                        </div>
+                                        <div class="delete col10">
+                                            <input type="button" name="delete" value="Xóa">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -288,6 +318,9 @@
             function advert() {
                 alert("Sản phẩm đã được ghi nhận.")
             }
+
+            // setup time comment
+
         </script>
     </body>
 </html>

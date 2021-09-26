@@ -5,6 +5,8 @@
     --text-color: #696969;
     --content-color: #fff;
     --header-height: 200px;
+    --header-height-second: 90px;
+    --header-height-third: 55px;
     --nav-height: 34px;
 }
 
@@ -293,6 +295,12 @@ nav {
 .client {
     text-align: center;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.client > input[type="text"] {
+    margin-right: 5px;
 }
 
 .col90 {
@@ -303,8 +311,16 @@ nav {
     width: 80%;
 }
 
+.col60 {
+    width: 60%;
+}
+
 .col70 {
     width: 70%;
+}
+
+.col30 {
+    width: 30%;
 }
 
 .col20 {
@@ -329,7 +345,11 @@ input {
     align-items: center;
 }
 
-div.item .delete {
+.name_User {
+    font-style: italic;
+}
+
+.delete {
     text-align: center;
 }
 
@@ -338,7 +358,38 @@ div.avatar {
 }
 
 .content-comment {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.content-comment {
     padding: 5px;
+}
+
+.content-comment div {
+    margin-bottom: 5px;
+}
+
+.content-comment_reply {
+    display: flex;
+    align-items: center;
+    margin-left: 12rem;
+    margin-right: 12rem;
+}
+
+.content-comment_reply.write {
+    margin-right: 16rem;
+    margin-left: 15rem;
+    justify-content: center;
+}
+
+input {
+    border-radius: 4px;
+}
+
+.content-comment_reply.write input[type=text] {
+    margin-right: 5px;
 }
 
 .active-comment {
@@ -479,6 +530,12 @@ div.avatar {
 }
 
     /* Reponsive */
+@media only screen and (max-width: 1308px) {
+    .header-tab-content__menu-list__item a {
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 1220px) {
     .main-content-classify__pet-item-member {
         width: 25%;
@@ -501,6 +558,13 @@ div.avatar {
         font-size: 2.8rem;
     }
 }
+
+@media only screen and (max-width: 1170px) {
+    .header-tab-content__menu-list__item {
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 1100px) {
     .hear-tab-content__search {
         display: none;
@@ -520,10 +584,6 @@ div.avatar {
         border-radius: 0;
         width: 100%;
         margin: 0;
-    }
-
-    .header-tab-content__menu.active nav {
-        
     }
 
     .header-tab-content__reponsive-icon i:active, 
@@ -551,8 +611,30 @@ div.avatar {
         background-color: transparent;
     }
     
+    .content-comment_reply.write {
+        margin-right: 14rem;
+        margin-left: 14rem;
+    }
+
     .footer-container-col__wrapper > h4 {
         font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .header-tab-content__reponsive-icon {
+        top: 12rem;
+    }
+
+    .content-comment_reply.write {
+        margin-right: 12rem;
+        margin-left: 12rem;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .header-tab-content__reponsive-icon {
+        top: 10rem;
     }
 }
 
@@ -606,6 +688,28 @@ div.avatar {
         width: 84%;
         margin: 8%;
     }
+
+    .content-comment_reply {
+        margin-right: 8rem;
+        margin-left: 8rem;
+    }
+
+    .content-comment_reply.write {
+        margin-right: 8rem;
+        margin-left: 8rem;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .content-comment_reply {
+        margin-right: 6rem;
+        margin-left: 6rem;
+    }
+
+    .content-comment_reply.write {
+        margin-right: 6rem;
+        margin-left: 6rem;
+    }
 }
 
 @media only screen and (max-width: 615px) {
@@ -624,7 +728,24 @@ div.avatar {
     .header-tab-content__reponsive-icon {
         top: 2rem;
     }
-} 
+}
+
+@media only screen and (max-width: 550px) {
+    .main {
+        margin-top: var(--header-height-second);
+    }
+
+    .content-comment_reply {
+        margin-right: 4rem;
+        margin-left: 4rem;
+    }
+
+    .content-comment_reply.write {
+        margin-right: 4rem;
+        margin-left: 4rem;
+    }
+}
+
 
 @media only screen and (max-width: 500px) {
     .header-tab-content__reponsive-icon {
@@ -675,6 +796,12 @@ div.avatar {
     .header-tab-content__reponsive-icon {
         font-size: 0.4rem;
         top: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .main {
+        margin-top: var(--header-height-third);
     }
 }
 
