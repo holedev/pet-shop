@@ -1,5 +1,5 @@
-// Ham scroll to Top
 $(document).ready(function() {
+    // Ham scroll to Top
     $("#gototop").hide()
 
     $(window).scroll(function() {
@@ -14,60 +14,57 @@ $(document).ready(function() {
             scrollTop: 0
         })
     })
-})
 
-// Ham scroll fix bug Header che khuat
-$(document).ready(function() {
-    const headerHeight = $(".header-tab").height()
-
-    $("#pets").click(function() {
-        const hPet = $(this).attr('href')
-        const tPet = $(hPet).prop("offsetTop")
+    // Ham scroll fix bug Header che khuat
+    // $("#pets").click(function() {
+    //     const headerHeight = $(".header-tab").height()
+    //     console.log(headerHeight)
+    //     const hPet = $(this).attr('href')
+    //     const tPet = $(hPet).prop("offsetTop")
         
-        $("html, body").animate({
-            scrollTop: (tPet - headerHeight)
-        })  
-    })
+    //     $("html, body").animate({
+    //         scrollTop: (tPet - headerHeight)
+    //     })  
+    // })
 
-    $("#stuffs").click(function() {
-        const hStuff = $(this).attr('href')
-        const tStuff = $(hStuff).prop("offsetTop")
+    // $("#stuffs").click(function() {
+    //     const hStuff = $(this).attr('href')
+    //     const tStuff = $(hStuff).prop("offsetTop")
         
-        $("html, body").animate({
-            scrollTop: (tStuff - headerHeight)
-        })
-    })
+    //     $("html, body").animate({
+    //         scrollTop: (tStuff - headerHeight)
+    //     })
+    // })
 
-    $("#medicines").click(function() {
-        const hMedi = $(this).attr('href')
-        const tMedi = $(hMedi).prop("offsetTop")
+    // $("#medicines").click(function() {
+    //     const hMedi = $(this).attr('href')
+    //     const tMedi = $(hMedi).prop("offsetTop")
         
-        $("html, body").animate({
-            scrollTop: (tMedi - headerHeight)
-        })
-    })
+    //     $("html, body").animate({
+    //         scrollTop: (tMedi - headerHeight)
+    //     })
+    // })
 
-    $("#buys").click(function() {
-        const hBuy = $(this).attr('href')
-        const tBuy = $(hBuy).prop("offsetTop")
+    // $("#buys").click(function() {
+    //     const hBuy = $(this).attr('href')
+    //     const tBuy = $(hBuy).prop("offsetTop")
         
-        $("html, body").animate({
-            scrollTop: (tBuy - headerHeight)
-        })
-    })
+    //     $("html, body").animate({
+    //         scrollTop: (tBuy - headerHeight)
+    //     })
+    // })
 
-    $("#comments").click(function() {
-        const hCmt = $(this).attr('href')
-        const tCmt = $(hCmt).prop("offsetTop")
+    // $("#comments").click(function() {
+    //     const hCmt = $(this).attr('href')
+    //     const tCmt = $(hCmt).prop("offsetTop")
         
-        $("html, body").animate({
-            scrollTop: (tCmt - headerHeight)
-        })
-    })
-})
+    //     $("html, body").animate({
+    //         scrollTop: (tCmt - headerHeight)
+    //     })
+    // })
 
-// Ham them + xoa binh luan
-$(document).ready(function() {
+
+    // Ham them + xoa binh luan
     $("#add-item").click(function() {
         var content = $("#add-comment").val()
         var name = $("#add-name").val()
@@ -96,9 +93,7 @@ $(document).ready(function() {
         if (confirm("Bạn có muốn xóa dòng bình luận này?") == true)
             $(this).parent().parent().parent().remove()
     })
-})
 
-$(document).ready(function() {
     $("#add-item-reply").click(function() {
         var contentReply = $("#add-comment-reply").val()
         var nameReply = $("#add-name-reply").val()
@@ -127,11 +122,14 @@ $(document).ready(function() {
         if (confirm("Bạn có muốn xóa dòng bình luận này?") == true)
             $(this).parent().parent().remove()
     })
-})
 
-// Ham xoa san pham "Thu Cung" khi click "Chot Don"
-$(document).ready(function() {
-    $("div.cat").on("click", "div.main-content-classify__pet-item-member__img-button", function() {
-        $(this).parent().parent().parent().remove()
+    // Ham xoa san pham "Thu Cung" khi click "Chot Don"
+    $(document).ready(function() {
+        $("div.cat").on("click", "div.main-content-classify__pet-item-member__img-button", function() {
+            $(this).parent().parent().parent().remove()
+        })
     })
 })
+
+
+
