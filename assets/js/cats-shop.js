@@ -1,6 +1,5 @@
-const app = (function() {
-
-    const products = [
+const app = {
+    products: [
         {
             path: "./assets/img/cat-shop/cat_1.jpg",
             name: "Maincoon (Female)",
@@ -240,13 +239,11 @@ const app = (function() {
             name: "Miracle (Male)",
             price: "150,000,000",
             brand: "Trung Quốc"
-        },
-    ]
-
-    return {
-        render() {
-            const htmls = products.map(function(product, index){
-                return `
+        }
+    ],
+    render: function() {
+        const htmls = this.products.map(function(product, index){
+            return `
                 <div class="main-content-classify__pet-item-member">
                     <div class="main-content-classify__pet-item-member__img">
                         <img src="${product.path}" alt="" width="100%">
@@ -267,12 +264,18 @@ const app = (function() {
                         <small>Xuất xứ: <span>${product.brand}</span></small>
                     </div>
                 </div>
-                `
-            })
-            document.querySelector('.cat').innerHTML = htmls.join('')
-        }
+            `
+        })
+        document.querySelector('.cat').innerHTML = htmls.join('')
+    },
+    handleEvent: function() {
+
+    },
+    start: function() {
+        this.render()
+        this.handleEvent()
     }
-})().render()
+}
 
 const stuffItem = {
     products: [
@@ -298,25 +301,25 @@ const stuffItem = {
     render: function() {
         const htmls = this.products.map(function(product) {
             return `
-            <div class="main-content-classify__pet-item-member">
-                <div class="main-content-classify__pet-item-member__img">
-                    <img src="${product.path}" alt="" width="100%">
-                    <div class="main-content-classify__pet-item-member__img-around">
-                        <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
-                            Chốt Đơn
+                <div class="main-content-classify__pet-item-member">
+                    <div class="main-content-classify__pet-item-member__img">
+                        <img src="${product.path}" alt="" width="100%">
+                        <div class="main-content-classify__pet-item-member__img-around">
+                            <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
+                                Chốt Đơn
+                            </div>
                         </div>
                     </div>
+                    <div class="main-content-classify__pet-item-member__name">
+                        <h4>${product.name}</h4>
+                    </div>
+                    <div class="main-content-classify__pet-item-member-price">
+                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                    </div>
+                    <div class="main-content-classify__pet-item-member-brand">
+                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    </div>
                 </div>
-                <div class="main-content-classify__pet-item-member__name">
-                    <h4>${product.name}</h4>
-                </div>
-                <div class="main-content-classify__pet-item-member-price">
-                    <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                </div>
-                <div class="main-content-classify__pet-item-member-brand">
-                    <small>Xuất xứ: <span>${product.brand}</span></small>
-                </div>
-            </div>
             `
         })
         document.querySelector('.stuff').innerHTML = htmls.join('')
@@ -366,25 +369,25 @@ const medicineItem = {
     render: function() {
         const htmls = this.products.map(function(product) {
             return `
-            <div class="main-content-classify__pet-item-member">
-                <div class="main-content-classify__pet-item-member__img">
-                    <img src="${product.path}" alt="" width="100%">
-                    <div class="main-content-classify__pet-item-member__img-around">
-                        <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
-                            Chốt Đơn
+                <div class="main-content-classify__pet-item-member">
+                    <div class="main-content-classify__pet-item-member__img">
+                        <img src="${product.path}" alt="" width="100%">
+                        <div class="main-content-classify__pet-item-member__img-around">
+                            <div class="main-content-classify__pet-item-member__img-button" onclick="advert()">
+                                Chốt Đơn
+                            </div>
                         </div>
                     </div>
+                    <div class="main-content-classify__pet-item-member__name">
+                        <h4>${product.name}</h4>
+                    </div>
+                    <div class="main-content-classify__pet-item-member-price">
+                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                    </div>
+                    <div class="main-content-classify__pet-item-member-brand">
+                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    </div>
                 </div>
-                <div class="main-content-classify__pet-item-member__name">
-                    <h4>${product.name}</h4>
-                </div>
-                <div class="main-content-classify__pet-item-member-price">
-                    <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                </div>
-                <div class="main-content-classify__pet-item-member-brand">
-                    <small>Xuất xứ: <span>${product.brand}</span></small>
-                </div>
-            </div>
             `
         })
         document.querySelector('.medicine').innerHTML = htmls.join('')
@@ -397,5 +400,7 @@ const medicineItem = {
         this.handleEvent()
     }
 }
+
+app.start()
 stuffItem.start()
 medicineItem.start()
