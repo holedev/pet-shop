@@ -1,7 +1,7 @@
 :root {
-    --header-color: #7FFF00;
-    --menu-color: #D2691E;
-    --background-color: #F0F8FF;
+    --header-color: #d16644;
+    --menu-color: #F8B195;
+    --background-color: #fff;
     --text-color: #696969;
     --content-color: #fff;
     --header-height: 200px;
@@ -28,7 +28,7 @@ html {
     position: fixed;
     bottom: 1rem;
     right: 2rem;
-    color: #696969;
+    color: var(--text-color);
 }
 
 .goToTop > a > i:active {
@@ -183,11 +183,11 @@ nav {
 }
 
 .header-tab-content__menu-list__item:hover i{
-    color: #DC143C;
+    color: black;
 }
 
 .header-tab-content__menu-list__item:hover a{
-    color: #DC143C;
+    color: black;
 }
 
     /* MAIN */
@@ -243,7 +243,7 @@ nav {
     position: absolute;
     top: 4px;
     right: 0;
-    background-color: var(--header-color);
+    background-color: #FE7D6A;
     transition-duration: 0.5s;
 }
 
@@ -254,7 +254,7 @@ nav {
     content: "";
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    border-color: var(--header-color) transparent transparent var(--header-color);
+    border-color: #FE7D6A transparent transparent #FE7D6A;
 }
 
 .main-content-classify__pet-item-member__img-button {
