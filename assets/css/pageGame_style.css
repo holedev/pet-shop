@@ -1,0 +1,84 @@
+* {
+    --background-color-second: #fff;
+    --text-title-color: #fff;
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255, 233, 213) url(../img/images_Dog/loading-dog.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+    z-index: 9999;
+}
+
+.overload {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    animation: fadeIn ease 0.4s;
+}
+
+.App {
+    width: auto;
+    height: 100vh;
+    background-color: var(--background-color-second);
+}
+
+.main {
+    margin-top: var(--header-height);
+    background-color: var(--background-color-second);
+}
+
+.main-menu-sub {
+    padding-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-sub__list {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start;
+}
+
+.menu-sub__member {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+.main-title {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.main-title h2 {
+    text-transform: uppercase;
+    color: var(--text-title-color);
+    font-weight: normal;
+    border-bottom: 3px solid rgb(16, 16, 143);
+    padding-bottom: 6px;
+    margin-top: 10px;
+}
+
+.main-title span {
+    background-color: rgb(16, 16, 143);
+    padding: 4px 8px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
