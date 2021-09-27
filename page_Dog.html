@@ -115,15 +115,15 @@
                     <div class="main-classify">
                         <div class="main-classify__name">
                             <ul>
-                                <li class="main-classify__name-item"><a id="one" href="#husky">Husky</a></li>
-                                <li class="main-classify__name-item"><a id="two" href="#shiba">Shiba Inu</a></li>
-                                <li class="main-classify__name-item"><a id="three" href="#samoyed">Samoyed</a></li>
-                                <li class="main-classify__name-item"><a id="four" href="#corgi">Corgi</a></li>
-                                <li class="main-classify__name-item"><a id="five" href="#dachshund">Dachshund</a></li>
-                                <li class="main-classify__name-item"><a id="six" href="#chihuahua">Chihuahua</a></li>
-                                <li class="main-classify__name-item"><a id="seven" href="#golden">Golden Retriever</a></li>
-                                <li class="main-classify__name-item"><a id="eight" href="#phuquoc">Chó Phú Quốc</a></li>
-                                <li class="main-classify__name-item"><a id="nine" href="#akita">Akita Inu</a></li>
+                                <li class="main-classify__name-item"><a id="one" onclick="return false" href="#husky">Husky</a></li>
+                                <li class="main-classify__name-item"><a id="two" onclick="return false" href="#shiba">Shiba Inu</a></li>
+                                <li class="main-classify__name-item"><a id="three" onclick="return false" href="#samoyed">Samoyed</a></li>
+                                <li class="main-classify__name-item"><a id="four" onclick="return false" href="#corgi">Corgi</a></li>
+                                <li class="main-classify__name-item"><a id="five" onclick="return false" href="#dachshund">Dachshund</a></li>
+                                <li class="main-classify__name-item"><a id="six" onclick="return false" href="#chihuahua">Chihuahua</a></li>
+                                <li class="main-classify__name-item"><a id="seven" onclick="return false" href="#golden">Golden Retriever</a></li>
+                                <li class="main-classify__name-item"><a id="eight" onclick="return false" href="#phuquoc">Chó Phú Quốc</a></li>
+                                <li class="main-classify__name-item"><a id="nine" onclick="return false" href="#akita">Akita Inu</a></li>
                             </ul>
                         </div>
                     </div>
@@ -652,6 +652,22 @@
                     flag = false
                 }
             }
+
+
+            //scroll js
+            const scrollBtns = document.querySelectorAll('.main-classify__name-item')
+            const scrollComponents = itemClassDogs
+
+            scrollBtns.forEach(function(scrollBtn, index){
+                scrollBtn.onclick = function(){
+                    const top = scrollComponents[index].offsetTop
+                    const headerHeight = document.querySelector('.header').clientHeight
+                    const scrollY = top - headerHeight
+                    window.scroll({
+                        top: scrollY,
+                    });
+                }
+            })
         </script>
     </body>
 </html>
