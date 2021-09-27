@@ -61,6 +61,10 @@ html {
     align-items: center;
 }
 
+.header-tab-content__logo {
+    width: 50%;
+}
+
 .header-tab-content__logo img {
     width: 100%;
 }
@@ -84,36 +88,36 @@ html {
 }
 
 .hear-tab-content__search {
+    width: 50%;
     display: flex;
-    
 }
 
 .hear-tab-content__search-input {
+    align-self: center;
+    width: 80%;
+    text-align: right;
+}
+
+.hear-tab-content__search input {
     border: 2px solid black;
-    border-right: 0;
-    border-radius: 25px 0 0 25px;
+    border-radius: 3.2rem;
     background-color: #fff;
-    display: flex;
+    width: 80%;
 }
 
 .hear-tab-content__search-input > input {
     font-size: 1.6rem;
     outline: none;
-    padding-left: 4px;
-    margin-left: 5%;
     border-color: transparent;
     color: var(--text-color);
 }
 
 .hear-tab-content__search-icon {
-    border: 2px solid black;
-    padding: 5px;
-    border-radius: 0 25px 25px 0;
-    background-color: var(--menu-color);
+    width: 20%;
 }
 
 .hear-tab-content__search-icon > i {
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: #fff !important;
     padding: 4px;
     margin: 8px;
@@ -126,12 +130,12 @@ html {
 }
 
 .hear-tab-content__search-icon > i:active {
-    transform: scale(95%);
+    transform: scale(80%);
 }
 
 .header-tab-content__menu {
     background-color: var(--menu-color);
-    border-radius: 20px 20px 0 0;
+    border-radius: 8px 8px 0 0;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -144,7 +148,6 @@ nav {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
-    
 }
 
 .header-tab-content__menu-list__item {
@@ -152,6 +155,7 @@ nav {
     text-transform: uppercase;
     padding: 4px 8px;
     margin: 4px;
+    border-radius: 4px;
 }
 
 .header-tab-content__menu-list__item:last-child {
@@ -165,18 +169,24 @@ nav {
 }
 
 .header-tab-content__menu-list__item i {
-    color: #fff;
+    color: var(--content-color);
 }
 
 .header-tab-content__menu-list__item a {
     text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 4px;
+    color: var(--content-color);
 }
 
-.header-tab-content__menu-list__item a:hover {
-    background-color: #ccc;
+.header-tab-content__menu-list__item:hover {
+    background-color: var(--content-color);
+    
+}
+
+.header-tab-content__menu-list__item:hover i{
+    color: #DC143C;
+}
+
+.header-tab-content__menu-list__item:hover a{
     color: #DC143C;
 }
 
@@ -201,7 +211,7 @@ nav {
     display: inline-block;
     padding: 8px 12px 0 12px;
     border-color: var(--menu-color);
-    border-radius: 15px 15px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .main-content-classify__pet-item {
@@ -213,9 +223,14 @@ nav {
     width: 21%;
     margin: 2%;
     border: 2px solid black;
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
     background-color: var(--menu-color);
     color: var(--content-color);
+    transition-duration: 0.5s;
+}
+
+.main-content-classify__pet-item-member:hover {
+    transform: scale(110%);
 }
     
 .main-content-classify__pet-item-member__img {
@@ -561,7 +576,7 @@ input {
 
 @media only screen and (max-width: 1170px) {
     .header-tab-content__menu-list__item {
-        padding: 0;
+        padding: 4px;
     }
 }
 
@@ -574,9 +589,13 @@ input {
         display: none;
     }
 
+    .header-tab-content__logo {
+        width: 80%;
+    }
+
     .header-tab-content__reponsive-icon {
         display: block;
-        top: 14rem;
+        top: 6rem;
     }
 
     .header-tab-content__menu.active {
@@ -622,19 +641,9 @@ input {
 }
 
 @media only screen and (max-width: 950px) {
-    .header-tab-content__reponsive-icon {
-        top: 12rem;
-    }
-
     .content-comment_reply.write {
         margin-right: 12rem;
         margin-left: 12rem;
-    }
-}
-
-@media only screen and (max-width: 890px) {
-    .header-tab-content__reponsive-icon {
-        top: 10rem;
     }
 }
 
@@ -668,10 +677,6 @@ input {
 @media only screen and (max-width: 780px) {
     .header {
         max-width: 120px;
-    }
-
-    .header-tab-content__reponsive-icon {
-        top: 10rem;
     }
 
     .footer-container-col.col3 {
@@ -749,7 +754,7 @@ input {
 
 @media only screen and (max-width: 500px) {
     .header-tab-content__reponsive-icon {
-        top: 2rem;
+        top: 1rem;
     }
 
     .main-content-classify__pet-title > h3 {
@@ -768,7 +773,7 @@ input {
 
 @media only screen and (max-width: 450px) {
     .header-tab-content__reponsive-icon {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -795,7 +800,7 @@ input {
 @media only screen and (max-width: 360px) {
     .header-tab-content__reponsive-icon {
         font-size: 0.4rem;
-        top: 1.6rem;
+        top: 0.4rem;
     }
 }
 
@@ -805,16 +810,10 @@ input {
     }
 }
 
-@media only screen and (max-width: 320px) {
-    .header-tab-content__reponsive-icon {
-        top: 0.8rem;
-    }
-}
-
 @media only screen and (max-width: 280px) {
     .header-tab-content__reponsive-icon {
-        top: 5px;
-        font-size: 4px;
+        font-size: 0.1rem;
+        top: 0.1rem;
     }
 
     .main {
