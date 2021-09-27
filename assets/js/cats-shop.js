@@ -414,7 +414,7 @@ const menuDropdown = document.querySelector('.header-tab-content__menu')
 scrollBtns.forEach(function(scrollBtn, index){
     scrollBtn.onclick = function(){
         if (index == 0) {
-            menuDropdown.classList.remove('active')
+            menuDropdown.classList.remove('active') // Tự động đóng menu sau khi click chọn mục scroll tới
             window.scroll({
                 top: 0,
             });
