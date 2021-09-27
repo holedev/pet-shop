@@ -300,17 +300,14 @@
         <script>
             const iconMenu = document.querySelector('.header-tab-content__reponsive-icon')
             const listMenu = document.querySelector('.header-tab-content__menu')
-            const flag = listMenu.classList.contains('active')
             
             // open - close menu list
             iconMenu.onclick = function () {
-                if (!flag) {
+                if (!(listMenu.classList.contains('active'))) {
                     listMenu.classList.add('active')
-                    flag = true
                 }
                 else {
                     listMenu.classList.remove('active')
-                    flag = false
                 }
             }
 

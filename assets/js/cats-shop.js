@@ -413,13 +413,22 @@ const menuDropdown = document.querySelector('.header-tab-content__menu')
 
 scrollBtns.forEach(function(scrollBtn, index){
     scrollBtn.onclick = function(){
-        menuDropdown.classList.remove('active')
-        const top = scrollComponents[index].offsetTop
-        const headerHeight = document.querySelector('.header-tab').clientHeight
-        const scrollY = top - headerHeight
-
-        window.scroll({
-            top: scrollY,
-        });
+        if (index == 0) {
+            menuDropdown.classList.remove('active')
+            window.scroll({
+                top: 0,
+            });
+        } else {
+            menuDropdown.classList.remove('active')
+            const top = scrollComponents[index].offsetTop
+            
+            const headerHeight = document.querySelector('.header-tab').clientHeight
+            const scrollY = top - headerHeight
+            window.scroll({
+                top: scrollY,
+            });
+        }
+        
     }
 })
+
