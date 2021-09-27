@@ -399,3 +399,22 @@ const medicineItem = {
 }
 stuffItem.start()
 medicineItem.start()
+
+
+//scroll js
+const scrollBtns = document.querySelectorAll('.scroll-btn')
+const scrollComponents = document.querySelectorAll('.scroll-component')
+const menuDropdown = document.querySelector('.header-tab-content__menu')
+
+scrollBtns.forEach(function(scrollBtn, index){
+    scrollBtn.onclick = function(){
+        menuDropdown.classList.remove('active')
+        const top = scrollComponents[index].offsetTop
+        const headerHeight = document.querySelector('.header-tab').clientHeight
+        const scrollY = top - headerHeight
+
+        window.scroll({
+            top: scrollY,
+        });
+    }
+})

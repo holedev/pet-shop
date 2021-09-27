@@ -44,35 +44,35 @@
                     <div class="header-tab-content__menu">
                         <nav>
                             <ul class="header-tab-content__menu-list">
-                                <li class="header-tab-content__menu-list__item">
+                                <li class="header-tab-content__menu-list__item scroll-btn">
                                     <span>
                                         <i class="fas fa-cat"></i>
                                     </span>
-                                    <a id="pets" href="#pet">Thú cưng</a>
+                                    <a id="pets" onclick="return false" href="#pet">Thú cưng</a>
                                 </li>
-                                <li class="header-tab-content__menu-list__item">
+                                <li class="header-tab-content__menu-list__item scroll-btn">
                                     <span>
                                         <i class="fas fa-archive"></i>
                                     </span>
-                                    <a id="stuffs" href="#stuff">Vật dụng</a>
+                                    <a id="stuffs" onclick="return false" href="#stuff">Vật dụng</a>
                                 </li>
-                                <li class="header-tab-content__menu-list__item">
+                                <li class="header-tab-content__menu-list__item scroll-btn">
                                     <span>
                                         <i class="fas fa-capsules"></i>
                                     </span>
-                                    <a id="medicines" href="#medicine">Thuốc bổ & trị liệu</a>
+                                    <a id="medicines" onclick="return false" href="#medicine">Thuốc bổ & trị liệu</a>
                                 </li>
-                                <li class="header-tab-content__menu-list__item">
+                                <li class="header-tab-content__menu-list__item scroll-btn">
                                     <span>
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
-                                    <a id="buys" href="#buy">Thanh toán</a>
+                                    <a id="buys" onclick="return false" href="#buy">Thanh toán</a>
                                 </li>
-                                <li class="header-tab-content__menu-list__item">
+                                <li class="header-tab-content__menu-list__item scroll-btn">
                                     <span>
                                         <i class="fas fa-luggage-cart"></i>
                                     </span>
-                                    <a id="comments" href="#comment">Đánh giá</a>
+                                    <a id="comments" onclick="return false" href="#comment">Đánh giá</a>
                                 </li>
                                 <li class="header-tab-content__menu-list__item">
                                     <span>
@@ -89,7 +89,7 @@
             <div class="main">
                 <div class="main-content">
                     <div class="main-content-classify__pet">
-                        <div id="pet" class="main-content-classify__pet-title">
+                        <div id="pet" class="main-content-classify__pet-title scroll-component">
                             <h3>
                                 Những chiếc mèo cute lạc lối
                             </h3>
@@ -97,7 +97,7 @@
                         <div class="main-content-classify__pet-item cat">
                             <!-- catShop.js -->
                         </div>
-                        <div id="stuff" class="main-content-classify__pet-title">
+                        <div id="stuff" class="main-content-classify__pet-title scroll-component">
                             <h3>
                                 Vật dụng
                             </h3>
@@ -105,7 +105,7 @@
                         <div class="main-content-classify__pet-item stuff">
                             <!-- catShop.js -->
                         </div>
-                        <div id="medicine" class="main-content-classify__pet-title">
+                        <div id="medicine" class="main-content-classify__pet-title scroll-component">
                             <h3>
                                 Thuốc bổ và trị liệu
                             </h3>
@@ -113,7 +113,7 @@
                         <div class="main-content-classify__pet-item medicine">
                             <!-- catShop.js -->
                         </div>
-                        <div id="buy" class="main-content-classify__pet-title">
+                        <div id="buy" class="main-content-classify__pet-title scroll-component">
                             <h3>
                                 Thanh toán
                             </h3>
@@ -129,7 +129,7 @@
                                 <img src="./assets/img/cat-shop/loading-cat-paper.gif" alt="" width="10%">
                             </div>
                         </div>
-                        <div id="comment" class="main-content-classify__pet-title">
+                        <div id="comment" class="main-content-classify__pet-title scroll-component">
                             <h3>
                                 Đánh giá
                             </h3>
@@ -300,7 +300,7 @@
         <script>
             const iconMenu = document.querySelector('.header-tab-content__reponsive-icon')
             const listMenu = document.querySelector('.header-tab-content__menu')
-            var flag = false
+            const flag = listMenu.classList.contains('active')
             
             // open - close menu list
             iconMenu.onclick = function () {
