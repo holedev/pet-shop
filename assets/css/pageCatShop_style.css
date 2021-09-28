@@ -307,6 +307,14 @@ nav {
     font-style: italic;
 }
 
+.ctrl {
+    background-image: url(../img/images-Game/nyan.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
 .client {
     text-align: center;
     padding: 10px;
@@ -430,12 +438,17 @@ input {
     flex: 1;
 }
 
+.footer-container-col.col1 {
+    color: black;
+}
+
 .footer-container-col__wrapper {
     
 }
 
 .footer-container-col__wrapper > h3, h5 {
     font-size: 2rem;
+    color: black;
 }
 
 .footer-container-col__wrapper > h4 {
@@ -444,7 +457,6 @@ input {
 }
 
 .footer-container-col__wrapper > p > strong {
-    color: red;
     padding: 10px 0;
 }
 
