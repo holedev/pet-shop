@@ -1,4 +1,4 @@
-* {
+:root {
     --background-color-third: #FAE29C;
     --text-title-color: #fff;
     --text-content-color: rgb(0, 0, 0);
@@ -17,6 +17,7 @@ img {
     background-position: center;
     background-attachment: fixed;
     background-color: transparent;
+    height: 100%;
 }
 
 .main {
@@ -51,7 +52,14 @@ img {
 .menu-sub__member {
     font-size: 1.6rem;
     text-transform: uppercase;
-    padding: 10px 15px;
+    padding: 1% 4%;
+    transition: all 0.5s ease;
+}
+
+.menu-sub__member:hover span {
+    border-bottom: 2px solid var(--bg-title-color);
+    color: var(--bg-title-color);
+    cursor: pointer;
 }
 
 .main-content {
@@ -94,6 +102,10 @@ img {
 
 .d-flex > div {
     width: 49.5%;
+}
+
+.news-one {
+    overflow: hidden;
 }
 
 .wrap {
@@ -220,4 +232,160 @@ img {
 .anime-container__item-wrapper-description p {
     font-size: 1.6rem;
     font-weight: lighter;
+}
+
+@media only screen and (max-width: 1200px) {
+    .news-one .wrap__title > h3 {
+        font-size: 1.6rem;
+    }
+
+    .news-two .wrap__title > h3 {
+        font-size: 0.8rem;
+    }
+
+    .wrap__label span {
+        padding: 3px;
+        font-size: 0.8rem;
+    }
+
+    .game-content__title span {
+        font-size: 1.6rem;
+    }
+
+    .game-content__description {
+        font-size: 1.2rem;
+    }
+
+    .anime-container__item-wrapper-description h4 {
+        font-size: 1.6rem;
+    }
+    
+    .anime-container__item-wrapper-description p {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .wrap__title {
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .main-menu-sub {
+        padding-left: 30px;
+    }
+
+    .news-one .wrap__title > h3 {
+        font-size: 2rem;
+    }
+
+    .news-two .wrap__title > h3 {
+        font-size: 2rem;
+    }
+
+    .wrap__label span {
+        padding: 3px;
+        font-size: 1rem;
+    }
+
+    .game-content__title span {
+        font-size: 2rem;
+    }
+
+    .game-content__description {
+        font-size: 1.2rem;
+    }
+
+    .anime-container__item-wrapper-description h4 {
+        font-size: 2rem;
+    }
+    
+    .anime-container__item-wrapper-description p {
+        font-size: 1.6rem;
+    }
+
+    .d-flex {
+        display: block;
+    }
+
+    .d-flex > div {
+        width: 100%;
+    }
+
+    .news-one, 
+    .news-two > div {
+        margin-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .main-menu-sub {
+        padding-left: 20px;
+    }
+
+    .news-one .wrap__title > h3 {
+        font-size: 1.8rem;
+    }
+
+    .news-two .wrap__title > h3 {
+        font-size: 1.8rem;
+    }
+
+    .wrap__label span {
+        padding: 2px;
+    }
+
+    .game-content__title span {
+        font-size: 1.8rem;
+    }
+
+    .game-content__description {
+        font-size: 1rem;
+    }
+
+    .anime-container__item-wrapper-description h4 {
+        font-size: 1.8rem;
+    }
+    
+    .anime-container__item-wrapper-description p {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .main-menu-sub {
+        padding-left: 15px;
+    }
+
+    .news-one .wrap__title > h3 {
+        font-size: 1.6rem;
+    }
+
+    .news-two .wrap__title > h3 {
+        font-size: 1.6rem;
+    }
+
+    .game-content__title span {
+        font-size: 1.6rem;
+    }
+
+    .anime-container__item-wrapper-description h4 {
+        font-size: 1.6rem;
+    }
+
+    .menu-sub__member {
+        font-size: 1.2rem;
+        padding: 1% 2%;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    .main-menu-sub {
+        padding-left: 10px;
+    }
+
+    .menu-sub__member {
+        font-size: 1rem;
+    }
 }
