@@ -1,6 +1,8 @@
 * {
     --background-color-second: #fff;
     --text-title-color: #fff;
+    --margin-content: 15%;
+    --bg-title-color: rgb(16, 16, 143);
 }
 
 .loading {
@@ -38,9 +40,25 @@
     background-color: var(--background-color-second);
 }
 
+.main-advertise {
+    text-align: center;
+    /* background-color: var(--background-color); */
+    background-image: url(../img/images-Game/Site-background-cat.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 1rem;
+}
+
+.main-advertise h1 {
+    font-size: 4rem;
+    text-decoration: underline;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .main-menu-sub {
     padding-left: 50px;
-    margin-top: 10px;
     margin-bottom: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
@@ -57,28 +75,96 @@
     padding: 10px 15px;
 }
 
+.main-content {
+    margin-left: var(--margin-content);
+    margin-right: var(--margin-content);
+    margin-top: 1%;
+}
+
+.main-content-container {
+    padding: 1%;
+}
+
 .main-title {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-bottom: 2%;
 }
 
 .main-title h2 {
     text-transform: uppercase;
     color: var(--text-title-color);
     font-weight: normal;
-    border-bottom: 3px solid rgb(16, 16, 143);
+    border-bottom: 3px solid var(--bg-title-color);
     padding-bottom: 6px;
-    margin-top: 10px;
 }
 
 .main-title span {
-    background-color: rgb(16, 16, 143);
+    background-color: var(--bg-title-color);
     padding: 4px 8px;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.main-news {
+    
 }
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.d-flex > div {
+    width: 49.5%;
+}
+
+.wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap img {
+    transition-duration: 0.5s;
+}
+
+.wrap:hover img {
+    transform: scale(110%);
+}
+
+.wrap:hover .wrap__label span{
+    background-color: var(--bg-title-color);
+}
+
+.wrap-text {
+    position: absolute;
+    top: 0;
+}
+
+.wrap-text > .wrap__label {
+    margin-left: 10px;
+}
+
+.wrap-text span, h3 {
+    text-transform: uppercase;
+}
+
+.wrap__title {
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.534),rgba(0, 0, 0, 0.418), transparent)
+}
+
+.wrap__label > span {
+    padding: 5px;
+    background:rgba(0, 0, 0, 0.7);
+    color: var(--text-title-color);
+}
+
+.wrap__title > h3 {
+    font-size: 2.4rem;
+    color: var(--text-title-color);
+    padding: 8px 8px 4px 8px;
+}
+
+.news-two .wrap__title > h3 {
+    font-size: 1.2rem;
+}
+
