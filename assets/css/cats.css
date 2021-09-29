@@ -631,7 +631,6 @@
     transition: all ease-in-out 0.5s;
 }
 
-
 .page-slider__content {
     display: flex;
     gap: 20px;
@@ -747,6 +746,14 @@
         width: calc(50% - var(--gap));
         margin-bottom: 24px;
     }
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page-slider__grid {
+        max-height: 500px;
+    }
 
 }
 
@@ -781,6 +788,7 @@
 
     .slider {
         padding: 20px 0;
+        align-items: unset;
     }
 
     .page-slider__grid {
