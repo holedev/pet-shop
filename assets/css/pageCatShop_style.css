@@ -227,6 +227,9 @@ nav {
     background-color: var(--menu-color);
     color: var(--content-color);
     transition-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-content-classify__pet-item-member:hover {

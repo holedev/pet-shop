@@ -157,10 +157,10 @@ const app = {
             brand: "Anh"
         },
         {
-            path: "./assets/img/cat-shop/cat_27.jpg",
-            name: "Anh lông ngắn (Xám xanh - Female)",
-            price: "30,000,000",
-            brand: "Bến Tre"
+            path: "./assets/img/cat-shop/Heo.jpg",
+            name: "Anh lông ngắn (Xám xanh - Male)",
+            price: "2,000,000",
+            brand: "Nhà ẻm"
         },
         {
             path: "./assets/img/cat-shop/cat_28.jpg",
@@ -253,15 +253,17 @@ const app = {
                             </div>
                         </div>
                     </div>
-                    <div class="main-content-classify__pet-item-member__name">
-                        <h4>${product.name}</h4>
-                        <h5>(Pedigreed Cats)</h5>
-                    </div>
-                    <div class="main-content-classify__pet-item-member-price">
-                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                    </div>
-                    <div class="main-content-classify__pet-item-member-brand">
-                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    <div class="main-content-classify__pet-item-member-wrap">
+                        <div class="main-content-classify__pet-item-member__name">
+                            <h4>${product.name}</h4>
+                            <h5>(Pedigreed Cats)</h5>
+                        </div>
+                        <div class="main-content-classify__pet-item-member-price">
+                            <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                        </div>
+                        <div class="main-content-classify__pet-item-member-brand">
+                            <small>Xuất xứ: <span>${product.brand}</span></small>
+                        </div>
                     </div>
                 </div>
             `
@@ -310,14 +312,16 @@ const stuffItem = {
                             </div>
                         </div>
                     </div>
-                    <div class="main-content-classify__pet-item-member__name">
-                        <h4>${product.name}</h4>
-                    </div>
-                    <div class="main-content-classify__pet-item-member-price">
-                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                    </div>
-                    <div class="main-content-classify__pet-item-member-brand">
-                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    <div class="main-content-classify__pet-item-member-wrap">
+                        <div class="main-content-classify__pet-item-member__name">
+                            <h4>${product.name}</h4>
+                        </div>
+                        <div class="main-content-classify__pet-item-member-price">
+                            <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                        </div>
+                        <div class="main-content-classify__pet-item-member-brand">
+                            <small>Xuất xứ: <span>${product.brand}</span></small>
+                        </div>
                     </div>
                 </div>
             `
@@ -378,14 +382,16 @@ const medicineItem = {
                             </div>
                         </div>
                     </div>
-                    <div class="main-content-classify__pet-item-member__name">
-                        <h4>${product.name}</h4>
-                    </div>
-                    <div class="main-content-classify__pet-item-member-price">
-                        <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
-                    </div>
-                    <div class="main-content-classify__pet-item-member-brand">
-                        <small>Xuất xứ: <span>${product.brand}</span></small>
+                    <div class="main-content-classify__pet-item-member-wrap">
+                        <div class="main-content-classify__pet-item-member__name">
+                            <h4>${product.name}</h4>
+                        </div>
+                        <div class="main-content-classify__pet-item-member-price">
+                            <span class="main-content-classify__pet-item-member-price__value">${product.price}</span>&#8363;
+                        </div>
+                        <div class="main-content-classify__pet-item-member-brand">
+                            <small>Xuất xứ: <span>${product.brand}</span></small>
+                        </div>
                     </div>
                 </div>
             `
