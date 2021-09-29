@@ -69,24 +69,30 @@ $(document).ready(function() {
         var content = $("#add-comment").val()
         var name = $("#add-name").val()
 
-        $("div.ctrl").prepend(`
-            <div class="item active-comment">
-                <div class="avatar col10">
-                    <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+        if(content && name) {
+            $("div.ctrl").prepend(`
+                <div>
+                    <div class="item active-comment">
+                        <div class="avatar col10">
+                            <img src="./assets/img/cat-shop/avt-2.jpg" alt="avatar" width="100%">
+                        </div>
+                        <div class="content-comment col80">
+                            <div class="name_User">${name}</div>
+                            <div class="content-comment-text">${content}</div>
+                        </div>
+                        <div class="delete col10">
+                            <input type="button" name="delete" value="Xóa">
+                        </div>
+                    </div>
                 </div>
-                <div class="content-comment col80">
-                    <div class="name_User">${name}</div>
-                    <div class="content-comment-text">${content}</div>
-                </div>
-                <div class="delete col10">
-                    <input type="button" name="delete" value="Xóa">
-                </div>
-            </div>
-        `)
+            `)
+            $("#add-comment").val("")
+            $("#add-name").val("")
+            setTimeout(function() {
+                $("div.item").removeClass("active-comment")
+            }, 1000)
+        }
 
-        setTimeout(function() {
-            $("div.item").removeClass("active-comment")
-        }, 1000)
     })
 
     $("div.ctrl").on("click", "div.item input[type=button]", function() {
@@ -98,24 +104,30 @@ $(document).ready(function() {
         var contentReply = $("#add-comment-reply").val()
         var nameReply = $("#add-name-reply").val()
 
-        $("div.item-reply").append(`
-            <div class="content-comment_reply active-comment">
-                <div class="avatar col10">
-                    <img src="./assets/img/avtar.png" alt="avatar" width="100%">
+        if (contentReply && nameReply) {
+            $("div.item-reply").append(`
+                <div class="content-comment_reply active-comment">
+                    <div class="avatar col10">
+                        <img src="./assets/img/cat-shop/avt-1.jpg" alt="avatar" width="100%">
+                    </div>
+                    <div class="content-comment col80">
+                        <div class="name_User">${nameReply}</div>
+                        <div class="content-comment-text">${contentReply}</div>
+                    </div>
+                    <div class="delete col10">
+                        <input type="button" name="delete" value="Xóa">
+                    </div>
                 </div>
-                <div class="content-comment col80">
-                    <div class="name_User">${nameReply}</div>
-                    <div class="content-comment-text">${contentReply}</div>
-                </div>
-                <div class="delete col10">
-                    <input type="button" name="delete" value="Xóa">
-                </div>
-            </div>
-        `)
+            `)
+    
+            $("#add-comment-reply").val("")
+            $("#add-name-reply").val("")
+    
+            setTimeout(function() {
+                $("div.content-comment_reply").removeClass("active-comment")
+            }, 1000)
+        }
 
-        setTimeout(function() {
-            $("div.content-comment_reply").removeClass("active-comment")
-        }, 1000)
     })
 
     $("div.item-reply").on("click", "div.content-comment_reply input[type=button]", function() {

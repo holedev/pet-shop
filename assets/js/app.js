@@ -15,29 +15,31 @@ preloader = function(){
     $('.loading').style.display = 'none'
 }
 
-//đóng, mở search pc
-closeSearch = function(){
-    $('.search-box').style.display = 'none'
-    document.body.style.overflow = 'auto'
-}
-openSearch = function(){
-    $('.search-box').style.display = 'flex'  
-    inputSearch.focus()
-    document.body.style.overflow = 'hidden'
-}
-
-
-//đóng mở menu mobile
-closeMenuMobile = function(){
-    headerRight.classList.remove('active')
-    overplay.classList.remove('active')
-    document.body.style.overflow = 'auto'
-}
-
-showMenuMobile = function(){
-    headerRight.classList.add('active')
-    overplay.classList.add('active')
-    document.body.style.overflow = 'hidden'
+if(headerRight) {
+    //đóng, mở search pc
+    closeSearch = function(){
+        $('.search-box').style.display = 'none'
+        document.body.style.overflow = 'auto'
+    }
+    openSearch = function(){
+        $('.search-box').style.display = 'flex'  
+        inputSearch.focus()
+        document.body.style.overflow = 'hidden'
+    }
+    
+    
+    //đóng mở menu mobile
+    closeMenuMobile = function(){
+        headerRight.classList.remove('active')
+        overplay.classList.remove('active')
+        document.body.style.overflow = 'auto'
+    }
+    
+    showMenuMobile = function(){
+        headerRight.classList.add('active')
+        overplay.classList.add('active')
+        document.body.style.overflow = 'hidden'
+    }
 }
 
 if(headerMobile) {
@@ -48,40 +50,43 @@ if(headerMobile) {
             closeMenuMobile()
         }
     }
-}
-
-overplay.onclick = function(){
-    closeMenuMobile()
-}
-
-//menu onclick
-activeMenu = function(itemMenu){
-    if (!(itemMenu.classList.contains('shop'))) {
+    overplay.onclick = function(){
         closeMenuMobile()
     }
+    
+    //menu onclick
+    activeMenu = function(itemMenu){
+        if (!(itemMenu.classList.contains('shop'))) {
+            closeMenuMobile()
+        }
+    }
+    menuRightItems.forEach(item => {
+        item.onclick = function(){
+            activeMenu(this)
+        }
+    })
+
+    //scroll
+    scrollToComponent = function(title, component) {
+        title.onclick = function(){
+            const scrollTop = component.offsetTop - 68
+            window.scroll({
+                top: scrollTop,
+            });
+            activeMenu(this)
+        }
+    }
 }
 
-menuRightItems.forEach(item => {
-    item.onclick = function(){
-        activeMenu(this)
-    }
-})
 
-//scroll
-scrollToComponent = function(title, component) {
-    title.onclick = function(){
-        const scrollTop = component.offsetTop - 68
-        window.scroll({
-            top: scrollTop,
-        });
-        activeMenu(this)
-    }
-}
+
 
 //scrollTop
 if (scrollTop) {
     scrollTop.onclick = function(){
-        scrollToComponent(this, $('.app'))
+        window.scroll({
+            top: 0,
+        })
     }
 }
 

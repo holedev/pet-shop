@@ -2105,9 +2105,17 @@ i.home-product-item__rating--gold {
     display: flex;
   }
 
+  .auth-form__social {
+    background: transparent;
+  }
+
   .auth-form__container,
   .auth-form__social {
     padding: 0 20px;
+  }
+
+  .auth-form__social--google {
+    border: 1px solid #ccc;
   }
 
   .auth-form__social {

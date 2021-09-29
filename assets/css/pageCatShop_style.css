@@ -315,7 +315,7 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .client {
@@ -373,6 +373,7 @@ input {
 
 .name_User {
     font-style: italic;
+    font-weight: 600;
 }
 
 .delete {
@@ -380,7 +381,13 @@ input {
 }
 
 div.avatar {
+    width: 80px;
+    height: 80px;
     text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 8px;
 }
 
 .content-comment {
@@ -393,6 +400,10 @@ div.avatar {
     padding: 5px;
 }
 
+.item-reply {
+
+}
+
 .content-comment div {
     margin-bottom: 5px;
 }
@@ -402,6 +413,7 @@ div.avatar {
     align-items: center;
     margin-left: 12rem;
     margin-right: 12rem;
+    margin-top: 12px;
 }
 
 .content-comment_reply.write {
@@ -701,7 +713,7 @@ input {
 
 @media only screen and (max-width: 680px) {
     .header-tab {
-        padding: 8px 40px 0 5px;
+        padding: 8px 8px 0 5px;
     }
 
     .main-content-classify__pet-item-member {

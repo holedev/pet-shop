@@ -27,6 +27,11 @@
     background-color: var(--background-color);
 }
 
+.main-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .main-title {
     padding: 12px 0;
     margin-left: 15px;

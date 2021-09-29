@@ -15,6 +15,7 @@ img {
     background-image: url(../img/images-Game/Site-background-cat.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     background-attachment: fixed;
     background-color: transparent;
     height: 100%;
@@ -22,6 +23,11 @@ img {
 
 .main {
     margin-top: var(--header-height);
+}
+
+.main-grid {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .main-advertise {
@@ -56,7 +62,7 @@ img {
     transition: all 0.5s ease;
 }
 
-.menu-sub__member:hover span {
+.menu-sub__member div:hover {
     border-bottom: 2px solid var(--bg-title-color);
     color: var(--bg-title-color);
     cursor: pointer;
