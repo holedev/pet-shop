@@ -1,7 +1,7 @@
-# project-môn học Thiết kế Web (Front-end)  DH20IT02
+# Project Web Design DH20IT02 
 
----Bài tập lớn---
-
-Thành viên:
+### Leccturer:
+Ths. Dương Hữu Thành
+### Group:
 1. Phan Lê Hồ
 2. Trần Nhật Minh
