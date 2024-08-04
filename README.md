@@ -1,6 +1,6 @@
 # Project Web Design DH20IT02 
 
-### Leccturer:
+### Lecturer:
 Ths. Dương Hữu Thành
 ### Group:
 1. Phan Lê Hồ
